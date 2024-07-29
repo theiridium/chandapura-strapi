@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "real_estate_amenities",
+  "info": {
+    "singularName": "real-estate-amenity",
+    "pluralName": "real-estate-amenities",
+    "displayName": "Real Estate Amenity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

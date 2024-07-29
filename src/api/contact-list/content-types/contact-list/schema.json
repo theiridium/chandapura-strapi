@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_lists",
+  "info": {
+    "singularName": "contact-list",
+    "pluralName": "contact-lists",
+    "displayName": "Contact List",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "phone_alt": {
+      "type": "string"
+    },
+    "email_id": {
+      "type": "email"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "contact_lists"
+    },
+    "advertisement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::advertisement.advertisement",
+      "mappedBy": "ad_contact"
+    }
+  }
+}

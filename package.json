@@ -1,0 +1,40 @@
+{
+  "name": "strapi",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@strapi/plugin-cloud": "4.15.5",
+    "@strapi/plugin-documentation": "^4.16.2",
+    "@strapi/plugin-i18n": "4.15.5",
+    "@strapi/plugin-users-permissions": "4.15.5",
+    "@strapi/provider-upload-cloudinary": "^4.21.0",
+    "@strapi/strapi": "4.15.5",
+    "mysql": "^2.18.1",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "strapi-plugin-meilisearch": "^0.11.1",
+    "strapi-plugin-slugify": "^2.3.8",
+    "strapi-plugin-transformer": "^3.1.2",
+    "styled-components": "5.3.3"
+  },
+  "author": {
+    "name": "Priyanka Das"
+  },
+  "strapi": {
+    "uuid": "f856e70b-1409-4cc0-9c3b-7f61d0d375dd"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

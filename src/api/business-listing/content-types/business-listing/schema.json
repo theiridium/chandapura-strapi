@@ -1,0 +1,88 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_listings",
+  "info": {
+    "singularName": "business-listing",
+    "pluralName": "business-listings",
+    "displayName": "Business Listing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "area": {
+      "type": "string"
+    },
+    "full_address": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "bus_contact": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::contact-list.contact-list"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "business_listings"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "text"
+    },
+    "sub_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "business_listing"
+    },
+    "gallery_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "inversedBy": "business_listing"
+    },
+    "website": {
+      "type": "string"
+    },
+    "services": {
+      "type": "json"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bus_hours": {
+      "type": "json"
+    }
+  }
+}
