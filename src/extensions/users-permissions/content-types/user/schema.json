@@ -78,12 +78,6 @@
     "phone_alt": {
       "type": "string"
     },
-    "first_name": {
-      "type": "string"
-    },
-    "last_name": {
-      "type": "string"
-    },
     "real_estates": {
       "type": "relation",
       "relation": "oneToMany",
@@ -102,14 +96,20 @@
       "target": "api::contact-list.contact-list",
       "mappedBy": "user"
     },
-    "unlinked_image_ids": {
-      "type": "json"
-    },
     "advertisement": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::advertisement.advertisement",
       "mappedBy": "user"
+    },
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "string"
     }
   }
 }

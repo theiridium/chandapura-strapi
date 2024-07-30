@@ -701,8 +701,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     user_type: Attribute.Enumeration<['Site User', 'Backend User']>;
     phone: Attribute.String;
     phone_alt: Attribute.String;
-    first_name: Attribute.String;
-    last_name: Attribute.String;
     real_estates: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
@@ -718,12 +716,14 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::contact-list.contact-list'
     >;
-    unlinked_image_ids: Attribute.JSON;
     advertisement: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToOne',
       'api::advertisement.advertisement'
     >;
+    firstname: Attribute.String;
+    lastname: Attribute.String;
+    avatar: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<

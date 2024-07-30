@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-29T11:18:48.610Z"
+    "x-generation-date": "2024-07-30T22:32:41.431Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -703,12 +703,6 @@
                                     "type": "string"
                                   },
                                   "phone_alt": {
-                                    "type": "string"
-                                  },
-                                  "first_name": {
-                                    "type": "string"
-                                  },
-                                  "last_name": {
                                     "type": "string"
                                   },
                                   "real_estates": {
@@ -2101,7 +2095,6 @@
                                       }
                                     }
                                   },
-                                  "unlinked_image_ids": {},
                                   "advertisement": {
                                     "type": "object",
                                     "properties": {
@@ -2352,6 +2345,15 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "firstname": {
+                                    "type": "string"
+                                  },
+                                  "lastname": {
+                                    "type": "string"
+                                  },
+                                  "avatar": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -3358,12 +3360,6 @@
                                   "phone_alt": {
                                     "type": "string"
                                   },
-                                  "first_name": {
-                                    "type": "string"
-                                  },
-                                  "last_name": {
-                                    "type": "string"
-                                  },
                                   "real_estates": {
                                     "type": "object",
                                     "properties": {
@@ -4754,7 +4750,6 @@
                                       }
                                     }
                                   },
-                                  "unlinked_image_ids": {},
                                   "advertisement": {
                                     "type": "object",
                                     "properties": {
@@ -5005,6 +5000,15 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "firstname": {
+                                    "type": "string"
+                                  },
+                                  "lastname": {
+                                    "type": "string"
+                                  },
+                                  "avatar": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -6591,12 +6595,6 @@
                                                                         "phone_alt": {
                                                                           "type": "string"
                                                                         },
-                                                                        "first_name": {
-                                                                          "type": "string"
-                                                                        },
-                                                                        "last_name": {
-                                                                          "type": "string"
-                                                                        },
                                                                         "real_estates": {
                                                                           "type": "object",
                                                                           "properties": {
@@ -7018,7 +7016,6 @@
                                                                             }
                                                                           }
                                                                         },
-                                                                        "unlinked_image_ids": {},
                                                                         "advertisement": {
                                                                           "type": "object",
                                                                           "properties": {
@@ -7269,6 +7266,15 @@
                                                                               }
                                                                             }
                                                                           }
+                                                                        },
+                                                                        "firstname": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "lastname": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "avatar": {
+                                                                          "type": "string"
                                                                         },
                                                                         "createdAt": {
                                                                           "type": "string",
@@ -8715,12 +8721,6 @@
                         "type": "string"
                       },
                       "phone_alt": {
-                        "type": "string"
-                      },
-                      "first_name": {
-                        "type": "string"
-                      },
-                      "last_name": {
                         "type": "string"
                       },
                       "real_estates": {
@@ -10441,7 +10441,6 @@
                           }
                         }
                       },
-                      "unlinked_image_ids": {},
                       "advertisement": {
                         "type": "object",
                         "properties": {
@@ -10458,6 +10457,15 @@
                             }
                           }
                         }
+                      },
+                      "firstname": {
+                        "type": "string"
+                      },
+                      "lastname": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -14557,12 +14565,6 @@
                       "phone_alt": {
                         "type": "string"
                       },
-                      "first_name": {
-                        "type": "string"
-                      },
-                      "last_name": {
-                        "type": "string"
-                      },
                       "real_estates": {
                         "type": "object",
                         "properties": {
@@ -16050,7 +16052,6 @@
                           }
                         }
                       },
-                      "unlinked_image_ids": {},
                       "advertisement": {
                         "type": "object",
                         "properties": {
@@ -16067,6 +16068,15 @@
                             }
                           }
                         }
+                      },
+                      "firstname": {
+                        "type": "string"
+                      },
+                      "lastname": {
+                        "type": "string"
+                      },
+                      "avatar": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -17281,12 +17291,6 @@
                                                                         "phone_alt": {
                                                                           "type": "string"
                                                                         },
-                                                                        "first_name": {
-                                                                          "type": "string"
-                                                                        },
-                                                                        "last_name": {
-                                                                          "type": "string"
-                                                                        },
                                                                         "real_estates": {
                                                                           "type": "object",
                                                                           "properties": {
@@ -17939,7 +17943,6 @@
                                                                             }
                                                                           }
                                                                         },
-                                                                        "unlinked_image_ids": {},
                                                                         "advertisement": {
                                                                           "type": "object",
                                                                           "properties": {
@@ -18190,6 +18193,15 @@
                                                                               }
                                                                             }
                                                                           }
+                                                                        },
+                                                                        "firstname": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "lastname": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "avatar": {
+                                                                          "type": "string"
                                                                         },
                                                                         "createdAt": {
                                                                           "type": "string",
