@@ -830,6 +830,10 @@ export interface ApiBusinessListingBusinessListing
     services: Attribute.JSON;
     featured_image: Attribute.Media;
     bus_hours: Attribute.JSON;
+    isReadyToList: Attribute.Boolean & Attribute.DefaultTo<false>;
+    bus_contact_name: Attribute.String;
+    bus_contact_number: Attribute.String;
+    bus_email_id: Attribute.Email;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

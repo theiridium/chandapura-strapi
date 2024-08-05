@@ -83,6 +83,19 @@
     },
     "bus_hours": {
       "type": "json"
+    },
+    "isReadyToList": {
+      "type": "boolean",
+      "default": false
+    },
+    "bus_contact_name": {
+      "type": "string"
+    },
+    "bus_contact_number": {
+      "type": "string"
+    },
+    "bus_email_id": {
+      "type": "email"
     }
   }
 }
