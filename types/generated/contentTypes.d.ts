@@ -706,11 +706,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::real-estate.real-estate'
     >;
-    business_listings: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::business-listing.business-listing'
-    >;
     contact_lists: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
@@ -724,6 +719,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     firstname: Attribute.String;
     lastname: Attribute.String;
     avatar: Attribute.String;
+    business_listings: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::business-listing.business-listing'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -803,16 +803,6 @@ export interface ApiBusinessListingBusinessListing
     area: Attribute.String;
     full_address: Attribute.Text;
     description: Attribute.Text;
-    bus_contact: Attribute.Relation<
-      'api::business-listing.business-listing',
-      'oneToOne',
-      'api::contact-list.contact-list'
-    >;
-    user: Attribute.Relation<
-      'api::business-listing.business-listing',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     slug: Attribute.String;
     tags: Attribute.Text;
     sub_category: Attribute.Relation<
@@ -831,9 +821,14 @@ export interface ApiBusinessListingBusinessListing
     featured_image: Attribute.Media;
     bus_hours: Attribute.JSON;
     isReadyToList: Attribute.Boolean & Attribute.DefaultTo<false>;
-    bus_contact_name: Attribute.String;
-    bus_contact_number: Attribute.String;
-    bus_email_id: Attribute.Email;
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    conatct_email_id: Attribute.Email;
+    author: Attribute.Relation<
+      'api::business-listing.business-listing',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

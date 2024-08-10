@@ -84,12 +84,6 @@
       "target": "api::real-estate.real-estate",
       "mappedBy": "user"
     },
-    "business_listings": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::business-listing.business-listing",
-      "mappedBy": "user"
-    },
     "contact_lists": {
       "type": "relation",
       "relation": "oneToMany",
@@ -110,6 +104,12 @@
     },
     "avatar": {
       "type": "string"
+    },
+    "business_listings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business-listing.business-listing",
+      "mappedBy": "author"
     }
   }
 }

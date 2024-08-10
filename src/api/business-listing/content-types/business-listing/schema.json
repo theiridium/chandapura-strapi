@@ -24,17 +24,6 @@
     "description": {
       "type": "text"
     },
-    "bus_contact": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::contact-list.contact-list"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "business_listings"
-    },
     "slug": {
       "type": "string"
     },
@@ -88,14 +77,20 @@
       "type": "boolean",
       "default": false
     },
-    "bus_contact_name": {
+    "contact_name": {
       "type": "string"
     },
-    "bus_contact_number": {
+    "contact_number": {
       "type": "string"
     },
-    "bus_email_id": {
+    "conatct_email_id": {
       "type": "email"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "business_listings"
     }
   }
 }
