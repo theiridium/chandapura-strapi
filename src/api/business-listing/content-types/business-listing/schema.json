@@ -73,7 +73,7 @@
     "bus_hours": {
       "type": "json"
     },
-    "isReadyToList": {
+    "publish_status": {
       "type": "boolean",
       "default": false
     },
@@ -91,6 +91,9 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "business_listings"
+    },
+    "step_number": {
+      "type": "integer"
     }
   }
 }

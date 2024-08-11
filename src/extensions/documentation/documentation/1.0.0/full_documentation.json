@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-10T00:14:58.225Z"
+    "x-generation-date": "2024-08-11T01:04:37.509Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2268,7 +2268,7 @@
                                                   }
                                                 },
                                                 "bus_hours": {},
-                                                "isReadyToList": {
+                                                "publish_status": {
                                                   "type": "boolean"
                                                 },
                                                 "contact_name": {
@@ -2297,6 +2297,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "step_number": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -2773,7 +2776,7 @@
                 "example": "string or id"
               },
               "bus_hours": {},
-              "isReadyToList": {
+              "publish_status": {
                 "type": "boolean"
               },
               "contact_name": {
@@ -2796,6 +2799,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "step_number": {
+                "type": "integer"
               }
             }
           }
@@ -3896,7 +3902,7 @@
                                                 }
                                               },
                                               "bus_hours": {},
-                                              "isReadyToList": {
+                                              "publish_status": {
                                                 "type": "boolean"
                                               },
                                               "contact_name": {
@@ -4951,6 +4957,9 @@
                                                   }
                                                 }
                                               },
+                                              "step_number": {
+                                                "type": "integer"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -5430,7 +5439,7 @@
             }
           },
           "bus_hours": {},
-          "isReadyToList": {
+          "publish_status": {
             "type": "boolean"
           },
           "contact_name": {
@@ -5459,6 +5468,9 @@
                 }
               }
             }
+          },
+          "step_number": {
+            "type": "integer"
           },
           "createdAt": {
             "type": "string",
@@ -6667,7 +6679,7 @@
                                                   }
                                                 },
                                                 "bus_hours": {},
-                                                "isReadyToList": {
+                                                "publish_status": {
                                                   "type": "boolean"
                                                 },
                                                 "contact_name": {
@@ -7721,6 +7733,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "step_number": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -10366,7 +10381,7 @@
                                       }
                                     },
                                     "bus_hours": {},
-                                    "isReadyToList": {
+                                    "publish_status": {
                                       "type": "boolean"
                                     },
                                     "contact_name": {
@@ -10395,6 +10410,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "step_number": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -15973,7 +15991,7 @@
                                       }
                                     },
                                     "bus_hours": {},
-                                    "isReadyToList": {
+                                    "publish_status": {
                                       "type": "boolean"
                                     },
                                     "contact_name": {
@@ -16002,6 +16020,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "step_number": {
+                                      "type": "integer"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -17582,7 +17603,7 @@
                                                   }
                                                 },
                                                 "bus_hours": {},
-                                                "isReadyToList": {
+                                                "publish_status": {
                                                   "type": "boolean"
                                                 },
                                                 "contact_name": {
@@ -18636,6 +18657,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "step_number": {
+                                                  "type": "integer"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",

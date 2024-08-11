@@ -820,7 +820,7 @@ export interface ApiBusinessListingBusinessListing
     services: Attribute.JSON;
     featured_image: Attribute.Media;
     bus_hours: Attribute.JSON;
-    isReadyToList: Attribute.Boolean & Attribute.DefaultTo<false>;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     contact_name: Attribute.String;
     contact_number: Attribute.String;
     conatct_email_id: Attribute.Email;
@@ -829,6 +829,7 @@ export interface ApiBusinessListingBusinessListing
       'manyToOne',
       'plugin::users-permissions.user'
     >;
+    step_number: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
