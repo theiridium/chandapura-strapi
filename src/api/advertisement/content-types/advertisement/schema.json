@@ -46,6 +46,12 @@
         "videos",
         "audios"
       ]
+    },
+    "business_listing": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business-listing.business-listing",
+      "mappedBy": "advertisement"
     }
   }
 }

@@ -768,6 +768,11 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     ad_image: Attribute.Media;
+    business_listing: Attribute.Relation<
+      'api::advertisement.advertisement',
+      'oneToOne',
+      'api::business-listing.business-listing'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -830,6 +835,11 @@ export interface ApiBusinessListingBusinessListing
       'plugin::users-permissions.user'
     >;
     step_number: Attribute.Integer;
+    advertisement: Attribute.Relation<
+      'api::business-listing.business-listing',
+      'oneToOne',
+      'api::advertisement.advertisement'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

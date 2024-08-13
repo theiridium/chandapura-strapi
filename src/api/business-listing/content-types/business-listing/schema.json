@@ -94,6 +94,12 @@
     },
     "step_number": {
       "type": "integer"
+    },
+    "advertisement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::advertisement.advertisement",
+      "inversedBy": "business_listing"
     }
   }
 }
