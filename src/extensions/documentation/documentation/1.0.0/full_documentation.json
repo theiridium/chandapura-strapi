@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-12T21:26:26.065Z"
+    "x-generation-date": "2024-08-14T00:46:14.411Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1274,6 +1274,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "publish_status": {
+                                                  "type": "boolean"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -4535,6 +4538,9 @@
                                                                             }
                                                                           }
                                                                         },
+                                                                        "publish_status": {
+                                                                          "type": "boolean"
+                                                                        },
                                                                         "createdAt": {
                                                                           "type": "string",
                                                                           "format": "date-time"
@@ -7363,6 +7369,9 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "publish_status": {
+                                                                            "type": "boolean"
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -9440,6 +9449,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "publish_status": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -13788,6 +13800,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "publish_status": {
+                "type": "boolean"
               }
             }
           }
@@ -15084,6 +15099,9 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "publish_status": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -16384,6 +16402,9 @@
                 }
               }
             }
+          },
+          "publish_status": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -18388,6 +18409,9 @@
                                                                                 }
                                                                               }
                                                                             }
+                                                                          },
+                                                                          "publish_status": {
+                                                                            "type": "boolean"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",

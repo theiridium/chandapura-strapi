@@ -1195,6 +1195,7 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
       'oneToMany',
       'api::real-estate-amenity.real-estate-amenity'
     >;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
