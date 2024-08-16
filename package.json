@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@amicaldo/strapi-google-maps": "^1.1.5",
     "@strapi/plugin-cloud": "4.15.5",
     "@strapi/plugin-documentation": "^4.16.2",
     "@strapi/plugin-i18n": "4.15.5",

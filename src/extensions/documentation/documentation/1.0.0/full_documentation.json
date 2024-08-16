@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-14T00:46:14.411Z"
+    "x-generation-date": "2024-08-16T09:19:11.709Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2269,6 +2269,7 @@
                                                               }
                                                             }
                                                           },
+                                                          "location": {},
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -2878,7 +2879,8 @@
                   }
                 ],
                 "example": "string or id"
-              }
+              },
+              "location": {}
             }
           }
         }
@@ -5073,6 +5075,7 @@
                                                   }
                                                 }
                                               },
+                                              "location": {},
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -5602,6 +5605,7 @@
               }
             }
           },
+          "location": {},
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7904,6 +7908,7 @@
                                                     }
                                                   }
                                                 },
+                                                "location": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -10468,6 +10473,7 @@
                                                                 }
                                                               }
                                                             },
+                                                            "location": {},
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -16118,6 +16124,7 @@
                                                                 }
                                                               }
                                                             },
+                                                            "location": {},
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -18945,6 +18952,7 @@
                                                     }
                                                   }
                                                 },
+                                                "location": {},
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
