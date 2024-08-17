@@ -35,9 +35,9 @@
       "type": "media",
       "multiple": false
     },
-    "business_listing": {
+    "business_listings": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::business-listing.business-listing",
       "mappedBy": "category"
     }

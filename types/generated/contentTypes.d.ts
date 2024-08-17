@@ -852,13 +852,13 @@ export interface ApiBusinessListingBusinessListing
     tags: Attribute.Text;
     sub_category: Attribute.Relation<
       'api::business-listing.business-listing',
-      'oneToOne',
+      'manyToOne',
       'api::sub-category.sub-category'
     >;
     gallery_images: Attribute.Media;
     category: Attribute.Relation<
       'api::business-listing.business-listing',
-      'oneToOne',
+      'manyToOne',
       'api::category.category'
     >;
     website: Attribute.String;
@@ -920,9 +920,9 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     >;
     slug: Attribute.UID<'api::category.category', 'name'>;
     image: Attribute.Media;
-    business_listing: Attribute.Relation<
+    business_listings: Attribute.Relation<
       'api::category.category',
-      'oneToOne',
+      'oneToMany',
       'api::business-listing.business-listing'
     >;
     createdAt: Attribute.DateTime;
@@ -1306,12 +1306,12 @@ export interface ApiSubCategorySubCategory extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
-    business_listing: Attribute.Relation<
+    slug: Attribute.UID<'api::sub-category.sub-category', 'name'>;
+    business_listings: Attribute.Relation<
       'api::sub-category.sub-category',
-      'oneToOne',
+      'oneToMany',
       'api::business-listing.business-listing'
     >;
-    slug: Attribute.UID<'api::sub-category.sub-category', 'name'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

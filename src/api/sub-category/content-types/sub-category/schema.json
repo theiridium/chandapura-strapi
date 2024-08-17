@@ -24,15 +24,15 @@
       "target": "api::category.category",
       "inversedBy": "sub_categories"
     },
-    "business_listing": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::business-listing.business-listing",
-      "mappedBy": "sub_category"
-    },
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "business_listings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business-listing.business-listing",
+      "mappedBy": "sub_category"
     }
   }
 }
