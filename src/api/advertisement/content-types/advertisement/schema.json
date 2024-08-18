@@ -24,17 +24,11 @@
     "expiry_date": {
       "type": "datetime"
     },
-    "ad_contact": {
+    "author": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::contact-list.contact-list",
-      "inversedBy": "advertisement"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "advertisement"
+      "inversedBy": "advertisements"
     },
     "ad_image": {
       "type": "media",
@@ -52,6 +46,23 @@
       "relation": "oneToOne",
       "target": "api::business-listing.business-listing",
       "mappedBy": "advertisement"
+    },
+    "publish_status": {
+      "type": "boolean",
+      "default": false
+    },
+    "step_number": {
+      "default": 0,
+      "type": "integer"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "contact_number": {
+      "type": "string"
+    },
+    "contact_email_id": {
+      "type": "string"
     }
   }
 }

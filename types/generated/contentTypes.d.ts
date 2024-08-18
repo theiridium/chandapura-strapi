@@ -751,11 +751,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::contact-list.contact-list'
     >;
-    advertisement: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToOne',
-      'api::advertisement.advertisement'
-    >;
     firstname: Attribute.String;
     lastname: Attribute.String;
     avatar: Attribute.String;
@@ -763,6 +758,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::business-listing.business-listing'
+    >;
+    advertisements: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::advertisement.advertisement'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -797,14 +797,9 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
     ad_url: Attribute.String;
     purchase_date: Attribute.DateTime;
     expiry_date: Attribute.DateTime;
-    ad_contact: Attribute.Relation<
+    author: Attribute.Relation<
       'api::advertisement.advertisement',
-      'oneToOne',
-      'api::contact-list.contact-list'
-    >;
-    user: Attribute.Relation<
-      'api::advertisement.advertisement',
-      'oneToOne',
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
     ad_image: Attribute.Media;
@@ -813,6 +808,11 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
       'oneToOne',
       'api::business-listing.business-listing'
     >;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
+    step_number: Attribute.Integer & Attribute.DefaultTo<0>;
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -882,6 +882,8 @@ export interface ApiBusinessListingBusinessListing
     >;
     location: Attribute.JSON &
       Attribute.CustomField<'plugin::google-maps.location-picker'>;
+    purchase_date: Attribute.DateTime;
+    expiry_date: Attribute.DateTime;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -963,11 +965,6 @@ export interface ApiContactListContactList extends Schema.CollectionType {
       'api::contact-list.contact-list',
       'manyToOne',
       'plugin::users-permissions.user'
-    >;
-    advertisement: Attribute.Relation<
-      'api::contact-list.contact-list',
-      'oneToOne',
-      'api::advertisement.advertisement'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

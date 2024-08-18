@@ -90,12 +90,6 @@
       "target": "api::contact-list.contact-list",
       "mappedBy": "user"
     },
-    "advertisement": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::advertisement.advertisement",
-      "mappedBy": "user"
-    },
     "firstname": {
       "type": "string"
     },
@@ -109,6 +103,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::business-listing.business-listing",
+      "mappedBy": "author"
+    },
+    "advertisements": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::advertisement.advertisement",
       "mappedBy": "author"
     }
   }

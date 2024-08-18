@@ -29,12 +29,6 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "contact_lists"
-    },
-    "advertisement": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::advertisement.advertisement",
-      "mappedBy": "ad_contact"
     }
   }
 }

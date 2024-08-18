@@ -104,6 +104,12 @@
     "location": {
       "type": "customField",
       "customField": "plugin::google-maps.location-picker"
+    },
+    "purchase_date": {
+      "type": "datetime"
+    },
+    "expiry_date": {
+      "type": "datetime"
     }
   }
 }
