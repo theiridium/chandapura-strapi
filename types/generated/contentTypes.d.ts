@@ -868,7 +868,7 @@ export interface ApiBusinessListingBusinessListing
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     contact_name: Attribute.String;
     contact_number: Attribute.String;
-    conatct_email_id: Attribute.Email;
+    contact_email_id: Attribute.Email;
     author: Attribute.Relation<
       'api::business-listing.business-listing',
       'manyToOne',
@@ -882,8 +882,8 @@ export interface ApiBusinessListingBusinessListing
     >;
     location: Attribute.JSON &
       Attribute.CustomField<'plugin::google-maps.location-picker'>;
-    purchase_date: Attribute.DateTime;
-    expiry_date: Attribute.DateTime;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

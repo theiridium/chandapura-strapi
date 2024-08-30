@@ -83,7 +83,7 @@
     "contact_number": {
       "type": "string"
     },
-    "conatct_email_id": {
+    "contact_email_id": {
       "type": "email"
     },
     "author": {
@@ -105,11 +105,15 @@
       "type": "customField",
       "customField": "plugin::google-maps.location-picker"
     },
-    "purchase_date": {
-      "type": "datetime"
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
     },
-    "expiry_date": {
-      "type": "datetime"
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
     }
   }
 }

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_payment_payments",
+  "info": {
+    "displayName": "Payment Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "purchase_date": {
+      "type": "datetime"
+    },
+    "isPaymentSuccess": {
+      "type": "boolean",
+      "default": false
+    },
+    "expiry_date": {
+      "type": "datetime"
+    },
+    "raz_order_id": {
+      "type": "string"
+    },
+    "raz_payment_id": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "isOfferApplied": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

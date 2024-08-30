@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-08-17T22:58:02.419Z"
+    "x-generation-date": "2024-08-30T10:22:29.184Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2102,7 +2102,7 @@
                                     "contact_number": {
                                       "type": "string"
                                     },
-                                    "conatct_email_id": {
+                                    "contact_email_id": {
                                       "type": "string",
                                       "format": "email"
                                     },
@@ -2393,13 +2393,72 @@
                                       }
                                     },
                                     "location": {},
-                                    "purchase_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_details": {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "number"
+                                        },
+                                        "purchase_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "isPaymentSuccess": {
+                                          "type": "boolean"
+                                        },
+                                        "expiry_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "raz_order_id": {
+                                          "type": "string"
+                                        },
+                                        "raz_payment_id": {
+                                          "type": "string"
+                                        },
+                                        "amount": {
+                                          "type": "number",
+                                          "format": "float"
+                                        },
+                                        "isOfferApplied": {
+                                          "type": "boolean"
+                                        }
+                                      }
                                     },
-                                    "expiry_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_history": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "purchase_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "isPaymentSuccess": {
+                                            "type": "boolean"
+                                          },
+                                          "expiry_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "raz_order_id": {
+                                            "type": "string"
+                                          },
+                                          "raz_payment_id": {
+                                            "type": "string"
+                                          },
+                                          "amount": {
+                                            "type": "number",
+                                            "format": "float"
+                                          },
+                                          "isOfferApplied": {
+                                            "type": "boolean"
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -2851,7 +2910,7 @@
               "contact_number": {
                 "type": "string"
               },
-              "conatct_email_id": {
+              "contact_email_id": {
                 "type": "string",
                 "format": "email"
               },
@@ -2881,13 +2940,14 @@
                 "example": "string or id"
               },
               "location": {},
-              "purchase_date": {
-                "type": "string",
-                "format": "date-time"
+              "payment_details": {
+                "$ref": "#/components/schemas/PaymentPaymentComponent"
               },
-              "expiry_date": {
-                "type": "string",
-                "format": "date-time"
+              "payment_history": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PaymentPaymentComponent"
+                }
               }
             }
           }
@@ -3999,7 +4059,7 @@
                                                 "contact_number": {
                                                   "type": "string"
                                                 },
-                                                "conatct_email_id": {
+                                                "contact_email_id": {
                                                   "type": "string",
                                                   "format": "email"
                                                 },
@@ -5070,13 +5130,72 @@
                                                   }
                                                 },
                                                 "location": {},
-                                                "purchase_date": {
-                                                  "type": "string",
-                                                  "format": "date-time"
+                                                "payment_details": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "id": {
+                                                      "type": "number"
+                                                    },
+                                                    "purchase_date": {
+                                                      "type": "string",
+                                                      "format": "date-time"
+                                                    },
+                                                    "isPaymentSuccess": {
+                                                      "type": "boolean"
+                                                    },
+                                                    "expiry_date": {
+                                                      "type": "string",
+                                                      "format": "date-time"
+                                                    },
+                                                    "raz_order_id": {
+                                                      "type": "string"
+                                                    },
+                                                    "raz_payment_id": {
+                                                      "type": "string"
+                                                    },
+                                                    "amount": {
+                                                      "type": "number",
+                                                      "format": "float"
+                                                    },
+                                                    "isOfferApplied": {
+                                                      "type": "boolean"
+                                                    }
+                                                  }
                                                 },
-                                                "expiry_date": {
-                                                  "type": "string",
-                                                  "format": "date-time"
+                                                "payment_history": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "purchase_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "isPaymentSuccess": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "expiry_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "raz_order_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "raz_payment_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "amount": {
+                                                        "type": "number",
+                                                        "format": "float"
+                                                      },
+                                                      "isOfferApplied": {
+                                                        "type": "boolean"
+                                                      }
+                                                    }
+                                                  }
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -5570,7 +5689,7 @@
           "contact_number": {
             "type": "string"
           },
-          "conatct_email_id": {
+          "contact_email_id": {
             "type": "string",
             "format": "email"
           },
@@ -5612,13 +5731,14 @@
             }
           },
           "location": {},
-          "purchase_date": {
-            "type": "string",
-            "format": "date-time"
+          "payment_details": {
+            "$ref": "#/components/schemas/PaymentPaymentComponent"
           },
-          "expiry_date": {
-            "type": "string",
-            "format": "date-time"
+          "payment_history": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PaymentPaymentComponent"
+            }
           },
           "createdAt": {
             "type": "string",
@@ -5687,6 +5807,38 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "PaymentPaymentComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "purchase_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isPaymentSuccess": {
+            "type": "boolean"
+          },
+          "expiry_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "raz_order_id": {
+            "type": "string"
+          },
+          "raz_payment_id": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number",
+            "format": "float"
+          },
+          "isOfferApplied": {
+            "type": "boolean"
           }
         }
       },
@@ -6841,7 +6993,7 @@
                                                   "contact_number": {
                                                     "type": "string"
                                                   },
-                                                  "conatct_email_id": {
+                                                  "contact_email_id": {
                                                     "type": "string",
                                                     "format": "email"
                                                   },
@@ -7912,13 +8064,72 @@
                                                     }
                                                   },
                                                   "location": {},
-                                                  "purchase_date": {
-                                                    "type": "string",
-                                                    "format": "date-time"
+                                                  "payment_details": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "purchase_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "isPaymentSuccess": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "expiry_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "raz_order_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "raz_payment_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "amount": {
+                                                        "type": "number",
+                                                        "format": "float"
+                                                      },
+                                                      "isOfferApplied": {
+                                                        "type": "boolean"
+                                                      }
+                                                    }
                                                   },
-                                                  "expiry_date": {
-                                                    "type": "string",
-                                                    "format": "date-time"
+                                                  "payment_history": {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "purchase_date": {
+                                                          "type": "string",
+                                                          "format": "date-time"
+                                                        },
+                                                        "isPaymentSuccess": {
+                                                          "type": "boolean"
+                                                        },
+                                                        "expiry_date": {
+                                                          "type": "string",
+                                                          "format": "date-time"
+                                                        },
+                                                        "raz_order_id": {
+                                                          "type": "string"
+                                                        },
+                                                        "raz_payment_id": {
+                                                          "type": "string"
+                                                        },
+                                                        "amount": {
+                                                          "type": "number",
+                                                          "format": "float"
+                                                        },
+                                                        "isOfferApplied": {
+                                                          "type": "boolean"
+                                                        }
+                                                      }
+                                                    }
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -10310,7 +10521,7 @@
                                     "contact_number": {
                                       "type": "string"
                                     },
-                                    "conatct_email_id": {
+                                    "contact_email_id": {
                                       "type": "string",
                                       "format": "email"
                                     },
@@ -10601,13 +10812,72 @@
                                       }
                                     },
                                     "location": {},
-                                    "purchase_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_details": {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "number"
+                                        },
+                                        "purchase_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "isPaymentSuccess": {
+                                          "type": "boolean"
+                                        },
+                                        "expiry_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "raz_order_id": {
+                                          "type": "string"
+                                        },
+                                        "raz_payment_id": {
+                                          "type": "string"
+                                        },
+                                        "amount": {
+                                          "type": "number",
+                                          "format": "float"
+                                        },
+                                        "isOfferApplied": {
+                                          "type": "boolean"
+                                        }
+                                      }
                                     },
-                                    "expiry_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_history": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "purchase_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "isPaymentSuccess": {
+                                            "type": "boolean"
+                                          },
+                                          "expiry_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "raz_order_id": {
+                                            "type": "string"
+                                          },
+                                          "raz_payment_id": {
+                                            "type": "string"
+                                          },
+                                          "amount": {
+                                            "type": "number",
+                                            "format": "float"
+                                          },
+                                          "isOfferApplied": {
+                                            "type": "boolean"
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -15942,7 +16212,7 @@
                                     "contact_number": {
                                       "type": "string"
                                     },
-                                    "conatct_email_id": {
+                                    "contact_email_id": {
                                       "type": "string",
                                       "format": "email"
                                     },
@@ -16233,13 +16503,72 @@
                                       }
                                     },
                                     "location": {},
-                                    "purchase_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_details": {
+                                      "type": "object",
+                                      "properties": {
+                                        "id": {
+                                          "type": "number"
+                                        },
+                                        "purchase_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "isPaymentSuccess": {
+                                          "type": "boolean"
+                                        },
+                                        "expiry_date": {
+                                          "type": "string",
+                                          "format": "date-time"
+                                        },
+                                        "raz_order_id": {
+                                          "type": "string"
+                                        },
+                                        "raz_payment_id": {
+                                          "type": "string"
+                                        },
+                                        "amount": {
+                                          "type": "number",
+                                          "format": "float"
+                                        },
+                                        "isOfferApplied": {
+                                          "type": "boolean"
+                                        }
+                                      }
                                     },
-                                    "expiry_date": {
-                                      "type": "string",
-                                      "format": "date-time"
+                                    "payment_history": {
+                                      "type": "array",
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "id": {
+                                            "type": "number"
+                                          },
+                                          "purchase_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "isPaymentSuccess": {
+                                            "type": "boolean"
+                                          },
+                                          "expiry_date": {
+                                            "type": "string",
+                                            "format": "date-time"
+                                          },
+                                          "raz_order_id": {
+                                            "type": "string"
+                                          },
+                                          "raz_payment_id": {
+                                            "type": "string"
+                                          },
+                                          "amount": {
+                                            "type": "number",
+                                            "format": "float"
+                                          },
+                                          "isOfferApplied": {
+                                            "type": "boolean"
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -17860,7 +18189,7 @@
                                                   "contact_number": {
                                                     "type": "string"
                                                   },
-                                                  "conatct_email_id": {
+                                                  "contact_email_id": {
                                                     "type": "string",
                                                     "format": "email"
                                                   },
@@ -18931,13 +19260,72 @@
                                                     }
                                                   },
                                                   "location": {},
-                                                  "purchase_date": {
-                                                    "type": "string",
-                                                    "format": "date-time"
+                                                  "payment_details": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "purchase_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "isPaymentSuccess": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "expiry_date": {
+                                                        "type": "string",
+                                                        "format": "date-time"
+                                                      },
+                                                      "raz_order_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "raz_payment_id": {
+                                                        "type": "string"
+                                                      },
+                                                      "amount": {
+                                                        "type": "number",
+                                                        "format": "float"
+                                                      },
+                                                      "isOfferApplied": {
+                                                        "type": "boolean"
+                                                      }
+                                                    }
                                                   },
-                                                  "expiry_date": {
-                                                    "type": "string",
-                                                    "format": "date-time"
+                                                  "payment_history": {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "purchase_date": {
+                                                          "type": "string",
+                                                          "format": "date-time"
+                                                        },
+                                                        "isPaymentSuccess": {
+                                                          "type": "boolean"
+                                                        },
+                                                        "expiry_date": {
+                                                          "type": "string",
+                                                          "format": "date-time"
+                                                        },
+                                                        "raz_order_id": {
+                                                          "type": "string"
+                                                        },
+                                                        "raz_payment_id": {
+                                                          "type": "string"
+                                                        },
+                                                        "amount": {
+                                                          "type": "number",
+                                                          "format": "float"
+                                                        },
+                                                        "isOfferApplied": {
+                                                          "type": "boolean"
+                                                        }
+                                                      }
+                                                    }
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
