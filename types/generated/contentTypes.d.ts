@@ -746,11 +746,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::real-estate.real-estate'
     >;
-    contact_lists: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::contact-list.contact-list'
-    >;
     firstname: Attribute.String;
     lastname: Attribute.String;
     avatar: Attribute.String;
@@ -810,9 +805,9 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
     >;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     step_number: Attribute.Integer & Attribute.DefaultTo<0>;
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.String;
+    contact: Attribute.Component<'contact.contact-details'>;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -866,9 +861,6 @@ export interface ApiBusinessListingBusinessListing
     featured_image: Attribute.Media;
     bus_hours: Attribute.JSON;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
     author: Attribute.Relation<
       'api::business-listing.business-listing',
       'manyToOne',
@@ -884,6 +876,7 @@ export interface ApiBusinessListingBusinessListing
       Attribute.CustomField<'plugin::google-maps.location-picker'>;
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
+    contact: Attribute.Component<'contact.contact-details'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -945,163 +938,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactListContactList extends Schema.CollectionType {
-  collectionName: 'contact_lists';
-  info: {
-    singularName: 'contact-list';
-    pluralName: 'contact-lists';
-    displayName: 'Contact List';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    full_name: Attribute.String;
-    phone: Attribute.String;
-    phone_alt: Attribute.String;
-    email_id: Attribute.Email;
-    user: Attribute.Relation<
-      'api::contact-list.contact-list',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::contact-list.contact-list',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::contact-list.contact-list',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiListingManagerListingManager extends Schema.CollectionType {
-  collectionName: 'listing_managers';
-  info: {
-    singularName: 'listing-manager';
-    pluralName: 'listing-managers';
-    displayName: 'Listing Manager';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
-  attributes: {
-    first_name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    last_name: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contact_number: Attribute.String &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contact_number_alt: Attribute.String &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    email_id: Attribute.Email &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    address: Attribute.Text &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    joining_date: Attribute.DateTime &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    last_login_date: Attribute.DateTime &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    password: Attribute.Password &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    app_user: Attribute.Boolean &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
-      Attribute.DefaultTo<false>;
-    properties: Attribute.Relation<
-      'api::listing-manager.listing-manager',
-      'oneToMany',
-      'api::property.property'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::listing-manager.listing-manager',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::listing-manager.listing-manager',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    localizations: Attribute.Relation<
-      'api::listing-manager.listing-manager',
-      'oneToMany',
-      'api::listing-manager.listing-manager'
-    >;
-    locale: Attribute.String;
-  };
-}
-
 export interface ApiLocationLocation extends Schema.CollectionType {
   collectionName: 'locations';
   info: {
@@ -1157,11 +993,6 @@ export interface ApiPropertyProperty extends Schema.CollectionType {
     landmark: Attribute.Text;
     quote_amount: Attribute.String;
     listing_type: Attribute.String;
-    listing_manager: Attribute.Relation<
-      'api::property.property',
-      'manyToOne',
-      'api::listing-manager.listing-manager'
-    >;
     property_images: Attribute.Media;
     slug: Attribute.String;
     createdAt: Attribute.DateTime;
@@ -1348,8 +1179,6 @@ declare module '@strapi/types' {
       'api::advertisement.advertisement': ApiAdvertisementAdvertisement;
       'api::business-listing.business-listing': ApiBusinessListingBusinessListing;
       'api::category.category': ApiCategoryCategory;
-      'api::contact-list.contact-list': ApiContactListContactList;
-      'api::listing-manager.listing-manager': ApiListingManagerListingManager;
       'api::location.location': ApiLocationLocation;
       'api::property.property': ApiPropertyProperty;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;

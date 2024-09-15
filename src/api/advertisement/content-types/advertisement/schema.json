@@ -55,14 +55,20 @@
       "default": 0,
       "type": "integer"
     },
-    "contact_name": {
-      "type": "string"
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-details"
     },
-    "contact_number": {
-      "type": "string"
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
     },
-    "contact_email_id": {
-      "type": "string"
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
     }
   }
 }

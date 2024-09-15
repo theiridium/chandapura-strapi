@@ -84,12 +84,6 @@
       "target": "api::real-estate.real-estate",
       "mappedBy": "user"
     },
-    "contact_lists": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::contact-list.contact-list",
-      "mappedBy": "user"
-    },
     "firstname": {
       "type": "string"
     },

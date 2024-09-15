@@ -51,12 +51,6 @@
     "listing_type": {
       "type": "string"
     },
-    "listing_manager": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::listing-manager.listing-manager",
-      "inversedBy": "properties"
-    },
     "property_images": {
       "type": "media",
       "multiple": true,
