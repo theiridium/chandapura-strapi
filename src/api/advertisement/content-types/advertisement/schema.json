@@ -15,14 +15,8 @@
     "name": {
       "type": "string"
     },
-    "ad_url": {
+    "website": {
       "type": "string"
-    },
-    "purchase_date": {
-      "type": "datetime"
-    },
-    "expiry_date": {
-      "type": "datetime"
     },
     "author": {
       "type": "relation",

@@ -789,9 +789,7 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    ad_url: Attribute.String;
-    purchase_date: Attribute.DateTime;
-    expiry_date: Attribute.DateTime;
+    website: Attribute.String;
     author: Attribute.Relation<
       'api::advertisement.advertisement',
       'manyToOne',
@@ -961,6 +959,39 @@ export interface ApiLocationLocation extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::location.location',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPricingPlanPricingPlan extends Schema.CollectionType {
+  collectionName: 'pricing_plans';
+  info: {
+    singularName: 'pricing-plan';
+    pluralName: 'pricing-plans';
+    displayName: 'Pricing Plan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    monthly: Attribute.Integer;
+    quaterly: Attribute.Integer;
+    yearly: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pricing-plan.pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pricing-plan.pricing-plan',
       'oneToOne',
       'admin::user'
     > &
@@ -1180,6 +1211,7 @@ declare module '@strapi/types' {
       'api::business-listing.business-listing': ApiBusinessListingBusinessListing;
       'api::category.category': ApiCategoryCategory;
       'api::location.location': ApiLocationLocation;
+      'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
       'api::property.property': ApiPropertyProperty;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
