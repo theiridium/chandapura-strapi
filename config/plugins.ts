@@ -7,6 +7,7 @@ export default ({ env }) => ({
                   privateKey: env('DKIM_PRIVATE_KEY'),
                   keySelector: 'iridium', // the same as the one set in DNS txt record, use online dns lookup tools to be sure that is retreivable
                 },
+                secure: true,
               },
             settings: {
                 defaultFrom: 'no-reply@chandapura.com',
