@@ -23,9 +23,10 @@ export default {
                 let id = params.where.id;
                 if (beforeUpdate_publish_status === false && afterUpdate_publish_status === true) {
                     const response = await strapi.entityService.findOne('api::business-listing.business-listing', id, {
-                        populate: ['category', 'sub_category']
+                        populate: ['category', 'sub_category', 'author']
                     });
-                    let emailToAddressUser = result.author.email;
+                    let emailToAddressUser = response.author.email;
+                    console
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Business Listing Live - Chandapura.com',
