@@ -26,7 +26,6 @@ export default {
                         populate: ['category', 'sub_category', 'author']
                     });
                     let emailToAddressUser = response.author.email;
-                    console
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Business Listing Live - Chandapura.com',
