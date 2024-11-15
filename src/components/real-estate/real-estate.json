@@ -1,0 +1,94 @@
+{
+  "collectionName": "components_real_estate_real_estates",
+  "info": {
+    "displayName": "Real Estate",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "floors": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Apartment",
+        "Individual",
+        "Villa"
+      ]
+    },
+    "bathrooms": {
+      "type": "integer"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "East",
+        "West",
+        "North",
+        "South",
+        "North-East",
+        "South-East",
+        "North-West",
+        "South-West"
+      ]
+    },
+    "floor_number": {
+      "type": "integer"
+    },
+    "total_floors": {
+      "type": "integer"
+    },
+    "carpet_area": {
+      "type": "decimal"
+    },
+    "parking_type": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Covered"
+      ]
+    },
+    "address": {
+      "type": "text"
+    },
+    "landmark": {
+      "type": "string"
+    },
+    "listing_type": {
+      "type": "enumeration",
+      "enum": [
+        "Rent",
+        "Sale"
+      ]
+    },
+    "rental_amount": {
+      "type": "integer"
+    },
+    "selling_amount": {
+      "type": "integer"
+    },
+    "deposit_amount": {
+      "type": "integer"
+    },
+    "furnishing": {
+      "type": "enumeration",
+      "enum": [
+        "Semi Furnished",
+        "Fully Furnished",
+        "Non Furnished"
+      ]
+    },
+    "area": {
+      "type": "string"
+    },
+    "rooms": {
+      "type": "string"
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::real-estate-amenity.real-estate-amenity"
+    }
+  }
+}

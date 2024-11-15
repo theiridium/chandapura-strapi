@@ -1113,50 +1113,6 @@ export interface ApiPricingPlanPricingPlan extends Schema.CollectionType {
   };
 }
 
-export interface ApiPropertyProperty extends Schema.CollectionType {
-  collectionName: 'properties';
-  info: {
-    singularName: 'property';
-    pluralName: 'properties';
-    displayName: 'Property';
-    description: '';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    name: Attribute.String;
-    type: Attribute.String;
-    rooms: Attribute.Integer;
-    bathrooms: Attribute.Integer;
-    direction: Attribute.String;
-    floor_number: Attribute.Integer;
-    carpet_area: Attribute.String;
-    parking_type: Attribute.String;
-    property_address: Attribute.Text;
-    map_location_url: Attribute.Text;
-    landmark: Attribute.Text;
-    quote_amount: Attribute.String;
-    listing_type: Attribute.String;
-    property_images: Attribute.Media<'images', true>;
-    slug: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::property.property',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::property.property',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   collectionName: 'real_estates';
   info: {
@@ -1170,31 +1126,6 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    type: Attribute.Enumeration<['Apartment', 'Individual', 'Villa']>;
-    bathrooms: Attribute.Integer;
-    facing: Attribute.Enumeration<
-      [
-        'East',
-        'West',
-        'North',
-        'South',
-        'North-East',
-        'South-East',
-        'North-West',
-        'South-West'
-      ]
-    >;
-    floor_number: Attribute.Integer;
-    floors: Attribute.Integer;
-    carpet_area: Attribute.String;
-    parking_type: Attribute.Enumeration<['Open', 'Covered']>;
-    property_address: Attribute.Text;
-    map_location_url: Attribute.Text;
-    landmark: Attribute.String;
-    listing_type: Attribute.Enumeration<['Rent', 'Sale']>;
-    rental_amount: Attribute.Integer;
-    selling_amount: Attribute.Integer;
-    deposit_amount: Attribute.Integer;
     property_images: Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
@@ -1205,15 +1136,13 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
       'manyToOne',
       'plugin::users-permissions.user'
     >;
-    furnishing: Attribute.Enumeration<['Semi', 'Fully', 'Not']>;
-    area: Attribute.String;
-    rooms: Attribute.String;
-    real_estate_amenities: Attribute.Relation<
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
+    property_details: Attribute.Component<'real-estate.real-estate'>;
+    amenities: Attribute.Relation<
       'api::real-estate.real-estate',
       'oneToMany',
       'api::real-estate-amenity.real-estate-amenity'
     >;
-    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1331,7 +1260,6 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::location.location': ApiLocationLocation;
       'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
-      'api::property.property': ApiPropertyProperty;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::sub-category.sub-category': ApiSubCategorySubCategory;

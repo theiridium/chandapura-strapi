@@ -15,71 +15,6 @@
     "name": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "Apartment",
-        "Individual",
-        "Villa"
-      ]
-    },
-    "bathrooms": {
-      "type": "integer"
-    },
-    "facing": {
-      "type": "enumeration",
-      "enum": [
-        "East",
-        "West",
-        "North",
-        "South",
-        "North-East",
-        "South-East",
-        "North-West",
-        "South-West"
-      ]
-    },
-    "floor_number": {
-      "type": "integer"
-    },
-    "floors": {
-      "type": "integer"
-    },
-    "carpet_area": {
-      "type": "string"
-    },
-    "parking_type": {
-      "type": "enumeration",
-      "enum": [
-        "Open",
-        "Covered"
-      ]
-    },
-    "property_address": {
-      "type": "text"
-    },
-    "map_location_url": {
-      "type": "text"
-    },
-    "landmark": {
-      "type": "string"
-    },
-    "listing_type": {
-      "type": "enumeration",
-      "enum": [
-        "Rent",
-        "Sale"
-      ]
-    },
-    "rental_amount": {
-      "type": "integer"
-    },
-    "selling_amount": {
-      "type": "integer"
-    },
-    "deposit_amount": {
-      "type": "integer"
-    },
     "property_images": {
       "type": "media",
       "multiple": true,
@@ -100,28 +35,19 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "real_estates"
     },
-    "furnishing": {
-      "type": "enumeration",
-      "enum": [
-        "Semi",
-        "Fully",
-        "Not"
-      ]
-    },
-    "area": {
-      "type": "string"
-    },
-    "rooms": {
-      "type": "string"
-    },
-    "real_estate_amenities": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::real-estate-amenity.real-estate-amenity"
-    },
     "publish_status": {
       "type": "boolean",
       "default": false
+    },
+    "property_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "real-estate.real-estate"
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::real-estate-amenity.real-estate-amenity"
     }
   }
 }
