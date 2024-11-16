@@ -15,25 +15,8 @@
     "name": {
       "type": "string"
     },
-    "property_images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "slug": {
       "type": "string"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "real_estates"
     },
     "publish_status": {
       "type": "boolean",
@@ -48,6 +31,53 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::real-estate-amenity.real-estate-amenity"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "real_estates"
+    },
+    "description": {
+      "type": "text"
+    },
+    "step_number": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "customField",
+      "customField": "plugin::google-maps.location-picker"
+    },
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
+    },
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-details"
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

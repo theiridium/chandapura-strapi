@@ -852,11 +852,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
     user_type: Attribute.Enumeration<['Site User', 'Backend User']>;
     phone: Attribute.String;
     phone_alt: Attribute.String;
-    real_estates: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::real-estate.real-estate'
-    >;
     firstname: Attribute.String;
     lastname: Attribute.String;
     avatar: Attribute.String;
@@ -869,6 +864,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'plugin::users-permissions.user',
       'oneToMany',
       'api::advertisement.advertisement'
+    >;
+    real_estates: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::real-estate.real-estate'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1126,16 +1126,7 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   };
   attributes: {
     name: Attribute.String;
-    property_images: Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
     slug: Attribute.String;
-    user: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     property_details: Attribute.Component<'real-estate.real-estate'>;
     amenities: Attribute.Relation<
@@ -1143,6 +1134,20 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
       'oneToMany',
       'api::real-estate-amenity.real-estate-amenity'
     >;
+    author: Attribute.Relation<
+      'api::real-estate.real-estate',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    description: Attribute.Text;
+    step_number: Attribute.Integer;
+    location: Attribute.JSON &
+      Attribute.CustomField<'plugin::google-maps.location-picker'>;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
+    contact: Attribute.Component<'contact.contact-details'>;
+    featured_image: Attribute.Media<'images'>;
+    gallery_images: Attribute.Media<'images', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

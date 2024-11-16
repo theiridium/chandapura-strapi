@@ -1,5 +1,22 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface PaymentPayment extends Schema.Component {
+  collectionName: 'components_payment_payments';
+  info: {
+    displayName: 'Payment Details';
+    description: '';
+  };
+  attributes: {
+    purchase_date: Attribute.DateTime;
+    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date: Attribute.DateTime;
+    raz_order_id: Attribute.String;
+    raz_payment_id: Attribute.String;
+    amount: Attribute.Decimal;
+    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
+  };
+}
+
 export interface RealEstateRealEstate extends Schema.Component {
   collectionName: 'components_real_estate_real_estates';
   info: {
@@ -37,28 +54,6 @@ export interface RealEstateRealEstate extends Schema.Component {
     >;
     area: Attribute.String;
     rooms: Attribute.String;
-    amenities: Attribute.Relation<
-      'real-estate.real-estate',
-      'oneToMany',
-      'api::real-estate-amenity.real-estate-amenity'
-    >;
-  };
-}
-
-export interface PaymentPayment extends Schema.Component {
-  collectionName: 'components_payment_payments';
-  info: {
-    displayName: 'Payment Details';
-    description: '';
-  };
-  attributes: {
-    purchase_date: Attribute.DateTime;
-    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date: Attribute.DateTime;
-    raz_order_id: Attribute.String;
-    raz_payment_id: Attribute.String;
-    amount: Attribute.Decimal;
-    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
@@ -78,8 +73,8 @@ export interface ContactContactDetails extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'real-estate.real-estate': RealEstateRealEstate;
       'payment.payment': PaymentPayment;
+      'real-estate.real-estate': RealEstateRealEstate;
       'contact.contact-details': ContactContactDetails;
     }
   }

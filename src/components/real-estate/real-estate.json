@@ -84,11 +84,6 @@
     },
     "rooms": {
       "type": "string"
-    },
-    "amenities": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::real-estate-amenity.real-estate-amenity"
     }
   }
 }

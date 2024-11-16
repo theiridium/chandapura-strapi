@@ -78,12 +78,6 @@
     "phone_alt": {
       "type": "string"
     },
-    "real_estates": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::real-estate.real-estate",
-      "mappedBy": "user"
-    },
     "firstname": {
       "type": "string"
     },
@@ -103,6 +97,12 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::advertisement.advertisement",
+      "mappedBy": "author"
+    },
+    "real_estates": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::real-estate.real-estate",
       "mappedBy": "author"
     }
   }
