@@ -935,6 +935,28 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
   };
 }
 
+export interface ApiAreaArea extends Schema.CollectionType {
+  collectionName: 'areas';
+  info: {
+    singularName: 'area';
+    pluralName: 'areas';
+    displayName: 'Area';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::area.area', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::area.area', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiBusinessListingBusinessListing
   extends Schema.CollectionType {
   collectionName: 'business_listings';
@@ -1148,6 +1170,14 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
     contact: Attribute.Component<'contact.contact-details'>;
     featured_image: Attribute.Media<'images'>;
     gallery_images: Attribute.Media<'images', true>;
+    property_type: Attribute.Enumeration<['Apartment', 'Individual', 'Villa']>;
+    listing_type: Attribute.Enumeration<['Rent', 'Sale']>;
+    room_type: Attribute.String;
+    area: Attribute.Relation<
+      'api::real-estate.real-estate',
+      'oneToOne',
+      'api::area.area'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1261,6 +1291,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::advertisement.advertisement': ApiAdvertisementAdvertisement;
+      'api::area.area': ApiAreaArea;
       'api::business-listing.business-listing': ApiBusinessListingBusinessListing;
       'api::category.category': ApiCategoryCategory;
       'api::location.location': ApiLocationLocation;

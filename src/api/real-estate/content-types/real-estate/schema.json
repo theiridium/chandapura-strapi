@@ -78,6 +78,29 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "property_type": {
+      "type": "enumeration",
+      "enum": [
+        "Apartment",
+        "Individual",
+        "Villa"
+      ]
+    },
+    "listing_type": {
+      "type": "enumeration",
+      "enum": [
+        "Rent",
+        "Sale"
+      ]
+    },
+    "room_type": {
+      "type": "string"
+    },
+    "area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::area.area"
     }
   }
 }

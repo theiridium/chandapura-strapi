@@ -32,15 +32,13 @@ export default ({ env }) => ({
     },
     slugify: {
         enabled: true,
+        shouldUpdateSlug: true,
+        skipUndefinedReferences: true,
         config: {
             contentTypes: {
-                property: {
-                    field: 'slug',
-                    references: ['name', 'type', 'carpet_area'],
-                },
                 'real-estate': {
                     field: 'slug',
-                    references: ['name', 'type', 'rooms', 'listing_type', 'area'],
+                    references: ['name', 'property_type', 'room_type', 'listing_type'],
                 },
                 'business-listing': {
                     field: 'slug',
