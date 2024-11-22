@@ -971,7 +971,6 @@ export interface ApiBusinessListingBusinessListing
   };
   attributes: {
     name: Attribute.String;
-    area: Attribute.String;
     full_address: Attribute.Text;
     description: Attribute.Text;
     slug: Attribute.String;
@@ -1011,6 +1010,11 @@ export interface ApiBusinessListingBusinessListing
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
     contact: Attribute.Component<'contact.contact-details'>;
+    area: Attribute.Relation<
+      'api::business-listing.business-listing',
+      'oneToOne',
+      'api::area.area'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1178,6 +1182,7 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
       'oneToOne',
       'api::area.area'
     >;
+    full_address: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1203,12 +1208,13 @@ export interface ApiRealEstateAmenityRealEstateAmenity
     singularName: 'real-estate-amenity';
     pluralName: 'real-estate-amenities';
     displayName: 'Real Estate Amenity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    name: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

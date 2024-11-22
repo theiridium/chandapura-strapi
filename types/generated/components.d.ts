@@ -24,7 +24,6 @@ export interface RealEstateRealEstate extends Schema.Component {
     total_floors: Attribute.Integer;
     carpet_area: Attribute.Decimal;
     parking_type: Attribute.Enumeration<['Open', 'Covered']>;
-    address: Attribute.Text;
     landmark: Attribute.String;
     rental_amount: Attribute.Integer;
     selling_amount: Attribute.Integer;
@@ -32,6 +31,19 @@ export interface RealEstateRealEstate extends Schema.Component {
     furnishing: Attribute.Enumeration<
       ['Semi Furnished', 'Fully Furnished', 'Non Furnished']
     >;
+  };
+}
+
+export interface ContactContactDetails extends Schema.Component {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'Contact Details';
+    description: '';
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.Email;
   };
 }
 
@@ -52,25 +64,12 @@ export interface PaymentPayment extends Schema.Component {
   };
 }
 
-export interface ContactContactDetails extends Schema.Component {
-  collectionName: 'components_contact_contact_details';
-  info: {
-    displayName: 'Contact Details';
-    description: '';
-  };
-  attributes: {
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'real-estate.real-estate': RealEstateRealEstate;
-      'payment.payment': PaymentPayment;
       'contact.contact-details': ContactContactDetails;
+      'payment.payment': PaymentPayment;
     }
   }
 }

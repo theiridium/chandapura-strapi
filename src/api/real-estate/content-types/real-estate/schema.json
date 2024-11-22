@@ -101,6 +101,9 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::area.area"
+    },
+    "full_address": {
+      "type": "text"
     }
   }
 }

@@ -4,14 +4,15 @@
   "info": {
     "singularName": "real-estate-amenity",
     "pluralName": "real-estate-amenities",
-    "displayName": "Real Estate Amenity"
+    "displayName": "Real Estate Amenity",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string"
     }
   }

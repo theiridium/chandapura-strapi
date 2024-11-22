@@ -42,7 +42,7 @@ export default ({ env }) => ({
                 },
                 'business-listing': {
                     field: 'slug',
-                    references: ['name', 'area'],
+                    references: ['name'],
                 }
             },
         },

@@ -38,9 +38,6 @@
         "Covered"
       ]
     },
-    "address": {
-      "type": "text"
-    },
     "landmark": {
       "type": "string"
     },

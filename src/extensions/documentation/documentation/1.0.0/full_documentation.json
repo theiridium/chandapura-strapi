@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-11-20T14:50:21.550Z"
+    "x-generation-date": "2024-11-22T10:04:16.391Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -706,9 +706,6 @@
                                   "type": "object",
                                   "properties": {
                                     "name": {
-                                      "type": "string"
-                                    },
-                                    "area": {
                                       "type": "string"
                                     },
                                     "full_address": {
@@ -2042,6 +2039,73 @@
                                         }
                                       }
                                     },
+                                    "area": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {
+                                                "name": {
+                                                  "type": "string"
+                                                },
+                                                "createdAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "updatedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "publishedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "createdBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "updatedBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -2177,9 +2241,6 @@
                                             "Covered"
                                           ]
                                         },
-                                        "address": {
-                                          "type": "string"
-                                        },
                                         "landmark": {
                                           "type": "string"
                                         },
@@ -2216,7 +2277,7 @@
                                               "attributes": {
                                                 "type": "object",
                                                 "properties": {
-                                                  "title": {
+                                                  "name": {
                                                     "type": "string"
                                                   },
                                                   "createdAt": {
@@ -2691,61 +2752,14 @@
                                             },
                                             "attributes": {
                                               "type": "object",
-                                              "properties": {
-                                                "name": {
-                                                  "type": "string"
-                                                },
-                                                "createdAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "updatedAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "publishedAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "createdBy": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "data": {
-                                                      "type": "object",
-                                                      "properties": {
-                                                        "id": {
-                                                          "type": "number"
-                                                        },
-                                                        "attributes": {
-                                                          "type": "object",
-                                                          "properties": {}
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "updatedBy": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "data": {
-                                                      "type": "object",
-                                                      "properties": {
-                                                        "id": {
-                                                          "type": "number"
-                                                        },
-                                                        "attributes": {
-                                                          "type": "object",
-                                                          "properties": {}
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
+                                              "properties": {}
                                             }
                                           }
                                         }
                                       }
+                                    },
+                                    "full_address": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -3544,9 +3558,6 @@
               "name": {
                 "type": "string"
               },
-              "area": {
-                "type": "string"
-              },
               "full_address": {
                 "type": "string"
               },
@@ -3651,6 +3662,17 @@
               },
               "contact": {
                 "$ref": "#/components/schemas/ContactContactDetailsComponent"
+              },
+              "area": {
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "example": "string or id"
               }
             }
           }
@@ -3706,9 +3728,6 @@
         "type": "object",
         "properties": {
           "name": {
-            "type": "string"
-          },
-          "area": {
             "type": "string"
           },
           "full_address": {
@@ -4416,9 +4435,6 @@
                                               "type": "object",
                                               "properties": {
                                                 "name": {
-                                                  "type": "string"
-                                                },
-                                                "area": {
                                                   "type": "string"
                                                 },
                                                 "full_address": {
@@ -5403,9 +5419,6 @@
                                                                                   "Covered"
                                                                                 ]
                                                                               },
-                                                                              "address": {
-                                                                                "type": "string"
-                                                                              },
                                                                               "landmark": {
                                                                                 "type": "string"
                                                                               },
@@ -5442,7 +5455,7 @@
                                                                                     "attributes": {
                                                                                       "type": "object",
                                                                                       "properties": {
-                                                                                        "title": {
+                                                                                        "name": {
                                                                                           "type": "string"
                                                                                         },
                                                                                         "createdAt": {
@@ -5973,6 +5986,9 @@
                                                                               }
                                                                             }
                                                                           },
+                                                                          "full_address": {
+                                                                            "type": "string"
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -6177,6 +6193,23 @@
                                                     "contact_email_id": {
                                                       "type": "string",
                                                       "format": "email"
+                                                    }
+                                                  }
+                                                },
+                                                "area": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
                                                     }
                                                   }
                                                 },
@@ -6715,6 +6748,23 @@
           },
           "contact": {
             "$ref": "#/components/schemas/ContactContactDetailsComponent"
+          },
+          "area": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
           },
           "createdAt": {
             "type": "string",
@@ -7591,9 +7641,6 @@
                                                 "type": "object",
                                                 "properties": {
                                                   "name": {
-                                                    "type": "string"
-                                                  },
-                                                  "area": {
                                                     "type": "string"
                                                   },
                                                   "full_address": {
@@ -8578,9 +8625,6 @@
                                                                                     "Covered"
                                                                                   ]
                                                                                 },
-                                                                                "address": {
-                                                                                  "type": "string"
-                                                                                },
                                                                                 "landmark": {
                                                                                   "type": "string"
                                                                                 },
@@ -8617,7 +8661,7 @@
                                                                                       "attributes": {
                                                                                         "type": "object",
                                                                                         "properties": {
-                                                                                          "title": {
+                                                                                          "name": {
                                                                                             "type": "string"
                                                                                           },
                                                                                           "createdAt": {
@@ -9148,6 +9192,9 @@
                                                                                 }
                                                                               }
                                                                             },
+                                                                            "full_address": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -9352,6 +9399,23 @@
                                                       "contact_email_id": {
                                                         "type": "string",
                                                         "format": "email"
+                                                      }
+                                                    }
+                                                  },
+                                                  "area": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
                                                       }
                                                     }
                                                   },
@@ -10684,6 +10748,9 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "full_address": {
+                "type": "string"
               }
             }
           }
@@ -10764,7 +10831,7 @@
                     "attributes": {
                       "type": "object",
                       "properties": {
-                        "title": {
+                        "name": {
                           "type": "string"
                         },
                         "createdAt": {
@@ -11315,9 +11382,6 @@
                                   "type": "object",
                                   "properties": {
                                     "name": {
-                                      "type": "string"
-                                    },
-                                    "area": {
                                       "type": "string"
                                     },
                                     "full_address": {
@@ -12651,6 +12715,73 @@
                                         }
                                       }
                                     },
+                                    "area": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {
+                                                "name": {
+                                                  "type": "string"
+                                                },
+                                                "createdAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "updatedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "publishedAt": {
+                                                  "type": "string",
+                                                  "format": "date-time"
+                                                },
+                                                "createdBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "updatedBy": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -12785,9 +12916,6 @@
                                             "Open",
                                             "Covered"
                                           ]
-                                        },
-                                        "address": {
-                                          "type": "string"
                                         },
                                         "landmark": {
                                           "type": "string"
@@ -13250,61 +13378,14 @@
                                             },
                                             "attributes": {
                                               "type": "object",
-                                              "properties": {
-                                                "name": {
-                                                  "type": "string"
-                                                },
-                                                "createdAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "updatedAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "publishedAt": {
-                                                  "type": "string",
-                                                  "format": "date-time"
-                                                },
-                                                "createdBy": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "data": {
-                                                      "type": "object",
-                                                      "properties": {
-                                                        "id": {
-                                                          "type": "number"
-                                                        },
-                                                        "attributes": {
-                                                          "type": "object",
-                                                          "properties": {}
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                },
-                                                "updatedBy": {
-                                                  "type": "object",
-                                                  "properties": {
-                                                    "data": {
-                                                      "type": "object",
-                                                      "properties": {
-                                                        "id": {
-                                                          "type": "number"
-                                                        },
-                                                        "attributes": {
-                                                          "type": "object",
-                                                          "properties": {}
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
+                                              "properties": {}
                                             }
                                           }
                                         }
                                       }
+                                    },
+                                    "full_address": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -13742,6 +13823,9 @@
               }
             }
           },
+          "full_address": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -13851,9 +13935,6 @@
               "Covered"
             ]
           },
-          "address": {
-            "type": "string"
-          },
           "landmark": {
             "type": "string"
           },
@@ -13885,7 +13966,7 @@
           "data": {
             "type": "object",
             "properties": {
-              "title": {
+              "name": {
                 "type": "string"
               }
             }
@@ -13941,7 +14022,7 @@
       "RealEstateAmenity": {
         "type": "object",
         "properties": {
-          "title": {
+          "name": {
             "type": "string"
           },
           "createdAt": {
@@ -14438,9 +14519,6 @@
                                                 "type": "object",
                                                 "properties": {
                                                   "name": {
-                                                    "type": "string"
-                                                  },
-                                                  "area": {
                                                     "type": "string"
                                                   },
                                                   "full_address": {
@@ -15908,9 +15986,6 @@
                                                                                     "Covered"
                                                                                   ]
                                                                                 },
-                                                                                "address": {
-                                                                                  "type": "string"
-                                                                                },
                                                                                 "landmark": {
                                                                                   "type": "string"
                                                                                 },
@@ -15947,7 +16022,7 @@
                                                                                       "attributes": {
                                                                                         "type": "object",
                                                                                         "properties": {
-                                                                                          "title": {
+                                                                                          "name": {
                                                                                             "type": "string"
                                                                                           },
                                                                                           "createdAt": {
@@ -16478,6 +16553,9 @@
                                                                                 }
                                                                               }
                                                                             },
+                                                                            "full_address": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -16682,6 +16760,23 @@
                                                       "contact_email_id": {
                                                         "type": "string",
                                                         "format": "email"
+                                                      }
+                                                    }
+                                                  },
+                                                  "area": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
                                                       }
                                                     }
                                                   },

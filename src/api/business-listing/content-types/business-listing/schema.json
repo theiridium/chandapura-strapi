@@ -15,9 +15,6 @@
     "name": {
       "type": "string"
     },
-    "area": {
-      "type": "string"
-    },
     "full_address": {
       "type": "text"
     },
@@ -110,6 +107,11 @@
       "type": "component",
       "repeatable": false,
       "component": "contact.contact-details"
+    },
+    "area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::area.area"
     }
   }
 }
