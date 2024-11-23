@@ -4,11 +4,11 @@ export default {
     async afterCreate(event: any) {
         try {
             const { result } = event;
-            const response = await strapi.entityService.findOne('api::business-listing.business-listing', result.id, {
+            const response = await strapi.entityService.findOne('api::real-estate.real-estate', result.id, {
                 populate: ['area']
             });
             const updatedSlug = `${result.slug}-${response.area.name.toLowerCase().replace(/\s+/g, '-')}`;
-            await strapi.entityService.update('api::business-listing.business-listing', result.id, {
+            await strapi.entityService.update('api::real-estate.real-estate', result.id, {
                 data: {
                     slug: updatedSlug,
                 },
@@ -24,7 +24,7 @@ export default {
             const { params } = event;
             if (process.env.APP_ENV === "Production") {
                 let id = params.where.id;
-                const response = await strapi.entityService.findOne('api::business-listing.business-listing', id);
+                const response = await strapi.entityService.findOne('api::real-estate.real-estate', id);
                 beforeUpdate_publish_status = response.publish_status;
             }
         }
@@ -40,14 +40,15 @@ export default {
                 afterUpdate_publish_status = result.publish_status;
                 let id = params.where.id;
                 if (beforeUpdate_publish_status === false && afterUpdate_publish_status === true) {
-                    const response = await strapi.entityService.findOne('api::business-listing.business-listing', id, {
-                        populate: ['category', 'sub_category', 'author']
+                    const response = await strapi.entityService.findOne('api::real-estate.real-estate', id, {
+                        populate: ['author']
                     });
                     let emailToAddressUser = response.author.email;
+                    let listingTypeSlug = response.listing_type === "Rent" ? "property-for-rent" : "property-for-sale";
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
-                        subject: 'New Business Listing Live - Chandapura.com',
-                        html: `<p>Your Business Listing - <b><a href='https://www.chandapura.com/business-categories/${response.category.slug}/${response.sub_category.slug}/${result.slug}?source=${result.id}'>${result.name}</b></a> is Live now.</p>`,
+                        subject: 'New Property Listing Live - Chandapura.com',
+                        html: `<p>Your Property Listing - <b><a href='https://www.chandapura.com/real-estate/${listingTypeSlug}/${result.slug}?source=${result.id}'>${result.name}</b></a> is Live now.</p>`,
                     });
                 }
             }

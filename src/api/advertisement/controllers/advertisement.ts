@@ -9,7 +9,7 @@ export default factories.createCoreController('api::advertisement.advertisement'
         try {
             const response = await super.update(ctx);
             if (process.env.APP_ENV === "Production") {
-                if (response.data.attributes && response.data.attributes.step_number === 5) {
+                if (response.data.attributes && response.data.attributes.step_number === 4) {
                     const adminUsers = await strapi.db.query('admin::user').findMany();
                     let emailToAddressList = adminUsers.map(x => x.email).join(',');
                     await strapi.plugins['email'].services.email.send({

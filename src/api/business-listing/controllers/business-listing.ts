@@ -12,7 +12,7 @@ export default factories.createCoreController('api::business-listing.business-li
                 populate: 'author',
             });
             if (process.env.APP_ENV === "Production") {
-                if (response.data.attributes && response.data.attributes.step_number === 5) {
+                if (response.data.attributes && response.data.attributes.step_number === 4) {
                     const adminUsers = await strapi.db.query('admin::user').findMany();
                     let emailToAddressListAdmin = adminUsers.map(x => x.email).join(',');
                     await strapi.plugins['email'].services.email.send({
