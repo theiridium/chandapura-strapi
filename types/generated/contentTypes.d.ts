@@ -1190,36 +1190,6 @@ export interface ApiClassifiedListingClassifiedListing
   };
 }
 
-export interface ApiLocationLocation extends Schema.CollectionType {
-  collectionName: 'locations';
-  info: {
-    singularName: 'location';
-    pluralName: 'locations';
-    displayName: 'Location';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::location.location',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::location.location',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiPricingPlanPricingPlan extends Schema.CollectionType {
   collectionName: 'pricing_plans';
   info: {
@@ -1450,7 +1420,6 @@ declare module '@strapi/types' {
       'api::business-listing-pricing-plan.business-listing-pricing-plan': ApiBusinessListingPricingPlanBusinessListingPricingPlan;
       'api::category.category': ApiCategoryCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
-      'api::location.location': ApiLocationLocation;
       'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
