@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_real_estate_pricing_plans",
+  "info": {
+    "displayName": "Pricing Plan"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    }
+  }
+}

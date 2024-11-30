@@ -4,7 +4,9 @@
     "displayName": "Payment Details",
     "description": ""
   },
-  "options": {},
+  "options": {
+    "timestamps": true
+  },
   "attributes": {
     "purchase_date": {
       "type": "datetime"
@@ -17,10 +19,12 @@
       "type": "datetime"
     },
     "raz_order_id": {
-      "type": "string"
+      "type": "string",
+      "private": true
     },
     "raz_payment_id": {
-      "type": "string"
+      "type": "string",
+      "private": true
     },
     "amount": {
       "type": "decimal"
@@ -28,6 +32,9 @@
     "isOfferApplied": {
       "type": "boolean",
       "default": false
+    },
+    "expiry_date_timestamp": {
+      "type": "decimal"
     }
   }
 }

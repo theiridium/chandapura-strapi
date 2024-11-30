@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "business_listing_pricing_plans",
+  "info": {
+    "singularName": "business-listing-pricing-plan",
+    "pluralName": "business-listing-pricing-plans",
+    "displayName": "Business Listing Pricing Plan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "monthly": {
+      "type": "decimal"
+    },
+    "quaterly": {
+      "type": "decimal"
+    },
+    "yearly": {
+      "type": "decimal"
+    }
+  }
+}

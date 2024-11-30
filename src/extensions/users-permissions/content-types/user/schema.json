@@ -104,6 +104,12 @@
       "relation": "oneToMany",
       "target": "api::real-estate.real-estate",
       "mappedBy": "author"
+    },
+    "classified_listings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::classified-listing.classified-listing",
+      "mappedBy": "author"
     }
   }
 }

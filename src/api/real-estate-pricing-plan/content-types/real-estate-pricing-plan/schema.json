@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "real_estate_pricing_plans",
+  "info": {
+    "singularName": "real-estate-pricing-plan",
+    "pluralName": "real-estate-pricing-plans",
+    "displayName": "Real Estate Pricing Plan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "rent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "real-estate.pricing-plan"
+    },
+    "sale": {
+      "type": "component",
+      "repeatable": true,
+      "component": "real-estate.pricing-plan"
+    }
+  }
+}

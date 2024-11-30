@@ -870,6 +870,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::real-estate.real-estate'
     >;
+    classified_listings: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::classified-listing.classified-listing'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -928,6 +933,39 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::advertisement.advertisement',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAdvertisementPricingPlanAdvertisementPricingPlan
+  extends Schema.SingleType {
+  collectionName: 'advertisement_pricing_plans';
+  info: {
+    singularName: 'advertisement-pricing-plan';
+    pluralName: 'advertisement-pricing-plans';
+    displayName: 'Advertisement Pricing Plan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    monthly: Attribute.Decimal;
+    quaterly: Attribute.Decimal;
+    yearly: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::advertisement-pricing-plan.advertisement-pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::advertisement-pricing-plan.advertisement-pricing-plan',
       'oneToOne',
       'admin::user'
     > &
@@ -1033,6 +1071,40 @@ export interface ApiBusinessListingBusinessListing
   };
 }
 
+export interface ApiBusinessListingPricingPlanBusinessListingPricingPlan
+  extends Schema.SingleType {
+  collectionName: 'business_listing_pricing_plans';
+  info: {
+    singularName: 'business-listing-pricing-plan';
+    pluralName: 'business-listing-pricing-plans';
+    displayName: 'Business Listing Pricing Plan';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    monthly: Attribute.Decimal;
+    quaterly: Attribute.Decimal;
+    yearly: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::business-listing-pricing-plan.business-listing-pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::business-listing-pricing-plan.business-listing-pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Schema.CollectionType {
   collectionName: 'categories';
   info: {
@@ -1069,6 +1141,48 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::category.category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiClassifiedListingClassifiedListing
+  extends Schema.CollectionType {
+  collectionName: 'classified_listings';
+  info: {
+    singularName: 'classified-listing';
+    pluralName: 'classified-listings';
+    displayName: 'Classified Listing';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    slug: Attribute.String;
+    author: Attribute.Relation<
+      'api::classified-listing.classified-listing',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
+    contact: Attribute.Component<'contact.contact-details'>;
+    featured_image: Attribute.Media<'images'>;
+    gallery_images: Attribute.Media<'images', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::classified-listing.classified-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::classified-listing.classified-listing',
       'oneToOne',
       'admin::user'
     > &
@@ -1233,6 +1347,39 @@ export interface ApiRealEstateAmenityRealEstateAmenity
   };
 }
 
+export interface ApiRealEstatePricingPlanRealEstatePricingPlan
+  extends Schema.SingleType {
+  collectionName: 'real_estate_pricing_plans';
+  info: {
+    singularName: 'real-estate-pricing-plan';
+    pluralName: 'real-estate-pricing-plans';
+    displayName: 'Real Estate Pricing Plan';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    rent: Attribute.Component<'real-estate.pricing-plan', true>;
+    sale: Attribute.Component<'real-estate.pricing-plan', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::real-estate-pricing-plan.real-estate-pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::real-estate-pricing-plan.real-estate-pricing-plan',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSubCategorySubCategory extends Schema.CollectionType {
   collectionName: 'sub_categories';
   info: {
@@ -1297,13 +1444,17 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::advertisement.advertisement': ApiAdvertisementAdvertisement;
+      'api::advertisement-pricing-plan.advertisement-pricing-plan': ApiAdvertisementPricingPlanAdvertisementPricingPlan;
       'api::area.area': ApiAreaArea;
       'api::business-listing.business-listing': ApiBusinessListingBusinessListing;
+      'api::business-listing-pricing-plan.business-listing-pricing-plan': ApiBusinessListingPricingPlanBusinessListingPricingPlan;
       'api::category.category': ApiCategoryCategory;
+      'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::location.location': ApiLocationLocation;
       'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
+      'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;
       'api::sub-category.sub-category': ApiSubCategorySubCategory;
     }
   }

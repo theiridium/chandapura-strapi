@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "advertisement_pricing_plans",
+  "info": {
+    "singularName": "advertisement-pricing-plan",
+    "pluralName": "advertisement-pricing-plans",
+    "displayName": "Advertisement Pricing Plan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "monthly": {
+      "type": "decimal"
+    },
+    "quaterly": {
+      "type": "decimal"
+    },
+    "yearly": {
+      "type": "decimal"
+    }
+  }
+}

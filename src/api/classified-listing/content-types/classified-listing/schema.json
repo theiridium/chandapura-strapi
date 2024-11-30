@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classified_listings",
+  "info": {
+    "singularName": "classified-listing",
+    "pluralName": "classified-listings",
+    "displayName": "Classified Listing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "classified_listings"
+    },
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
+    },
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-details"
+    },
+    "featured_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "gallery_images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
