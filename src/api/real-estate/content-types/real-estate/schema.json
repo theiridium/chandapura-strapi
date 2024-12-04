@@ -84,7 +84,8 @@
       "enum": [
         "Apartment",
         "Individual",
-        "Villa"
+        "Villa",
+        "Plot"
       ]
     },
     "listing_type": {

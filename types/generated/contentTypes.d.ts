@@ -1190,39 +1190,6 @@ export interface ApiClassifiedListingClassifiedListing
   };
 }
 
-export interface ApiPricingPlanPricingPlan extends Schema.CollectionType {
-  collectionName: 'pricing_plans';
-  info: {
-    singularName: 'pricing-plan';
-    pluralName: 'pricing-plans';
-    displayName: 'Pricing Plan';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    monthly: Attribute.Integer;
-    quaterly: Attribute.Integer;
-    yearly: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::pricing-plan.pricing-plan',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::pricing-plan.pricing-plan',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   collectionName: 'real_estates';
   info: {
@@ -1258,7 +1225,9 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
     contact: Attribute.Component<'contact.contact-details'>;
     featured_image: Attribute.Media<'images'>;
     gallery_images: Attribute.Media<'images', true>;
-    property_type: Attribute.Enumeration<['Apartment', 'Individual', 'Villa']>;
+    property_type: Attribute.Enumeration<
+      ['Apartment', 'Individual', 'Villa', 'Plot']
+    >;
     listing_type: Attribute.Enumeration<['Rent', 'Sale']>;
     room_type: Attribute.String;
     area: Attribute.Relation<
@@ -1420,7 +1389,6 @@ declare module '@strapi/types' {
       'api::business-listing-pricing-plan.business-listing-pricing-plan': ApiBusinessListingPricingPlanBusinessListingPricingPlan;
       'api::category.category': ApiCategoryCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
-      'api::pricing-plan.pricing-plan': ApiPricingPlanPricingPlan;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;
