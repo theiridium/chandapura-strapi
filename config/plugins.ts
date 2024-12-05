@@ -43,7 +43,11 @@ export default ({ env }) => ({
                 'business-listing': {
                     field: 'slug',
                     references: ['name'],
-                }
+                },
+                'classified-listing': {
+                    field: 'slug',
+                    references: ['name'],
+                },
             },
         },
     },

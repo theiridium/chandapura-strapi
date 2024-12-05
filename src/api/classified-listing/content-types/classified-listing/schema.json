@@ -4,7 +4,8 @@
   "info": {
     "singularName": "classified-listing",
     "pluralName": "classified-listings",
-    "displayName": "Classified Listing"
+    "displayName": "Classified Listing",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -39,18 +40,44 @@
       "component": "contact.contact-details"
     },
     "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "gallery_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "sale_amount": {
+      "type": "decimal"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::classified-category.classified-category",
+      "inversedBy": "classified_listings"
+    },
+    "area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::area.area"
+    },
+    "description": {
+      "type": "text"
+    },
+    "step_number": {
+      "type": "integer"
+    },
+    "publish_status": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

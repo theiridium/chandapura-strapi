@@ -1148,6 +1148,44 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiClassifiedCategoryClassifiedCategory
+  extends Schema.CollectionType {
+  collectionName: 'classified_categories';
+  info: {
+    singularName: 'classified-category';
+    pluralName: 'classified-categories';
+    displayName: 'Classified Category';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    classified_listings: Attribute.Relation<
+      'api::classified-category.classified-category',
+      'oneToMany',
+      'api::classified-listing.classified-listing'
+    >;
+    slug: Attribute.UID<'api::classified-category.classified-category', 'name'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::classified-category.classified-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::classified-category.classified-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiClassifiedListingClassifiedListing
   extends Schema.CollectionType {
   collectionName: 'classified_listings';
@@ -1155,6 +1193,7 @@ export interface ApiClassifiedListingClassifiedListing
     singularName: 'classified-listing';
     pluralName: 'classified-listings';
     displayName: 'Classified Listing';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1172,6 +1211,20 @@ export interface ApiClassifiedListingClassifiedListing
     contact: Attribute.Component<'contact.contact-details'>;
     featured_image: Attribute.Media<'images'>;
     gallery_images: Attribute.Media<'images', true>;
+    sale_amount: Attribute.Decimal;
+    category: Attribute.Relation<
+      'api::classified-listing.classified-listing',
+      'manyToOne',
+      'api::classified-category.classified-category'
+    >;
+    area: Attribute.Relation<
+      'api::classified-listing.classified-listing',
+      'oneToOne',
+      'api::area.area'
+    >;
+    description: Attribute.Text;
+    step_number: Attribute.Integer;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1388,6 +1441,7 @@ declare module '@strapi/types' {
       'api::business-listing.business-listing': ApiBusinessListingBusinessListing;
       'api::business-listing-pricing-plan.business-listing-pricing-plan': ApiBusinessListingPricingPlanBusinessListingPricingPlan;
       'api::category.category': ApiCategoryCategory;
+      'api::classified-category.classified-category': ApiClassifiedCategoryClassifiedCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;

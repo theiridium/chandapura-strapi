@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classified_categories",
+  "info": {
+    "singularName": "classified-category",
+    "pluralName": "classified-categories",
+    "displayName": "Classified Category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "classified_listings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::classified-listing.classified-listing",
+      "mappedBy": "category"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    }
+  }
+}
