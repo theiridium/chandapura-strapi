@@ -110,6 +110,12 @@
       "relation": "oneToMany",
       "target": "api::classified-listing.classified-listing",
       "mappedBy": "author"
+    },
+    "job_listings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::job-listing.job-listing",
+      "mappedBy": "author"
     }
   }
 }

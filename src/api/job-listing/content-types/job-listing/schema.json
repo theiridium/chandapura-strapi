@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_listings",
+  "info": {
+    "singularName": "job-listing",
+    "pluralName": "job-listings",
+    "displayName": "Job Listing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "company_name": {
+      "type": "string"
+    },
+    "job_designation": {
+      "type": "string"
+    },
+    "job_description": {
+      "type": "text"
+    },
+    "educational_qualification": {
+      "type": "string"
+    },
+    "employment_type": {
+      "type": "enumeration",
+      "enum": [
+        "Full-Time",
+        "Part-Time",
+        "Contract-Based",
+        "Freelance",
+        "Internship"
+      ]
+    },
+    "publish_status": {
+      "type": "boolean",
+      "default": false
+    },
+    "step_number": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "job_listings"
+    },
+    "area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::area.area"
+    },
+    "featured_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-details"
+    },
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
+    },
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
+    },
+    "salary_range": {
+      "type": "string"
+    }
+  }
+}

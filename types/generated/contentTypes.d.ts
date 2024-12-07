@@ -875,6 +875,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::classified-listing.classified-listing'
     >;
+    job_listings: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::job-listing.job-listing'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1243,6 +1248,61 @@ export interface ApiClassifiedListingClassifiedListing
   };
 }
 
+export interface ApiJobListingJobListing extends Schema.CollectionType {
+  collectionName: 'job_listings';
+  info: {
+    singularName: 'job-listing';
+    pluralName: 'job-listings';
+    displayName: 'Job Listing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    company_name: Attribute.String;
+    job_designation: Attribute.String;
+    job_description: Attribute.Text;
+    educational_qualification: Attribute.String;
+    employment_type: Attribute.Enumeration<
+      ['Full-Time', 'Part-Time', 'Contract-Based', 'Freelance', 'Internship']
+    >;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
+    step_number: Attribute.Integer;
+    slug: Attribute.String;
+    author: Attribute.Relation<
+      'api::job-listing.job-listing',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    area: Attribute.Relation<
+      'api::job-listing.job-listing',
+      'oneToOne',
+      'api::area.area'
+    >;
+    featured_image: Attribute.Media<'images'>;
+    contact: Attribute.Component<'contact.contact-details'>;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
+    salary_range: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::job-listing.job-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::job-listing.job-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   collectionName: 'real_estates';
   info: {
@@ -1443,6 +1503,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::classified-category.classified-category': ApiClassifiedCategoryClassifiedCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
+      'api::job-listing.job-listing': ApiJobListingJobListing;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;
