@@ -45,19 +45,6 @@ export interface RealEstatePricingPlan extends Schema.Component {
   };
 }
 
-export interface ContactContactDetails extends Schema.Component {
-  collectionName: 'components_contact_contact_details';
-  info: {
-    displayName: 'Contact Details';
-    description: '';
-  };
-  attributes: {
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
-  };
-}
-
 export interface PaymentPayment extends Schema.Component {
   collectionName: 'components_payment_payments';
   info: {
@@ -79,13 +66,44 @@ export interface PaymentPayment extends Schema.Component {
   };
 }
 
+export interface ContactContactDetails extends Schema.Component {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'Contact Details';
+    description: '';
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.Email;
+  };
+}
+
+export interface ClassifiedVehicleDetails extends Schema.Component {
+  collectionName: 'components_classified_vehicle_details';
+  info: {
+    displayName: 'Vehicle Details';
+    description: '';
+  };
+  attributes: {
+    fuel_type: Attribute.Enumeration<
+      ['Petrol', 'Diesel', 'Electric', 'CNG', 'Hybrid']
+    >;
+    model_name: Attribute.String;
+    transmission: Attribute.Enumeration<['Manual', 'Automatic']>;
+    kms_driven: Attribute.BigInteger;
+    year_of_manufacture: Attribute.String;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'real-estate.real-estate': RealEstateRealEstate;
       'real-estate.pricing-plan': RealEstatePricingPlan;
-      'contact.contact-details': ContactContactDetails;
       'payment.payment': PaymentPayment;
+      'contact.contact-details': ContactContactDetails;
+      'classified.vehicle-details': ClassifiedVehicleDetails;
     }
   }
 }

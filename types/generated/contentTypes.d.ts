@@ -1230,6 +1230,11 @@ export interface ApiClassifiedListingClassifiedListing
     description: Attribute.Text;
     step_number: Attribute.Integer;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
+    ownership_history: Attribute.Integer;
+    category_based_details: Attribute.DynamicZone<
+      ['classified.vehicle-details', 'real-estate.real-estate']
+    >;
+    year_of_purchase: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1261,7 +1266,7 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
   };
   attributes: {
     company_name: Attribute.String;
-    job_designation: Attribute.String;
+    designation: Attribute.String;
     job_description: Attribute.Text;
     educational_qualification: Attribute.String;
     employment_type: Attribute.Enumeration<
@@ -1285,6 +1290,8 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
     salary_range: Attribute.String;
+    open_positions: Attribute.Integer;
+    job_role: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1296,6 +1303,36 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::job-listing.job-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJobTitleJobTitle extends Schema.CollectionType {
+  collectionName: 'job_titles';
+  info: {
+    singularName: 'job-title';
+    pluralName: 'job-titles';
+    displayName: 'Job Title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::job-title.job-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::job-title.job-title',
       'oneToOne',
       'admin::user'
     > &
@@ -1504,6 +1541,7 @@ declare module '@strapi/types' {
       'api::classified-category.classified-category': ApiClassifiedCategoryClassifiedCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::job-listing.job-listing': ApiJobListingJobListing;
+      'api::job-title.job-title': ApiJobTitleJobTitle;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;

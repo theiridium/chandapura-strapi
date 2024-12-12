@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_classified_vehicle_details",
+  "info": {
+    "displayName": "Vehicle Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fuel_type": {
+      "type": "enumeration",
+      "enum": [
+        "Petrol",
+        "Diesel",
+        "Electric",
+        "CNG",
+        "Hybrid"
+      ]
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "transmission": {
+      "type": "enumeration",
+      "enum": [
+        "Manual",
+        "Automatic"
+      ]
+    },
+    "kms_driven": {
+      "type": "biginteger"
+    },
+    "year_of_manufacture": {
+      "type": "string"
+    }
+  }
+}

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-07T02:25:30.491Z"
+    "x-generation-date": "2024-12-12T22:03:39.286Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3370,6 +3370,122 @@
                                     "publish_status": {
                                       "type": "boolean"
                                     },
+                                    "ownership_history": {
+                                      "type": "integer"
+                                    },
+                                    "category_based_details": {
+                                      "type": "array",
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "fuel_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Petrol",
+                                                  "Diesel",
+                                                  "Electric",
+                                                  "CNG",
+                                                  "Hybrid"
+                                                ]
+                                              },
+                                              "model_name": {
+                                                "type": "string"
+                                              },
+                                              "transmission": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Manual",
+                                                  "Automatic"
+                                                ]
+                                              },
+                                              "kms_driven": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "year_of_manufacture": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "bathrooms": {
+                                                "type": "integer"
+                                              },
+                                              "direction": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "East",
+                                                  "West",
+                                                  "North",
+                                                  "South",
+                                                  "North-East",
+                                                  "South-East",
+                                                  "North-West",
+                                                  "South-West"
+                                                ]
+                                              },
+                                              "floor_number": {
+                                                "type": "integer"
+                                              },
+                                              "total_floors": {
+                                                "type": "integer"
+                                              },
+                                              "carpet_area": {
+                                                "type": "number",
+                                                "format": "float"
+                                              },
+                                              "parking_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Open",
+                                                  "Covered"
+                                                ]
+                                              },
+                                              "landmark": {
+                                                "type": "string"
+                                              },
+                                              "rental_amount": {
+                                                "type": "integer"
+                                              },
+                                              "selling_amount": {
+                                                "type": "integer"
+                                              },
+                                              "deposit_amount": {
+                                                "type": "integer"
+                                              },
+                                              "furnishing": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Semi Furnished",
+                                                  "Fully Furnished",
+                                                  "Non Furnished"
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -3440,7 +3556,7 @@
                                     "company_name": {
                                       "type": "string"
                                     },
-                                    "job_designation": {
+                                    "designation": {
                                       "type": "string"
                                     },
                                     "job_description": {
@@ -3735,6 +3851,12 @@
                                       }
                                     },
                                     "salary_range": {
+                                      "type": "string"
+                                    },
+                                    "open_positions": {
+                                      "type": "integer"
+                                    },
+                                    "job_role": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -7978,6 +8100,122 @@
                                                                           "publish_status": {
                                                                             "type": "boolean"
                                                                           },
+                                                                          "ownership_history": {
+                                                                            "type": "integer"
+                                                                          },
+                                                                          "category_based_details": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "anyOf": [
+                                                                                {
+                                                                                  "type": "object",
+                                                                                  "properties": {
+                                                                                    "id": {
+                                                                                      "type": "number"
+                                                                                    },
+                                                                                    "__component": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "fuel_type": {
+                                                                                      "type": "string",
+                                                                                      "enum": [
+                                                                                        "Petrol",
+                                                                                        "Diesel",
+                                                                                        "Electric",
+                                                                                        "CNG",
+                                                                                        "Hybrid"
+                                                                                      ]
+                                                                                    },
+                                                                                    "model_name": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "transmission": {
+                                                                                      "type": "string",
+                                                                                      "enum": [
+                                                                                        "Manual",
+                                                                                        "Automatic"
+                                                                                      ]
+                                                                                    },
+                                                                                    "kms_driven": {
+                                                                                      "type": "string",
+                                                                                      "pattern": "^\\d*$",
+                                                                                      "example": "123456789"
+                                                                                    },
+                                                                                    "year_of_manufacture": {
+                                                                                      "type": "string"
+                                                                                    }
+                                                                                  }
+                                                                                },
+                                                                                {
+                                                                                  "type": "object",
+                                                                                  "properties": {
+                                                                                    "id": {
+                                                                                      "type": "number"
+                                                                                    },
+                                                                                    "__component": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "bathrooms": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "direction": {
+                                                                                      "type": "string",
+                                                                                      "enum": [
+                                                                                        "East",
+                                                                                        "West",
+                                                                                        "North",
+                                                                                        "South",
+                                                                                        "North-East",
+                                                                                        "South-East",
+                                                                                        "North-West",
+                                                                                        "South-West"
+                                                                                      ]
+                                                                                    },
+                                                                                    "floor_number": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "total_floors": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "carpet_area": {
+                                                                                      "type": "number",
+                                                                                      "format": "float"
+                                                                                    },
+                                                                                    "parking_type": {
+                                                                                      "type": "string",
+                                                                                      "enum": [
+                                                                                        "Open",
+                                                                                        "Covered"
+                                                                                      ]
+                                                                                    },
+                                                                                    "landmark": {
+                                                                                      "type": "string"
+                                                                                    },
+                                                                                    "rental_amount": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "selling_amount": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "deposit_amount": {
+                                                                                      "type": "integer"
+                                                                                    },
+                                                                                    "furnishing": {
+                                                                                      "type": "string",
+                                                                                      "enum": [
+                                                                                        "Semi Furnished",
+                                                                                        "Fully Furnished",
+                                                                                        "Non Furnished"
+                                                                                      ]
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              ]
+                                                                            }
+                                                                          },
+                                                                          "year_of_purchase": {
+                                                                            "type": "string"
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -8048,7 +8286,7 @@
                                                                           "company_name": {
                                                                             "type": "string"
                                                                           },
-                                                                          "job_designation": {
+                                                                          "designation": {
                                                                             "type": "string"
                                                                           },
                                                                           "job_description": {
@@ -8343,6 +8581,12 @@
                                                                             }
                                                                           },
                                                                           "salary_range": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "open_positions": {
+                                                                            "type": "integer"
+                                                                          },
+                                                                          "job_role": {
                                                                             "type": "string"
                                                                           },
                                                                           "createdAt": {
@@ -12568,6 +12812,122 @@
                                                                             "publish_status": {
                                                                               "type": "boolean"
                                                                             },
+                                                                            "ownership_history": {
+                                                                              "type": "integer"
+                                                                            },
+                                                                            "category_based_details": {
+                                                                              "type": "array",
+                                                                              "items": {
+                                                                                "anyOf": [
+                                                                                  {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "__component": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "fuel_type": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Petrol",
+                                                                                          "Diesel",
+                                                                                          "Electric",
+                                                                                          "CNG",
+                                                                                          "Hybrid"
+                                                                                        ]
+                                                                                      },
+                                                                                      "model_name": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "transmission": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Manual",
+                                                                                          "Automatic"
+                                                                                        ]
+                                                                                      },
+                                                                                      "kms_driven": {
+                                                                                        "type": "string",
+                                                                                        "pattern": "^\\d*$",
+                                                                                        "example": "123456789"
+                                                                                      },
+                                                                                      "year_of_manufacture": {
+                                                                                        "type": "string"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "__component": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "bathrooms": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "direction": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "East",
+                                                                                          "West",
+                                                                                          "North",
+                                                                                          "South",
+                                                                                          "North-East",
+                                                                                          "South-East",
+                                                                                          "North-West",
+                                                                                          "South-West"
+                                                                                        ]
+                                                                                      },
+                                                                                      "floor_number": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "total_floors": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "carpet_area": {
+                                                                                        "type": "number",
+                                                                                        "format": "float"
+                                                                                      },
+                                                                                      "parking_type": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Open",
+                                                                                          "Covered"
+                                                                                        ]
+                                                                                      },
+                                                                                      "landmark": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "rental_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "selling_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "deposit_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "furnishing": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Semi Furnished",
+                                                                                          "Fully Furnished",
+                                                                                          "Non Furnished"
+                                                                                        ]
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "year_of_purchase": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -12638,7 +12998,7 @@
                                                                             "company_name": {
                                                                               "type": "string"
                                                                             },
-                                                                            "job_designation": {
+                                                                            "designation": {
                                                                               "type": "string"
                                                                             },
                                                                             "job_description": {
@@ -12933,6 +13293,12 @@
                                                                               }
                                                                             },
                                                                             "salary_range": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "open_positions": {
+                                                                              "type": "integer"
+                                                                            },
+                                                                            "job_role": {
                                                                               "type": "string"
                                                                             },
                                                                             "createdAt": {
@@ -16350,7 +16716,7 @@
                                                   "company_name": {
                                                     "type": "string"
                                                   },
-                                                  "job_designation": {
+                                                  "designation": {
                                                     "type": "string"
                                                   },
                                                   "job_description": {
@@ -16645,6 +17011,12 @@
                                                     }
                                                   },
                                                   "salary_range": {
+                                                    "type": "string"
+                                                  },
+                                                  "open_positions": {
+                                                    "type": "integer"
+                                                  },
+                                                  "job_role": {
                                                     "type": "string"
                                                   },
                                                   "createdAt": {
@@ -17242,6 +17614,122 @@
                         "publish_status": {
                           "type": "boolean"
                         },
+                        "ownership_history": {
+                          "type": "integer"
+                        },
+                        "category_based_details": {
+                          "type": "array",
+                          "items": {
+                            "anyOf": [
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "__component": {
+                                    "type": "string"
+                                  },
+                                  "fuel_type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "Petrol",
+                                      "Diesel",
+                                      "Electric",
+                                      "CNG",
+                                      "Hybrid"
+                                    ]
+                                  },
+                                  "model_name": {
+                                    "type": "string"
+                                  },
+                                  "transmission": {
+                                    "type": "string",
+                                    "enum": [
+                                      "Manual",
+                                      "Automatic"
+                                    ]
+                                  },
+                                  "kms_driven": {
+                                    "type": "string",
+                                    "pattern": "^\\d*$",
+                                    "example": "123456789"
+                                  },
+                                  "year_of_manufacture": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "__component": {
+                                    "type": "string"
+                                  },
+                                  "bathrooms": {
+                                    "type": "integer"
+                                  },
+                                  "direction": {
+                                    "type": "string",
+                                    "enum": [
+                                      "East",
+                                      "West",
+                                      "North",
+                                      "South",
+                                      "North-East",
+                                      "South-East",
+                                      "North-West",
+                                      "South-West"
+                                    ]
+                                  },
+                                  "floor_number": {
+                                    "type": "integer"
+                                  },
+                                  "total_floors": {
+                                    "type": "integer"
+                                  },
+                                  "carpet_area": {
+                                    "type": "number",
+                                    "format": "float"
+                                  },
+                                  "parking_type": {
+                                    "type": "string",
+                                    "enum": [
+                                      "Open",
+                                      "Covered"
+                                    ]
+                                  },
+                                  "landmark": {
+                                    "type": "string"
+                                  },
+                                  "rental_amount": {
+                                    "type": "integer"
+                                  },
+                                  "selling_amount": {
+                                    "type": "integer"
+                                  },
+                                  "deposit_amount": {
+                                    "type": "integer"
+                                  },
+                                  "furnishing": {
+                                    "type": "string",
+                                    "enum": [
+                                      "Semi Furnished",
+                                      "Fully Furnished",
+                                      "Non Furnished"
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "year_of_purchase": {
+                          "type": "string"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -17465,6 +17953,25 @@
               },
               "publish_status": {
                 "type": "boolean"
+              },
+              "ownership_history": {
+                "type": "integer"
+              },
+              "category_based_details": {
+                "type": "array",
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/ClassifiedVehicleDetailsComponent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/RealEstateRealEstateComponent"
+                    }
+                  ]
+                }
+              },
+              "year_of_purchase": {
+                "type": "string"
               }
             }
           }
@@ -20684,6 +21191,122 @@
                                     "publish_status": {
                                       "type": "boolean"
                                     },
+                                    "ownership_history": {
+                                      "type": "integer"
+                                    },
+                                    "category_based_details": {
+                                      "type": "array",
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "fuel_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Petrol",
+                                                  "Diesel",
+                                                  "Electric",
+                                                  "CNG",
+                                                  "Hybrid"
+                                                ]
+                                              },
+                                              "model_name": {
+                                                "type": "string"
+                                              },
+                                              "transmission": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Manual",
+                                                  "Automatic"
+                                                ]
+                                              },
+                                              "kms_driven": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "year_of_manufacture": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "bathrooms": {
+                                                "type": "integer"
+                                              },
+                                              "direction": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "East",
+                                                  "West",
+                                                  "North",
+                                                  "South",
+                                                  "North-East",
+                                                  "South-East",
+                                                  "North-West",
+                                                  "South-West"
+                                                ]
+                                              },
+                                              "floor_number": {
+                                                "type": "integer"
+                                              },
+                                              "total_floors": {
+                                                "type": "integer"
+                                              },
+                                              "carpet_area": {
+                                                "type": "number",
+                                                "format": "float"
+                                              },
+                                              "parking_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Open",
+                                                  "Covered"
+                                                ]
+                                              },
+                                              "landmark": {
+                                                "type": "string"
+                                              },
+                                              "rental_amount": {
+                                                "type": "integer"
+                                              },
+                                              "selling_amount": {
+                                                "type": "integer"
+                                              },
+                                              "deposit_amount": {
+                                                "type": "integer"
+                                              },
+                                              "furnishing": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Semi Furnished",
+                                                  "Fully Furnished",
+                                                  "Non Furnished"
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -20754,7 +21377,7 @@
                                     "company_name": {
                                       "type": "string"
                                     },
-                                    "job_designation": {
+                                    "designation": {
                                       "type": "string"
                                     },
                                     "job_description": {
@@ -21049,6 +21672,12 @@
                                       }
                                     },
                                     "salary_range": {
+                                      "type": "string"
+                                    },
+                                    "open_positions": {
+                                      "type": "integer"
+                                    },
+                                    "job_role": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -21492,6 +22121,25 @@
           "publish_status": {
             "type": "boolean"
           },
+          "ownership_history": {
+            "type": "integer"
+          },
+          "category_based_details": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ClassifiedVehicleDetailsComponent"
+                },
+                {
+                  "$ref": "#/components/schemas/RealEstateRealEstateComponent"
+                }
+              ]
+            }
+          },
+          "year_of_purchase": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -21562,6 +22210,106 @@
           }
         }
       },
+      "ClassifiedVehicleDetailsComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "__component": {
+            "type": "string"
+          },
+          "fuel_type": {
+            "type": "string",
+            "enum": [
+              "Petrol",
+              "Diesel",
+              "Electric",
+              "CNG",
+              "Hybrid"
+            ]
+          },
+          "model_name": {
+            "type": "string"
+          },
+          "transmission": {
+            "type": "string",
+            "enum": [
+              "Manual",
+              "Automatic"
+            ]
+          },
+          "kms_driven": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
+          "year_of_manufacture": {
+            "type": "string"
+          }
+        }
+      },
+      "RealEstateRealEstateComponent": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "bathrooms": {
+            "type": "integer"
+          },
+          "direction": {
+            "type": "string",
+            "enum": [
+              "East",
+              "West",
+              "North",
+              "South",
+              "North-East",
+              "South-East",
+              "North-West",
+              "South-West"
+            ]
+          },
+          "floor_number": {
+            "type": "integer"
+          },
+          "total_floors": {
+            "type": "integer"
+          },
+          "carpet_area": {
+            "type": "number",
+            "format": "float"
+          },
+          "parking_type": {
+            "type": "string",
+            "enum": [
+              "Open",
+              "Covered"
+            ]
+          },
+          "landmark": {
+            "type": "string"
+          },
+          "rental_amount": {
+            "type": "integer"
+          },
+          "selling_amount": {
+            "type": "integer"
+          },
+          "deposit_amount": {
+            "type": "integer"
+          },
+          "furnishing": {
+            "type": "string",
+            "enum": [
+              "Semi Furnished",
+              "Fully Furnished",
+              "Non Furnished"
+            ]
+          }
+        }
+      },
       "JobListingRequest": {
         "type": "object",
         "required": [
@@ -21574,7 +22322,7 @@
               "company_name": {
                 "type": "string"
               },
-              "job_designation": {
+              "designation": {
                 "type": "string"
               },
               "job_description": {
@@ -21649,6 +22397,12 @@
               },
               "salary_range": {
                 "type": "string"
+              },
+              "open_positions": {
+                "type": "integer"
+              },
+              "job_role": {
+                "type": "string"
               }
             }
           }
@@ -21706,7 +22460,7 @@
           "company_name": {
             "type": "string"
           },
-          "job_designation": {
+          "designation": {
             "type": "string"
           },
           "job_description": {
@@ -24893,6 +25647,122 @@
                                     "publish_status": {
                                       "type": "boolean"
                                     },
+                                    "ownership_history": {
+                                      "type": "integer"
+                                    },
+                                    "category_based_details": {
+                                      "type": "array",
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "fuel_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Petrol",
+                                                  "Diesel",
+                                                  "Electric",
+                                                  "CNG",
+                                                  "Hybrid"
+                                                ]
+                                              },
+                                              "model_name": {
+                                                "type": "string"
+                                              },
+                                              "transmission": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Manual",
+                                                  "Automatic"
+                                                ]
+                                              },
+                                              "kms_driven": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "year_of_manufacture": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "bathrooms": {
+                                                "type": "integer"
+                                              },
+                                              "direction": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "East",
+                                                  "West",
+                                                  "North",
+                                                  "South",
+                                                  "North-East",
+                                                  "South-East",
+                                                  "North-West",
+                                                  "South-West"
+                                                ]
+                                              },
+                                              "floor_number": {
+                                                "type": "integer"
+                                              },
+                                              "total_floors": {
+                                                "type": "integer"
+                                              },
+                                              "carpet_area": {
+                                                "type": "number",
+                                                "format": "float"
+                                              },
+                                              "parking_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Open",
+                                                  "Covered"
+                                                ]
+                                              },
+                                              "landmark": {
+                                                "type": "string"
+                                              },
+                                              "rental_amount": {
+                                                "type": "integer"
+                                              },
+                                              "selling_amount": {
+                                                "type": "integer"
+                                              },
+                                              "deposit_amount": {
+                                                "type": "integer"
+                                              },
+                                              "furnishing": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Semi Furnished",
+                                                  "Fully Furnished",
+                                                  "Non Furnished"
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -24963,7 +25833,7 @@
                                     "company_name": {
                                       "type": "string"
                                     },
-                                    "job_designation": {
+                                    "designation": {
                                       "type": "string"
                                     },
                                     "job_description": {
@@ -25260,6 +26130,12 @@
                                     "salary_range": {
                                       "type": "string"
                                     },
+                                    "open_positions": {
+                                      "type": "integer"
+                                    },
+                                    "job_role": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -25532,6 +26408,12 @@
           "salary_range": {
             "type": "string"
           },
+          "open_positions": {
+            "type": "integer"
+          },
+          "job_role": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -25596,6 +26478,396 @@
         "properties": {
           "data": {
             "$ref": "#/components/schemas/JobListingResponseDataObject"
+          },
+          "meta": {
+            "type": "object"
+          }
+        }
+      },
+      "JobTitleRequest": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "JobTitleListResponseDataItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/JobTitle"
+          }
+        }
+      },
+      "JobTitleListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JobTitleListResponseDataItem"
+            }
+          },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "pagination": {
+                "type": "object",
+                "properties": {
+                  "page": {
+                    "type": "integer"
+                  },
+                  "pageSize": {
+                    "type": "integer",
+                    "minimum": 25
+                  },
+                  "pageCount": {
+                    "type": "integer",
+                    "maximum": 1
+                  },
+                  "total": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "JobTitle": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {
+                      "firstname": {
+                        "type": "string"
+                      },
+                      "lastname": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string",
+                        "format": "email"
+                      },
+                      "resetPasswordToken": {
+                        "type": "string"
+                      },
+                      "registrationToken": {
+                        "type": "string"
+                      },
+                      "isActive": {
+                        "type": "boolean"
+                      },
+                      "roles": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "code": {
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "type": "string"
+                                    },
+                                    "users": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "permissions": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "action": {
+                                                    "type": "string"
+                                                  },
+                                                  "actionParameters": {},
+                                                  "subject": {
+                                                    "type": "string"
+                                                  },
+                                                  "properties": {},
+                                                  "conditions": {},
+                                                  "role": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "createdBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "updatedBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "createdAt": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "updatedAt": {
+                                      "type": "string",
+                                      "format": "date-time"
+                                    },
+                                    "createdBy": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "updatedBy": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "object",
+                                          "properties": {
+                                            "id": {
+                                              "type": "number"
+                                            },
+                                            "attributes": {
+                                              "type": "object",
+                                              "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "blocked": {
+                        "type": "boolean"
+                      },
+                      "preferedLanguage": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "createdBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "updatedBy": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "updatedBy": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "attributes": {
+                    "type": "object",
+                    "properties": {}
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "JobTitleResponseDataObject": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/JobTitle"
+          }
+        }
+      },
+      "JobTitleResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/JobTitleResponseDataObject"
           },
           "meta": {
             "type": "object"
@@ -28969,6 +30241,122 @@
                                     "publish_status": {
                                       "type": "boolean"
                                     },
+                                    "ownership_history": {
+                                      "type": "integer"
+                                    },
+                                    "category_based_details": {
+                                      "type": "array",
+                                      "items": {
+                                        "anyOf": [
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "fuel_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Petrol",
+                                                  "Diesel",
+                                                  "Electric",
+                                                  "CNG",
+                                                  "Hybrid"
+                                                ]
+                                              },
+                                              "model_name": {
+                                                "type": "string"
+                                              },
+                                              "transmission": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Manual",
+                                                  "Automatic"
+                                                ]
+                                              },
+                                              "kms_driven": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "year_of_manufacture": {
+                                                "type": "string"
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "__component": {
+                                                "type": "string"
+                                              },
+                                              "bathrooms": {
+                                                "type": "integer"
+                                              },
+                                              "direction": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "East",
+                                                  "West",
+                                                  "North",
+                                                  "South",
+                                                  "North-East",
+                                                  "South-East",
+                                                  "North-West",
+                                                  "South-West"
+                                                ]
+                                              },
+                                              "floor_number": {
+                                                "type": "integer"
+                                              },
+                                              "total_floors": {
+                                                "type": "integer"
+                                              },
+                                              "carpet_area": {
+                                                "type": "number",
+                                                "format": "float"
+                                              },
+                                              "parking_type": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Open",
+                                                  "Covered"
+                                                ]
+                                              },
+                                              "landmark": {
+                                                "type": "string"
+                                              },
+                                              "rental_amount": {
+                                                "type": "integer"
+                                              },
+                                              "selling_amount": {
+                                                "type": "integer"
+                                              },
+                                              "deposit_amount": {
+                                                "type": "integer"
+                                              },
+                                              "furnishing": {
+                                                "type": "string",
+                                                "enum": [
+                                                  "Semi Furnished",
+                                                  "Fully Furnished",
+                                                  "Non Furnished"
+                                                ]
+                                              }
+                                            }
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -29039,7 +30427,7 @@
                                     "company_name": {
                                       "type": "string"
                                     },
-                                    "job_designation": {
+                                    "designation": {
                                       "type": "string"
                                     },
                                     "job_description": {
@@ -29334,6 +30722,12 @@
                                       }
                                     },
                                     "salary_range": {
+                                      "type": "string"
+                                    },
+                                    "open_positions": {
+                                      "type": "integer"
+                                    },
+                                    "job_role": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -29843,67 +31237,6 @@
           },
           "meta": {
             "type": "object"
-          }
-        }
-      },
-      "RealEstateRealEstateComponent": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "number"
-          },
-          "bathrooms": {
-            "type": "integer"
-          },
-          "direction": {
-            "type": "string",
-            "enum": [
-              "East",
-              "West",
-              "North",
-              "South",
-              "North-East",
-              "South-East",
-              "North-West",
-              "South-West"
-            ]
-          },
-          "floor_number": {
-            "type": "integer"
-          },
-          "total_floors": {
-            "type": "integer"
-          },
-          "carpet_area": {
-            "type": "number",
-            "format": "float"
-          },
-          "parking_type": {
-            "type": "string",
-            "enum": [
-              "Open",
-              "Covered"
-            ]
-          },
-          "landmark": {
-            "type": "string"
-          },
-          "rental_amount": {
-            "type": "integer"
-          },
-          "selling_amount": {
-            "type": "integer"
-          },
-          "deposit_amount": {
-            "type": "integer"
-          },
-          "furnishing": {
-            "type": "string",
-            "enum": [
-              "Semi Furnished",
-              "Fully Furnished",
-              "Non Furnished"
-            ]
           }
         }
       },
@@ -33530,6 +34863,122 @@
                                                                             "publish_status": {
                                                                               "type": "boolean"
                                                                             },
+                                                                            "ownership_history": {
+                                                                              "type": "integer"
+                                                                            },
+                                                                            "category_based_details": {
+                                                                              "type": "array",
+                                                                              "items": {
+                                                                                "anyOf": [
+                                                                                  {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "__component": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "fuel_type": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Petrol",
+                                                                                          "Diesel",
+                                                                                          "Electric",
+                                                                                          "CNG",
+                                                                                          "Hybrid"
+                                                                                        ]
+                                                                                      },
+                                                                                      "model_name": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "transmission": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Manual",
+                                                                                          "Automatic"
+                                                                                        ]
+                                                                                      },
+                                                                                      "kms_driven": {
+                                                                                        "type": "string",
+                                                                                        "pattern": "^\\d*$",
+                                                                                        "example": "123456789"
+                                                                                      },
+                                                                                      "year_of_manufacture": {
+                                                                                        "type": "string"
+                                                                                      }
+                                                                                    }
+                                                                                  },
+                                                                                  {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "__component": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "bathrooms": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "direction": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "East",
+                                                                                          "West",
+                                                                                          "North",
+                                                                                          "South",
+                                                                                          "North-East",
+                                                                                          "South-East",
+                                                                                          "North-West",
+                                                                                          "South-West"
+                                                                                        ]
+                                                                                      },
+                                                                                      "floor_number": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "total_floors": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "carpet_area": {
+                                                                                        "type": "number",
+                                                                                        "format": "float"
+                                                                                      },
+                                                                                      "parking_type": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Open",
+                                                                                          "Covered"
+                                                                                        ]
+                                                                                      },
+                                                                                      "landmark": {
+                                                                                        "type": "string"
+                                                                                      },
+                                                                                      "rental_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "selling_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "deposit_amount": {
+                                                                                        "type": "integer"
+                                                                                      },
+                                                                                      "furnishing": {
+                                                                                        "type": "string",
+                                                                                        "enum": [
+                                                                                          "Semi Furnished",
+                                                                                          "Fully Furnished",
+                                                                                          "Non Furnished"
+                                                                                        ]
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "year_of_purchase": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -33600,7 +35049,7 @@
                                                                             "company_name": {
                                                                               "type": "string"
                                                                             },
-                                                                            "job_designation": {
+                                                                            "designation": {
                                                                               "type": "string"
                                                                             },
                                                                             "job_description": {
@@ -33895,6 +35344,12 @@
                                                                               }
                                                                             },
                                                                             "salary_range": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "open_positions": {
+                                                                              "type": "integer"
+                                                                            },
+                                                                            "job_role": {
                                                                               "type": "string"
                                                                             },
                                                                             "createdAt": {
@@ -38936,6 +40391,512 @@
           }
         ],
         "operationId": "delete/job-listings/{id}"
+      }
+    },
+    "/job-titles": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTitleListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Job-title"
+        ],
+        "parameters": [
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Sort by attributes ascending (asc) or descending (desc)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pagination[withCount]",
+            "in": "query",
+            "description": "Return page/pageSize (default: true)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "pagination[page]",
+            "in": "query",
+            "description": "Page number (default: 0)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[pageSize]",
+            "in": "query",
+            "description": "Page size (default: 25)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[start]",
+            "in": "query",
+            "description": "Offset value (default: 0)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "pagination[limit]",
+            "in": "query",
+            "description": "Number of entities to return (default: 25)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "fields",
+            "in": "query",
+            "description": "Fields to return (ex: title,author)",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "populate",
+            "in": "query",
+            "description": "Relations to return",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filters",
+            "in": "query",
+            "description": "Filters to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "object",
+              "additionalProperties": true
+            },
+            "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "operationId": "get/job-titles"
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTitleResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Job-title"
+        ],
+        "parameters": [],
+        "operationId": "post/job-titles",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobTitleRequest"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/job-titles/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTitleResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Job-title"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "get/job-titles/{id}"
+      },
+      "put": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JobTitleResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Job-title"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "put/job-titles/{id}",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/JobTitleRequest"
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "tags": [
+          "Job-title"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "number"
+            }
+          }
+        ],
+        "operationId": "delete/job-titles/{id}"
       }
     },
     "/real-estates": {

@@ -48,6 +48,10 @@ export default ({ env }) => ({
                     field: 'slug',
                     references: ['name'],
                 },
+                'job-listing': {
+                    field: 'slug',
+                    references: ['company_name', 'job_role', 'id'],
+                },
             },
         },
     },

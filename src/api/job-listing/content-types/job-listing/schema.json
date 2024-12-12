@@ -15,7 +15,7 @@
     "company_name": {
       "type": "string"
     },
-    "job_designation": {
+    "designation": {
       "type": "string"
     },
     "job_description": {
@@ -56,11 +56,12 @@
       "target": "api::area.area"
     },
     "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "contact": {
       "type": "component",
@@ -78,6 +79,12 @@
       "component": "payment.payment"
     },
     "salary_range": {
+      "type": "string"
+    },
+    "open_positions": {
+      "type": "integer"
+    },
+    "job_role": {
       "type": "string"
     }
   }

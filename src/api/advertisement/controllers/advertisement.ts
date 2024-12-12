@@ -8,7 +8,7 @@ export default factories.createCoreController('api::advertisement.advertisement'
     async update(ctx) {
         try {
             const response = await super.update(ctx);
-            const authorData = await strapi.entityService.findOne('api::advertisement.advertisement', response.data.id, {
+            const itemData = await strapi.entityService.findOne('api::advertisement.advertisement', response.data.id, {
                 populate: ['author', 'payment_details', 'payment_history'],
             });
             if (process.env.APP_ENV === "Production") {
@@ -20,7 +20,7 @@ export default factories.createCoreController('api::advertisement.advertisement'
                         subject: 'New Advertisement Published - Chandapura.com',
                         html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::business-listing.business-listing/${response.data.id}`,
                     });
-                    let emailToAddressUser = authorData.author.email;
+                    let emailToAddressUser = itemData.author.email;
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Advertisement Uploaded - Chandapura.com',
@@ -29,15 +29,15 @@ export default factories.createCoreController('api::advertisement.advertisement'
                 }
                 if (response.data.attributes &&
                     response.data.attributes.step_number === 2 &&
-                    response.data.attributes.payment_history.length > 0 &&
-                    response.data.attributes.payment_details.expiry_date > new Date().toISOString()) {
+                    itemData.payment_history.length > 0 &&
+                    itemData.payment_details.expiry_date > new Date().toISOString()) {
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
                         subject: 'Images Updated for Advertisement - Chandapura.com',
                         html: `<p>Images Updated for Advertisement - <b>${response.data.attributes.name}</b> and awaiting approval. Please review the item in below link for approval</p>
                         <a href='${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::advertisement.advertisement/${response.data.id}'>Link to admin portal</a> `,
                     });
-                    let emailToAddressUser = authorData.author.email;
+                    let emailToAddressUser = itemData.author.email;
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'Images Updated for Advertisement - Chandapura.com',
