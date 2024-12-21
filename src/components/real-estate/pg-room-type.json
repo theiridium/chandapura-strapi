@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_real_estate_pg_room_types",
+  "info": {
+    "displayName": "PG Occupancy Type",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "single_room": {
+      "type": "decimal"
+    },
+    "twin_sharing": {
+      "type": "decimal"
+    },
+    "triple_sharing": {
+      "type": "decimal"
+    },
+    "four_sharing": {
+      "type": "decimal"
+    }
+  }
+}

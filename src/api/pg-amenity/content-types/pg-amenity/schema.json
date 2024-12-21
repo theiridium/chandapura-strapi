@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pg_amenities",
+  "info": {
+    "singularName": "pg-amenity",
+    "pluralName": "pg-amenities",
+    "displayName": "PG Amenity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

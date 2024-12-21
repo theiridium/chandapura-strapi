@@ -880,6 +880,11 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::job-listing.job-listing'
     >;
+    property_listings: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::property-listing.property-listing'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
@@ -1231,9 +1236,7 @@ export interface ApiClassifiedListingClassifiedListing
     step_number: Attribute.Integer;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     ownership_history: Attribute.Integer;
-    category_based_details: Attribute.DynamicZone<
-      ['classified.vehicle-details', 'real-estate.real-estate']
-    >;
+    details_by_category: Attribute.DynamicZone<['classified.vehicle-details']>;
     year_of_purchase: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1340,6 +1343,106 @@ export interface ApiJobTitleJobTitle extends Schema.CollectionType {
   };
 }
 
+export interface ApiPgAmenityPgAmenity extends Schema.CollectionType {
+  collectionName: 'pg_amenities';
+  info: {
+    singularName: 'pg-amenity';
+    pluralName: 'pg-amenities';
+    displayName: 'PG Amenity';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::pg-amenity.pg-amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::pg-amenity.pg-amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPropertyListingPropertyListing
+  extends Schema.CollectionType {
+  collectionName: 'property_listings';
+  info: {
+    singularName: 'property-listing';
+    pluralName: 'property-listings';
+    displayName: 'Property Listing';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
+    author: Attribute.Relation<
+      'api::property-listing.property-listing',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    description: Attribute.Text;
+    step_number: Attribute.Integer;
+    location: Attribute.JSON &
+      Attribute.CustomField<'plugin::google-maps.location-picker'>;
+    area: Attribute.Relation<
+      'api::property-listing.property-listing',
+      'oneToOne',
+      'api::area.area'
+    >;
+    full_address: Attribute.Text;
+    listing_type: Attribute.Enumeration<['Rent', 'Sale', 'PG']>;
+    property_type: Attribute.Enumeration<
+      ['Apartment', 'Individual House', 'Villa', 'PG', 'Plot']
+    >;
+    featured_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    gallery_images: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    details_by_listingtype: Attribute.DynamicZone<
+      [
+        'real-estate.rent-property-details',
+        'real-estate.sale-property-details',
+        'real-estate.pg-details',
+        'real-estate.plot-details'
+      ]
+    >;
+    contact: Attribute.Component<'contact.contact-details'>;
+    payment_details: Attribute.Component<'payment.payment'>;
+    payment_history: Attribute.Component<'payment.payment', true>;
+    slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::property-listing.property-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::property-listing.property-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRealEstateRealEstate extends Schema.CollectionType {
   collectionName: 'real_estates';
   info: {
@@ -1376,9 +1479,9 @@ export interface ApiRealEstateRealEstate extends Schema.CollectionType {
     featured_image: Attribute.Media<'images'>;
     gallery_images: Attribute.Media<'images', true>;
     property_type: Attribute.Enumeration<
-      ['Apartment', 'Individual', 'Villa', 'Plot']
+      ['Apartment', 'Individual', 'Villa', 'PG (Paying Guest)', 'Plot']
     >;
-    listing_type: Attribute.Enumeration<['Rent', 'Sale']>;
+    listing_type: Attribute.Enumeration<['Rent', 'Sale', 'PG']>;
     room_type: Attribute.String;
     area: Attribute.Relation<
       'api::real-estate.real-estate',
@@ -1542,6 +1645,8 @@ declare module '@strapi/types' {
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::job-listing.job-listing': ApiJobListingJobListing;
       'api::job-title.job-title': ApiJobTitleJobTitle;
+      'api::pg-amenity.pg-amenity': ApiPgAmenityPgAmenity;
+      'api::property-listing.property-listing': ApiPropertyListingPropertyListing;
       'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;

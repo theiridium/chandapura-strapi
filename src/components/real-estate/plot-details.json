@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_real_estate_plot_details",
+  "info": {
+    "displayName": "Plot Details"
+  },
+  "options": {},
+  "attributes": {
+    "dimension": {
+      "type": "decimal"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "East",
+        "West",
+        "North",
+        "South",
+        "North-East",
+        "South-East",
+        "North-West",
+        "South-West"
+      ]
+    }
+  }
+}

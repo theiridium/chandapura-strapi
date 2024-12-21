@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_real_estate_sale_property_details",
+  "info": {
+    "displayName": "Sale Property Details",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bathrooms": {
+      "type": "integer"
+    },
+    "direction": {
+      "type": "enumeration",
+      "enum": [
+        "East",
+        "West",
+        "North",
+        "South",
+        "North-East",
+        "South-East",
+        "North-West",
+        "South-West"
+      ]
+    },
+    "floor_number": {
+      "type": "integer"
+    },
+    "total_floors": {
+      "type": "integer"
+    },
+    "carpet_area": {
+      "type": "decimal"
+    },
+    "parking_type": {
+      "type": "enumeration",
+      "enum": [
+        "Open",
+        "Covered"
+      ]
+    },
+    "furnishing": {
+      "type": "enumeration",
+      "enum": [
+        "Semi Furnished",
+        "Fully Furnished",
+        "Non Furnished"
+      ]
+    },
+    "selling_amount": {
+      "type": "decimal"
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::real-estate-amenity.real-estate-amenity"
+    },
+    "room_type": {
+      "type": "string"
+    }
+  }
+}

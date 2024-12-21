@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "property_listings",
+  "info": {
+    "singularName": "property-listing",
+    "pluralName": "property-listings",
+    "displayName": "Property Listing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "publish_status": {
+      "type": "boolean",
+      "default": false,
+      "required": false
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "property_listings"
+    },
+    "description": {
+      "type": "text"
+    },
+    "step_number": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "customField",
+      "customField": "plugin::google-maps.location-picker"
+    },
+    "area": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::area.area"
+    },
+    "full_address": {
+      "type": "text"
+    },
+    "listing_type": {
+      "type": "enumeration",
+      "enum": [
+        "Rent",
+        "Sale",
+        "PG"
+      ]
+    },
+    "property_type": {
+      "type": "enumeration",
+      "enum": [
+        "Apartment",
+        "Individual House",
+        "Villa",
+        "PG",
+        "Plot"
+      ]
+    },
+    "featured_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery_images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "details_by_listingtype": {
+      "type": "dynamiczone",
+      "components": [
+        "real-estate.rent-property-details",
+        "real-estate.sale-property-details",
+        "real-estate.pg-details",
+        "real-estate.plot-details"
+      ]
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.contact-details"
+    },
+    "payment_details": {
+      "type": "component",
+      "repeatable": false,
+      "component": "payment.payment"
+    },
+    "payment_history": {
+      "type": "component",
+      "repeatable": true,
+      "component": "payment.payment"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
