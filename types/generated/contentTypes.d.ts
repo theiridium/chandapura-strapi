@@ -1552,8 +1552,9 @@ export interface ApiRealEstatePricingPlanRealEstatePricingPlan
     draftAndPublish: true;
   };
   attributes: {
-    rent: Attribute.Component<'real-estate.pricing-plan', true>;
-    sale: Attribute.Component<'real-estate.pricing-plan', true>;
+    Rent: Attribute.Component<'real-estate.pricing-plan', true>;
+    Sale: Attribute.Component<'real-estate.pricing-plan', true>;
+    PG: Attribute.Component<'real-estate.pricing-plan', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

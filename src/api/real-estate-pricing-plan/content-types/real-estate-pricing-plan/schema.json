@@ -12,12 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "rent": {
+    "Rent": {
       "type": "component",
       "repeatable": true,
       "component": "real-estate.pricing-plan"
     },
-    "sale": {
+    "Sale": {
+      "type": "component",
+      "repeatable": true,
+      "component": "real-estate.pricing-plan"
+    },
+    "PG": {
       "type": "component",
       "repeatable": true,
       "component": "real-estate.pricing-plan"

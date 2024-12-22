@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-21T23:50:32.561Z"
+    "x-generation-date": "2024-12-22T20:52:51.029Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -42653,13 +42653,19 @@
           "data": {
             "type": "object",
             "properties": {
-              "rent": {
+              "Rent": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
                 }
               },
-              "sale": {
+              "Sale": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
+                }
+              },
+              "PG": {
                 "type": "array",
                 "items": {
                   "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
@@ -42718,13 +42724,19 @@
       "RealEstatePricingPlan": {
         "type": "object",
         "properties": {
-          "rent": {
+          "Rent": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
             }
           },
-          "sale": {
+          "Sale": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
+            }
+          },
+          "PG": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/RealEstatePricingPlanComponent"
