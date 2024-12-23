@@ -15,6 +15,7 @@
     "@strapi/plugin-documentation": "^4.16.2",
     "@strapi/plugin-i18n": "4.25.13",
     "@strapi/plugin-users-permissions": "4.25.13",
+    "@strapi/provider-email-sendgrid": "^5.6.0",
     "@strapi/provider-email-sendmail": "^4.25.6",
     "@strapi/provider-upload-cloudinary": "^4.21.0",
     "@strapi/strapi": "4.25.13",

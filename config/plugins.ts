@@ -13,17 +13,14 @@ export default ({ env }) => ({
     },
     email: {
         config: {
-            provider: 'sendmail',
+            provider: 'sendgrid',
             providerOptions: {
-                dkim: {
-                    privateKey: env('DKIM_PRIVATE_KEY'),
-                    keySelector: 'iridium', // the same as the one set in DNS txt record, use online dns lookup tools to be sure that is retreivable
-                },
-                secure: true,
+                apiKey: env('SENDGRID_API_KEY'),
             },
             settings: {
-                defaultFrom: 'no-reply@chandapura.com',
-                defaultReplyTo: 'priyankastro7@gmail.com',
+                defaultFrom: env('SENDGRID_DEFAULT_FROM'),
+                defaultReplyTo: env('SENDGRID_DEFAULT_TO'),
+                defaultName: "Chandapura Notifications"
             },
         },
     },
