@@ -1236,8 +1236,8 @@ export interface ApiClassifiedListingClassifiedListing
     step_number: Attribute.Integer;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     ownership_history: Attribute.Integer;
-    details_by_category: Attribute.DynamicZone<['classified.vehicle-details']>;
     year_of_purchase: Attribute.String;
+    details_by_category: Attribute.DynamicZone<['classified.vehicle-details']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

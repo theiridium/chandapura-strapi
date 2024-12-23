@@ -48,19 +48,7 @@ export default ({ env }) => ({
         skipUndefinedReferences: true,
         config: {
             contentTypes: {
-                'real-estate': {
-                    field: 'slug',
-                    references: ['name', 'property_type', 'room_type', 'listing_type'],
-                },
-                // 'property-listing': {
-                //     field: 'slug',
-                //     references: ['name'],
-                // },
                 'business-listing': {
-                    field: 'slug',
-                    references: ['name'],
-                },
-                'classified-listing': {
                     field: 'slug',
                     references: ['name'],
                 },

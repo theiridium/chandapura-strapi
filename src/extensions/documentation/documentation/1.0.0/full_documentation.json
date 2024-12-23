@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-22T20:52:51.029Z"
+    "x-generation-date": "2024-12-23T07:44:53.594Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3375,6 +3375,9 @@
                                     "ownership_history": {
                                       "type": "integer"
                                     },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "details_by_category": {
                                       "type": "array",
                                       "items": {
@@ -3420,9 +3423,6 @@
                                           }
                                         ]
                                       }
-                                    },
-                                    "year_of_purchase": {
-                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -8857,6 +8857,9 @@
                                                                           "ownership_history": {
                                                                             "type": "integer"
                                                                           },
+                                                                          "year_of_purchase": {
+                                                                            "type": "string"
+                                                                          },
                                                                           "details_by_category": {
                                                                             "type": "array",
                                                                             "items": {
@@ -8902,9 +8905,6 @@
                                                                                 }
                                                                               ]
                                                                             }
-                                                                          },
-                                                                          "year_of_purchase": {
-                                                                            "type": "string"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -14321,6 +14321,9 @@
                                                                             "ownership_history": {
                                                                               "type": "integer"
                                                                             },
+                                                                            "year_of_purchase": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "details_by_category": {
                                                                               "type": "array",
                                                                               "items": {
@@ -14366,9 +14369,6 @@
                                                                                   }
                                                                                 ]
                                                                               }
-                                                                            },
-                                                                            "year_of_purchase": {
-                                                                              "type": "string"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -20689,6 +20689,9 @@
                         "ownership_history": {
                           "type": "integer"
                         },
+                        "year_of_purchase": {
+                          "type": "string"
+                        },
                         "details_by_category": {
                           "type": "array",
                           "items": {
@@ -20734,9 +20737,6 @@
                               }
                             ]
                           }
-                        },
-                        "year_of_purchase": {
-                          "type": "string"
                         },
                         "createdAt": {
                           "type": "string",
@@ -20965,6 +20965,9 @@
               "ownership_history": {
                 "type": "integer"
               },
+              "year_of_purchase": {
+                "type": "string"
+              },
               "details_by_category": {
                 "type": "array",
                 "items": {
@@ -20974,9 +20977,6 @@
                     }
                   ]
                 }
-              },
-              "year_of_purchase": {
-                "type": "string"
               }
             }
           }
@@ -24201,6 +24201,9 @@
                                     "ownership_history": {
                                       "type": "integer"
                                     },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "details_by_category": {
                                       "type": "array",
                                       "items": {
@@ -24246,9 +24249,6 @@
                                           }
                                         ]
                                       }
-                                    },
-                                    "year_of_purchase": {
-                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -25881,6 +25881,9 @@
           "ownership_history": {
             "type": "integer"
           },
+          "year_of_purchase": {
+            "type": "string"
+          },
           "details_by_category": {
             "type": "array",
             "items": {
@@ -25890,9 +25893,6 @@
                 }
               ]
             }
-          },
-          "year_of_purchase": {
-            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -29345,6 +29345,9 @@
                                     "ownership_history": {
                                       "type": "integer"
                                     },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "details_by_category": {
                                       "type": "array",
                                       "items": {
@@ -29390,9 +29393,6 @@
                                           }
                                         ]
                                       }
-                                    },
-                                    "year_of_purchase": {
-                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -35056,6 +35056,9 @@
                                     "ownership_history": {
                                       "type": "integer"
                                     },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "details_by_category": {
                                       "type": "array",
                                       "items": {
@@ -35101,9 +35104,6 @@
                                           }
                                         ]
                                       }
-                                    },
-                                    "year_of_purchase": {
-                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -40445,6 +40445,9 @@
                                     "ownership_history": {
                                       "type": "integer"
                                     },
+                                    "year_of_purchase": {
+                                      "type": "string"
+                                    },
                                     "details_by_category": {
                                       "type": "array",
                                       "items": {
@@ -40490,9 +40493,6 @@
                                           }
                                         ]
                                       }
-                                    },
-                                    "year_of_purchase": {
-                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -45894,6 +45894,9 @@
                                                                             "ownership_history": {
                                                                               "type": "integer"
                                                                             },
+                                                                            "year_of_purchase": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "details_by_category": {
                                                                               "type": "array",
                                                                               "items": {
@@ -45939,9 +45942,6 @@
                                                                                   }
                                                                                 ]
                                                                               }
-                                                                            },
-                                                                            "year_of_purchase": {
-                                                                              "type": "string"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
