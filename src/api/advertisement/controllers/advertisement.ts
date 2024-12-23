@@ -11,7 +11,7 @@ export default factories.createCoreController('api::advertisement.advertisement'
             const itemData = await strapi.entityService.findOne('api::advertisement.advertisement', response.data.id, {
                 populate: ['author', 'payment_details', 'payment_history'],
             });
-            if (true) {
+            if (process.env.APP_ENV === "Production") {
                 const adminUsers = await strapi.db.query('admin::user').findMany();
                 let emailToAddressListAdmin = adminUsers.map(x => x.email).join(',');
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
