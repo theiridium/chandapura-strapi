@@ -865,11 +865,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'oneToMany',
       'api::advertisement.advertisement'
     >;
-    real_estates: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'oneToMany',
-      'api::real-estate.real-estate'
-    >;
     classified_listings: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
@@ -1443,70 +1438,6 @@ export interface ApiPropertyListingPropertyListing
   };
 }
 
-export interface ApiRealEstateRealEstate extends Schema.CollectionType {
-  collectionName: 'real_estates';
-  info: {
-    singularName: 'real-estate';
-    pluralName: 'real-estates';
-    displayName: 'Real Estate';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String;
-    slug: Attribute.String;
-    publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
-    property_details: Attribute.Component<'real-estate.real-estate'>;
-    amenities: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'oneToMany',
-      'api::real-estate-amenity.real-estate-amenity'
-    >;
-    author: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'manyToOne',
-      'plugin::users-permissions.user'
-    >;
-    description: Attribute.Text;
-    step_number: Attribute.Integer;
-    location: Attribute.JSON &
-      Attribute.CustomField<'plugin::google-maps.location-picker'>;
-    payment_details: Attribute.Component<'payment.payment'>;
-    payment_history: Attribute.Component<'payment.payment', true>;
-    contact: Attribute.Component<'contact.contact-details'>;
-    featured_image: Attribute.Media<'images'>;
-    gallery_images: Attribute.Media<'images', true>;
-    property_type: Attribute.Enumeration<
-      ['Apartment', 'Individual', 'Villa', 'PG (Paying Guest)', 'Plot']
-    >;
-    listing_type: Attribute.Enumeration<['Rent', 'Sale', 'PG']>;
-    room_type: Attribute.String;
-    area: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'oneToOne',
-      'api::area.area'
-    >;
-    full_address: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::real-estate.real-estate',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiRealEstateAmenityRealEstateAmenity
   extends Schema.CollectionType {
   collectionName: 'real_estate_amenities';
@@ -1648,7 +1579,6 @@ declare module '@strapi/types' {
       'api::job-title.job-title': ApiJobTitleJobTitle;
       'api::pg-amenity.pg-amenity': ApiPgAmenityPgAmenity;
       'api::property-listing.property-listing': ApiPropertyListingPropertyListing;
-      'api::real-estate.real-estate': ApiRealEstateRealEstate;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;
       'api::sub-category.sub-category': ApiSubCategorySubCategory;
