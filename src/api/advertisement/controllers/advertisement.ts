@@ -19,7 +19,8 @@ export default factories.createCoreController('api::advertisement.advertisement'
                     const yo = await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
                         subject: 'New Advertisement Published - Chandapura.com',
-                        html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::business-listing.business-listing/${response.data.id}`,
+                        // html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::business-listing.business-listing/${response.data.id}`,
+                        html: `<p>A new Advertisement</p>`,
                     });
                     console.log(yo)
                     // let emailToAddressUser = itemData.author.email;
