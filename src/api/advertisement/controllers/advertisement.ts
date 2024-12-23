@@ -16,11 +16,12 @@ export default factories.createCoreController('api::advertisement.advertisement'
                 const adminUsers = await strapi.db.query('admin::user').findMany();
                 let emailToAddressListAdmin = adminUsers.map(x => x.email).join(',');
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
-                    await strapi.plugins['email'].services.email.send({
+                    const yo = await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
                         subject: 'New Advertisement Published - Chandapura.com',
                         html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::business-listing.business-listing/${response.data.id}`,
                     });
+                    console.log(yo)
                     // let emailToAddressUser = itemData.author.email;
                     // await strapi.plugins['email'].services.email.send({
                     //     to: emailToAddressUser,

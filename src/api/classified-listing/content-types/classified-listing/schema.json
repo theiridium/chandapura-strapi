@@ -82,15 +82,14 @@
     "ownership_history": {
       "type": "integer"
     },
-    "category_based_details": {
-      "type": "dynamiczone",
-      "components": [
-        "classified.vehicle-details",
-        "real-estate.real-estate"
-      ]
-    },
     "year_of_purchase": {
       "type": "string"
+    },
+    "details_by_category": {
+      "type": "dynamiczone",
+      "components": [
+        "classified.vehicle-details"
+      ]
     }
   }
 }
