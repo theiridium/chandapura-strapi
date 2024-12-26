@@ -1,7 +1,8 @@
 {
   "collectionName": "components_real_estate_plot_details",
   "info": {
-    "displayName": "Plot Details"
+    "displayName": "Plot Details",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,6 +21,14 @@
         "North-West",
         "South-West"
       ]
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::plot-amenity.plot-amenity"
+    },
+    "selling_amount": {
+      "type": "integer"
     }
   }
 }

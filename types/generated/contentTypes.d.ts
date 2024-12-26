@@ -1173,6 +1173,7 @@ export interface ApiClassifiedCategoryClassifiedCategory
       'api::classified-listing.classified-listing'
     >;
     slug: Attribute.UID<'api::classified-category.classified-category', 'name'>;
+    sub_category: Attribute.Enumeration<['classified.vehicle-details']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1362,6 +1363,36 @@ export interface ApiPgAmenityPgAmenity extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::pg-amenity.pg-amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPlotAmenityPlotAmenity extends Schema.CollectionType {
+  collectionName: 'plot_amenities';
+  info: {
+    singularName: 'plot-amenity';
+    pluralName: 'plot-amenities';
+    displayName: 'Plot Amenity';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::plot-amenity.plot-amenity',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::plot-amenity.plot-amenity',
       'oneToOne',
       'admin::user'
     > &
@@ -1578,6 +1609,7 @@ declare module '@strapi/types' {
       'api::job-listing.job-listing': ApiJobListingJobListing;
       'api::job-title.job-title': ApiJobTitleJobTitle;
       'api::pg-amenity.pg-amenity': ApiPgAmenityPgAmenity;
+      'api::plot-amenity.plot-amenity': ApiPlotAmenityPlotAmenity;
       'api::property-listing.property-listing': ApiPropertyListingPropertyListing;
       'api::real-estate-amenity.real-estate-amenity': ApiRealEstateAmenityRealEstateAmenity;
       'api::real-estate-pricing-plan.real-estate-pricing-plan': ApiRealEstatePricingPlanRealEstatePricingPlan;

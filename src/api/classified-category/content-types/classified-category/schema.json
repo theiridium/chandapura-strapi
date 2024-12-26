@@ -24,6 +24,12 @@
     "slug": {
       "type": "uid",
       "targetField": "name"
+    },
+    "sub_category": {
+      "type": "enumeration",
+      "enum": [
+        "classified.vehicle-details"
+      ]
     }
   }
 }

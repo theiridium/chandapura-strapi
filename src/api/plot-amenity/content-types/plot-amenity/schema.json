@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plot_amenities",
+  "info": {
+    "singularName": "plot-amenity",
+    "pluralName": "plot-amenities",
+    "displayName": "Plot Amenity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
