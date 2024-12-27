@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-26T23:58:32.783Z"
+    "x-generation-date": "2024-12-27T00:07:14.978Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3295,7 +3295,7 @@
                                     "open_positions": {
                                       "type": "integer"
                                     },
-                                    "job_role": {
+                                    "job_title": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -8401,7 +8401,7 @@
                                                                           "open_positions": {
                                                                             "type": "integer"
                                                                           },
-                                                                          "job_role": {
+                                                                          "job_title": {
                                                                             "type": "string"
                                                                           },
                                                                           "createdAt": {
@@ -13489,7 +13489,7 @@
                                                                             "open_positions": {
                                                                               "type": "integer"
                                                                             },
-                                                                            "job_role": {
+                                                                            "job_title": {
                                                                               "type": "string"
                                                                             },
                                                                             "createdAt": {
@@ -17517,7 +17517,7 @@
                                                   "open_positions": {
                                                     "type": "integer"
                                                   },
-                                                  "job_role": {
+                                                  "job_title": {
                                                     "type": "string"
                                                   },
                                                   "createdAt": {
@@ -22779,7 +22779,7 @@
                                     "open_positions": {
                                       "type": "integer"
                                     },
-                                    "job_role": {
+                                    "job_title": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -24378,7 +24378,7 @@
               "open_positions": {
                 "type": "integer"
               },
-              "job_role": {
+              "job_title": {
                 "type": "string"
               }
             }
@@ -27549,7 +27549,7 @@
                                     "open_positions": {
                                       "type": "integer"
                                     },
-                                    "job_role": {
+                                    "job_title": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -28764,7 +28764,7 @@
           "open_positions": {
             "type": "integer"
           },
-          "job_role": {
+          "job_title": {
             "type": "string"
           },
           "createdAt": {
@@ -33274,7 +33274,7 @@
                                     "open_positions": {
                                       "type": "integer"
                                     },
-                                    "job_role": {
+                                    "job_title": {
                                       "type": "string"
                                     },
                                     "createdAt": {
@@ -38576,7 +38576,7 @@
                                                                             "open_positions": {
                                                                               "type": "integer"
                                                                             },
-                                                                            "job_role": {
+                                                                            "job_title": {
                                                                               "type": "string"
                                                                             },
                                                                             "createdAt": {

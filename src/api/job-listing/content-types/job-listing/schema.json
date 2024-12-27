@@ -84,7 +84,7 @@
     "open_positions": {
       "type": "integer"
     },
-    "job_role": {
+    "job_title": {
       "type": "string"
     }
   }

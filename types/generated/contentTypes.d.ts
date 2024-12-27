@@ -1291,7 +1291,7 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     payment_history: Attribute.Component<'payment.payment', true>;
     salary_range: Attribute.String;
     open_positions: Attribute.Integer;
-    job_role: Attribute.String;
+    job_title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
