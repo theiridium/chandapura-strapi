@@ -1174,6 +1174,7 @@ export interface ApiClassifiedCategoryClassifiedCategory
     >;
     slug: Attribute.UID<'api::classified-category.classified-category', 'name'>;
     sub_category: Attribute.Enumeration<['classified.vehicle-details']>;
+    image: Attribute.Media<'images'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
