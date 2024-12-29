@@ -1265,11 +1265,10 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    company_name: Attribute.String;
+    name: Attribute.String;
     designation: Attribute.String;
     job_description: Attribute.Text;
-    educational_qualification: Attribute.String;
-    employment_type: Attribute.Enumeration<
+    job_type: Attribute.Enumeration<
       ['Full-Time', 'Part-Time', 'Contract-Based', 'Freelance', 'Internship']
     >;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
@@ -1285,13 +1284,44 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       'oneToOne',
       'api::area.area'
     >;
-    featured_image: Attribute.Media<'images'>;
+    logo_image: Attribute.Media<'images'>;
     contact: Attribute.Component<'contact.contact-details'>;
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
-    salary_range: Attribute.String;
     open_positions: Attribute.Integer;
     job_title: Attribute.String;
+    educational_qualification: Attribute.Enumeration<
+      [
+        'Below 10th',
+        'SSC/10th',
+        'PUC/12th',
+        'Diploma',
+        'Graduate',
+        'Post Graduate'
+      ]
+    >;
+    job_location: Attribute.Enumeration<
+      [
+        'Work from office (WFO)',
+        'Work from home (WFH)',
+        'Hybrid (WFO + WFH)',
+        'Field Job'
+      ]
+    >;
+    gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
+    job_experience: Attribute.Enumeration<['Fresher', 'Experienced', 'Any']>;
+    interview_mode: Attribute.Enumeration<['In-Person', 'Telephonic / Online']>;
+    year_of_experience: Attribute.String;
+    job_shift: Attribute.Enumeration<
+      ['General', 'Morning', 'Afternoon', 'Night', 'Rotational']
+    >;
+    salary_range_min: Attribute.BigInteger;
+    salary_range_max: Attribute.BigInteger;
+    preferred_languages: Attribute.Relation<
+      'api::job-listing.job-listing',
+      'oneToMany',
+      'api::language.language'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1310,12 +1340,12 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
   };
 }
 
-export interface ApiJobTitleJobTitle extends Schema.CollectionType {
-  collectionName: 'job_titles';
+export interface ApiLanguageLanguage extends Schema.CollectionType {
+  collectionName: 'languages';
   info: {
-    singularName: 'job-title';
-    pluralName: 'job-titles';
-    displayName: 'Job Title';
+    singularName: 'language';
+    pluralName: 'languages';
+    displayName: 'Language';
   };
   options: {
     draftAndPublish: true;
@@ -1326,13 +1356,13 @@ export interface ApiJobTitleJobTitle extends Schema.CollectionType {
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::job-title.job-title',
+      'api::language.language',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::job-title.job-title',
+      'api::language.language',
       'oneToOne',
       'admin::user'
     > &
@@ -1608,7 +1638,7 @@ declare module '@strapi/types' {
       'api::classified-category.classified-category': ApiClassifiedCategoryClassifiedCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::job-listing.job-listing': ApiJobListingJobListing;
-      'api::job-title.job-title': ApiJobTitleJobTitle;
+      'api::language.language': ApiLanguageLanguage;
       'api::pg-amenity.pg-amenity': ApiPgAmenityPgAmenity;
       'api::plot-amenity.plot-amenity': ApiPlotAmenityPlotAmenity;
       'api::property-listing.property-listing': ApiPropertyListingPropertyListing;

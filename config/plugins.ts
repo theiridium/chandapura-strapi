@@ -9,6 +9,11 @@ export default ({ env }) => ({
                     filterableAttributes: ["publish_status", "payment_details", "listing_type"]
                 },
             },
+            'job-listing': {
+                settings: {
+                    filterableAttributes: ["publish_status"]
+                },
+            },
         }
     },
     email: {

@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "company_name": {
+    "name": {
       "type": "string"
     },
     "designation": {
@@ -21,10 +21,7 @@
     "job_description": {
       "type": "text"
     },
-    "educational_qualification": {
-      "type": "string"
-    },
-    "employment_type": {
+    "job_type": {
       "type": "enumeration",
       "enum": [
         "Full-Time",
@@ -55,7 +52,7 @@
       "relation": "oneToOne",
       "target": "api::area.area"
     },
-    "featured_image": {
+    "logo_image": {
       "type": "media",
       "multiple": false,
       "required": false,
@@ -78,14 +75,78 @@
       "repeatable": true,
       "component": "payment.payment"
     },
-    "salary_range": {
-      "type": "string"
-    },
     "open_positions": {
       "type": "integer"
     },
     "job_title": {
       "type": "string"
+    },
+    "educational_qualification": {
+      "type": "enumeration",
+      "enum": [
+        "Below 10th",
+        "SSC/10th",
+        "PUC/12th",
+        "Diploma",
+        "Graduate",
+        "Post Graduate"
+      ]
+    },
+    "job_location": {
+      "type": "enumeration",
+      "enum": [
+        "Work from office (WFO)",
+        "Work from home (WFH)",
+        "Hybrid (WFO + WFH)",
+        "Field Job"
+      ]
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male only",
+        "Female only",
+        "Any gender"
+      ]
+    },
+    "job_experience": {
+      "type": "enumeration",
+      "enum": [
+        "Fresher",
+        "Experienced",
+        "Any"
+      ]
+    },
+    "interview_mode": {
+      "type": "enumeration",
+      "enum": [
+        "In-Person",
+        "Telephonic / Online"
+      ]
+    },
+    "year_of_experience": {
+      "type": "string"
+    },
+    "job_shift": {
+      "type": "enumeration",
+      "enum": [
+        "General",
+        "Morning",
+        "Afternoon",
+        "Night",
+        "Rotational"
+      ]
+    },
+    "salary_range_min": {
+      "type": "biginteger"
+    },
+    "salary_range_max": {
+      "type": "biginteger"
+    },
+    "preferred_languages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::language.language"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-27T00:07:14.978Z"
+    "x-generation-date": "2024-12-29T00:37:05.469Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2992,7 +2992,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "company_name": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "designation": {
@@ -3001,10 +3001,7 @@
                                     "job_description": {
                                       "type": "string"
                                     },
-                                    "educational_qualification": {
-                                      "type": "string"
-                                    },
-                                    "employment_type": {
+                                    "job_type": {
                                       "type": "string",
                                       "enum": [
                                         "Full-Time",
@@ -3057,7 +3054,7 @@
                                         }
                                       }
                                     },
-                                    "featured_image": {
+                                    "logo_image": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -3289,14 +3286,147 @@
                                         }
                                       }
                                     },
-                                    "salary_range": {
-                                      "type": "string"
-                                    },
                                     "open_positions": {
                                       "type": "integer"
                                     },
                                     "job_title": {
                                       "type": "string"
+                                    },
+                                    "educational_qualification": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Below 10th",
+                                        "SSC/10th",
+                                        "PUC/12th",
+                                        "Diploma",
+                                        "Graduate",
+                                        "Post Graduate"
+                                      ]
+                                    },
+                                    "job_location": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Work from office (WFO)",
+                                        "Work from home (WFH)",
+                                        "Hybrid (WFO + WFH)",
+                                        "Field Job"
+                                      ]
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "job_experience": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Fresher",
+                                        "Experienced",
+                                        "Any"
+                                      ]
+                                    },
+                                    "interview_mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "In-Person",
+                                        "Telephonic / Online"
+                                      ]
+                                    },
+                                    "year_of_experience": {
+                                      "type": "string"
+                                    },
+                                    "job_shift": {
+                                      "type": "string",
+                                      "enum": [
+                                        "General",
+                                        "Morning",
+                                        "Afternoon",
+                                        "Night",
+                                        "Rotational"
+                                      ]
+                                    },
+                                    "salary_range_min": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "salary_range_max": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "preferred_languages": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "name": {
+                                                    "type": "string"
+                                                  },
+                                                  "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "publishedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "createdBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "updatedBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -8098,7 +8228,7 @@
                                                                       "attributes": {
                                                                         "type": "object",
                                                                         "properties": {
-                                                                          "company_name": {
+                                                                          "name": {
                                                                             "type": "string"
                                                                           },
                                                                           "designation": {
@@ -8107,10 +8237,7 @@
                                                                           "job_description": {
                                                                             "type": "string"
                                                                           },
-                                                                          "educational_qualification": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "employment_type": {
+                                                                          "job_type": {
                                                                             "type": "string",
                                                                             "enum": [
                                                                               "Full-Time",
@@ -8163,7 +8290,7 @@
                                                                               }
                                                                             }
                                                                           },
-                                                                          "featured_image": {
+                                                                          "logo_image": {
                                                                             "type": "object",
                                                                             "properties": {
                                                                               "data": {
@@ -8395,14 +8522,147 @@
                                                                               }
                                                                             }
                                                                           },
-                                                                          "salary_range": {
-                                                                            "type": "string"
-                                                                          },
                                                                           "open_positions": {
                                                                             "type": "integer"
                                                                           },
                                                                           "job_title": {
                                                                             "type": "string"
+                                                                          },
+                                                                          "educational_qualification": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "Below 10th",
+                                                                              "SSC/10th",
+                                                                              "PUC/12th",
+                                                                              "Diploma",
+                                                                              "Graduate",
+                                                                              "Post Graduate"
+                                                                            ]
+                                                                          },
+                                                                          "job_location": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "Work from office (WFO)",
+                                                                              "Work from home (WFH)",
+                                                                              "Hybrid (WFO + WFH)",
+                                                                              "Field Job"
+                                                                            ]
+                                                                          },
+                                                                          "gender": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "Male only",
+                                                                              "Female only",
+                                                                              "Any gender"
+                                                                            ]
+                                                                          },
+                                                                          "job_experience": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "Fresher",
+                                                                              "Experienced",
+                                                                              "Any"
+                                                                            ]
+                                                                          },
+                                                                          "interview_mode": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "In-Person",
+                                                                              "Telephonic / Online"
+                                                                            ]
+                                                                          },
+                                                                          "year_of_experience": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "job_shift": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "General",
+                                                                              "Morning",
+                                                                              "Afternoon",
+                                                                              "Night",
+                                                                              "Rotational"
+                                                                            ]
+                                                                          },
+                                                                          "salary_range_min": {
+                                                                            "type": "string",
+                                                                            "pattern": "^\\d*$",
+                                                                            "example": "123456789"
+                                                                          },
+                                                                          "salary_range_max": {
+                                                                            "type": "string",
+                                                                            "pattern": "^\\d*$",
+                                                                            "example": "123456789"
+                                                                          },
+                                                                          "preferred_languages": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "data": {
+                                                                                "type": "array",
+                                                                                "items": {
+                                                                                  "type": "object",
+                                                                                  "properties": {
+                                                                                    "id": {
+                                                                                      "type": "number"
+                                                                                    },
+                                                                                    "attributes": {
+                                                                                      "type": "object",
+                                                                                      "properties": {
+                                                                                        "name": {
+                                                                                          "type": "string"
+                                                                                        },
+                                                                                        "createdAt": {
+                                                                                          "type": "string",
+                                                                                          "format": "date-time"
+                                                                                        },
+                                                                                        "updatedAt": {
+                                                                                          "type": "string",
+                                                                                          "format": "date-time"
+                                                                                        },
+                                                                                        "publishedAt": {
+                                                                                          "type": "string",
+                                                                                          "format": "date-time"
+                                                                                        },
+                                                                                        "createdBy": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "data": {
+                                                                                              "type": "object",
+                                                                                              "properties": {
+                                                                                                "id": {
+                                                                                                  "type": "number"
+                                                                                                },
+                                                                                                "attributes": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        },
+                                                                                        "updatedBy": {
+                                                                                          "type": "object",
+                                                                                          "properties": {
+                                                                                            "data": {
+                                                                                              "type": "object",
+                                                                                              "properties": {
+                                                                                                "id": {
+                                                                                                  "type": "number"
+                                                                                                },
+                                                                                                "attributes": {
+                                                                                                  "type": "object",
+                                                                                                  "properties": {}
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -13186,7 +13446,7 @@
                                                                         "attributes": {
                                                                           "type": "object",
                                                                           "properties": {
-                                                                            "company_name": {
+                                                                            "name": {
                                                                               "type": "string"
                                                                             },
                                                                             "designation": {
@@ -13195,10 +13455,7 @@
                                                                             "job_description": {
                                                                               "type": "string"
                                                                             },
-                                                                            "educational_qualification": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "employment_type": {
+                                                                            "job_type": {
                                                                               "type": "string",
                                                                               "enum": [
                                                                                 "Full-Time",
@@ -13251,7 +13508,7 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "featured_image": {
+                                                                            "logo_image": {
                                                                               "type": "object",
                                                                               "properties": {
                                                                                 "data": {
@@ -13483,14 +13740,147 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "salary_range": {
-                                                                              "type": "string"
-                                                                            },
                                                                             "open_positions": {
                                                                               "type": "integer"
                                                                             },
                                                                             "job_title": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "educational_qualification": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Below 10th",
+                                                                                "SSC/10th",
+                                                                                "PUC/12th",
+                                                                                "Diploma",
+                                                                                "Graduate",
+                                                                                "Post Graduate"
+                                                                              ]
+                                                                            },
+                                                                            "job_location": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Work from office (WFO)",
+                                                                                "Work from home (WFH)",
+                                                                                "Hybrid (WFO + WFH)",
+                                                                                "Field Job"
+                                                                              ]
+                                                                            },
+                                                                            "gender": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Male only",
+                                                                                "Female only",
+                                                                                "Any gender"
+                                                                              ]
+                                                                            },
+                                                                            "job_experience": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Fresher",
+                                                                                "Experienced",
+                                                                                "Any"
+                                                                              ]
+                                                                            },
+                                                                            "interview_mode": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "In-Person",
+                                                                                "Telephonic / Online"
+                                                                              ]
+                                                                            },
+                                                                            "year_of_experience": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "job_shift": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "General",
+                                                                                "Morning",
+                                                                                "Afternoon",
+                                                                                "Night",
+                                                                                "Rotational"
+                                                                              ]
+                                                                            },
+                                                                            "salary_range_min": {
+                                                                              "type": "string",
+                                                                              "pattern": "^\\d*$",
+                                                                              "example": "123456789"
+                                                                            },
+                                                                            "salary_range_max": {
+                                                                              "type": "string",
+                                                                              "pattern": "^\\d*$",
+                                                                              "example": "123456789"
+                                                                            },
+                                                                            "preferred_languages": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "data": {
+                                                                                  "type": "array",
+                                                                                  "items": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "attributes": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                          "name": {
+                                                                                            "type": "string"
+                                                                                          },
+                                                                                          "createdAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "updatedAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "publishedAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "createdBy": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "data": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "id": {
+                                                                                                    "type": "number"
+                                                                                                  },
+                                                                                                  "attributes": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {}
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "updatedBy": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "data": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "id": {
+                                                                                                    "type": "number"
+                                                                                                  },
+                                                                                                  "attributes": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {}
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -17214,7 +17604,7 @@
                                               "attributes": {
                                                 "type": "object",
                                                 "properties": {
-                                                  "company_name": {
+                                                  "name": {
                                                     "type": "string"
                                                   },
                                                   "designation": {
@@ -17223,10 +17613,7 @@
                                                   "job_description": {
                                                     "type": "string"
                                                   },
-                                                  "educational_qualification": {
-                                                    "type": "string"
-                                                  },
-                                                  "employment_type": {
+                                                  "job_type": {
                                                     "type": "string",
                                                     "enum": [
                                                       "Full-Time",
@@ -17279,7 +17666,7 @@
                                                       }
                                                     }
                                                   },
-                                                  "featured_image": {
+                                                  "logo_image": {
                                                     "type": "object",
                                                     "properties": {
                                                       "data": {
@@ -17511,14 +17898,147 @@
                                                       }
                                                     }
                                                   },
-                                                  "salary_range": {
-                                                    "type": "string"
-                                                  },
                                                   "open_positions": {
                                                     "type": "integer"
                                                   },
                                                   "job_title": {
                                                     "type": "string"
+                                                  },
+                                                  "educational_qualification": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "Below 10th",
+                                                      "SSC/10th",
+                                                      "PUC/12th",
+                                                      "Diploma",
+                                                      "Graduate",
+                                                      "Post Graduate"
+                                                    ]
+                                                  },
+                                                  "job_location": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "Work from office (WFO)",
+                                                      "Work from home (WFH)",
+                                                      "Hybrid (WFO + WFH)",
+                                                      "Field Job"
+                                                    ]
+                                                  },
+                                                  "gender": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "Male only",
+                                                      "Female only",
+                                                      "Any gender"
+                                                    ]
+                                                  },
+                                                  "job_experience": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "Fresher",
+                                                      "Experienced",
+                                                      "Any"
+                                                    ]
+                                                  },
+                                                  "interview_mode": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "In-Person",
+                                                      "Telephonic / Online"
+                                                    ]
+                                                  },
+                                                  "year_of_experience": {
+                                                    "type": "string"
+                                                  },
+                                                  "job_shift": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "General",
+                                                      "Morning",
+                                                      "Afternoon",
+                                                      "Night",
+                                                      "Rotational"
+                                                    ]
+                                                  },
+                                                  "salary_range_min": {
+                                                    "type": "string",
+                                                    "pattern": "^\\d*$",
+                                                    "example": "123456789"
+                                                  },
+                                                  "salary_range_max": {
+                                                    "type": "string",
+                                                    "pattern": "^\\d*$",
+                                                    "example": "123456789"
+                                                  },
+                                                  "preferred_languages": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "array",
+                                                        "items": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "id": {
+                                                              "type": "number"
+                                                            },
+                                                            "attributes": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "name": {
+                                                                  "type": "string"
+                                                                },
+                                                                "createdAt": {
+                                                                  "type": "string",
+                                                                  "format": "date-time"
+                                                                },
+                                                                "updatedAt": {
+                                                                  "type": "string",
+                                                                  "format": "date-time"
+                                                                },
+                                                                "publishedAt": {
+                                                                  "type": "string",
+                                                                  "format": "date-time"
+                                                                },
+                                                                "createdBy": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "data": {
+                                                                      "type": "object",
+                                                                      "properties": {
+                                                                        "id": {
+                                                                          "type": "number"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "type": "object",
+                                                                          "properties": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                "updatedBy": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "data": {
+                                                                      "type": "object",
+                                                                      "properties": {
+                                                                        "id": {
+                                                                          "type": "number"
+                                                                        },
+                                                                        "attributes": {
+                                                                          "type": "object",
+                                                                          "properties": {}
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -22476,7 +22996,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "company_name": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "designation": {
@@ -22485,10 +23005,7 @@
                                     "job_description": {
                                       "type": "string"
                                     },
-                                    "educational_qualification": {
-                                      "type": "string"
-                                    },
-                                    "employment_type": {
+                                    "job_type": {
                                       "type": "string",
                                       "enum": [
                                         "Full-Time",
@@ -22541,7 +23058,7 @@
                                         }
                                       }
                                     },
-                                    "featured_image": {
+                                    "logo_image": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -22773,14 +23290,147 @@
                                         }
                                       }
                                     },
-                                    "salary_range": {
-                                      "type": "string"
-                                    },
                                     "open_positions": {
                                       "type": "integer"
                                     },
                                     "job_title": {
                                       "type": "string"
+                                    },
+                                    "educational_qualification": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Below 10th",
+                                        "SSC/10th",
+                                        "PUC/12th",
+                                        "Diploma",
+                                        "Graduate",
+                                        "Post Graduate"
+                                      ]
+                                    },
+                                    "job_location": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Work from office (WFO)",
+                                        "Work from home (WFH)",
+                                        "Hybrid (WFO + WFH)",
+                                        "Field Job"
+                                      ]
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "job_experience": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Fresher",
+                                        "Experienced",
+                                        "Any"
+                                      ]
+                                    },
+                                    "interview_mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "In-Person",
+                                        "Telephonic / Online"
+                                      ]
+                                    },
+                                    "year_of_experience": {
+                                      "type": "string"
+                                    },
+                                    "job_shift": {
+                                      "type": "string",
+                                      "enum": [
+                                        "General",
+                                        "Morning",
+                                        "Afternoon",
+                                        "Night",
+                                        "Rotational"
+                                      ]
+                                    },
+                                    "salary_range_min": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "salary_range_max": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "preferred_languages": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "name": {
+                                                    "type": "string"
+                                                  },
+                                                  "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "publishedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "createdBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "updatedBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -24296,7 +24946,7 @@
           "data": {
             "type": "object",
             "properties": {
-              "company_name": {
+              "name": {
                 "type": "string"
               },
               "designation": {
@@ -24305,10 +24955,7 @@
               "job_description": {
                 "type": "string"
               },
-              "educational_qualification": {
-                "type": "string"
-              },
-              "employment_type": {
+              "job_type": {
                 "type": "string",
                 "enum": [
                   "Full-Time",
@@ -24349,7 +24996,7 @@
                 ],
                 "example": "string or id"
               },
-              "featured_image": {
+              "logo_image": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -24372,14 +25019,91 @@
                   "$ref": "#/components/schemas/PaymentPaymentComponent"
                 }
               },
-              "salary_range": {
-                "type": "string"
-              },
               "open_positions": {
                 "type": "integer"
               },
               "job_title": {
                 "type": "string"
+              },
+              "educational_qualification": {
+                "type": "string",
+                "enum": [
+                  "Below 10th",
+                  "SSC/10th",
+                  "PUC/12th",
+                  "Diploma",
+                  "Graduate",
+                  "Post Graduate"
+                ]
+              },
+              "job_location": {
+                "type": "string",
+                "enum": [
+                  "Work from office (WFO)",
+                  "Work from home (WFH)",
+                  "Hybrid (WFO + WFH)",
+                  "Field Job"
+                ]
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "Male only",
+                  "Female only",
+                  "Any gender"
+                ]
+              },
+              "job_experience": {
+                "type": "string",
+                "enum": [
+                  "Fresher",
+                  "Experienced",
+                  "Any"
+                ]
+              },
+              "interview_mode": {
+                "type": "string",
+                "enum": [
+                  "In-Person",
+                  "Telephonic / Online"
+                ]
+              },
+              "year_of_experience": {
+                "type": "string"
+              },
+              "job_shift": {
+                "type": "string",
+                "enum": [
+                  "General",
+                  "Morning",
+                  "Afternoon",
+                  "Night",
+                  "Rotational"
+                ]
+              },
+              "salary_range_min": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
+              },
+              "salary_range_max": {
+                "type": "string",
+                "pattern": "^\\d*$",
+                "example": "123456789"
+              },
+              "preferred_languages": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               }
             }
           }
@@ -24434,7 +25158,7 @@
       "JobListing": {
         "type": "object",
         "properties": {
-          "company_name": {
+          "name": {
             "type": "string"
           },
           "designation": {
@@ -24443,10 +25167,7 @@
           "job_description": {
             "type": "string"
           },
-          "educational_qualification": {
-            "type": "string"
-          },
-          "employment_type": {
+          "job_type": {
             "type": "string",
             "enum": [
               "Full-Time",
@@ -27246,7 +27967,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "company_name": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "designation": {
@@ -27255,10 +27976,7 @@
                                     "job_description": {
                                       "type": "string"
                                     },
-                                    "educational_qualification": {
-                                      "type": "string"
-                                    },
-                                    "employment_type": {
+                                    "job_type": {
                                       "type": "string",
                                       "enum": [
                                         "Full-Time",
@@ -27311,7 +28029,7 @@
                                         }
                                       }
                                     },
-                                    "featured_image": {
+                                    "logo_image": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -27543,14 +28261,147 @@
                                         }
                                       }
                                     },
-                                    "salary_range": {
-                                      "type": "string"
-                                    },
                                     "open_positions": {
                                       "type": "integer"
                                     },
                                     "job_title": {
                                       "type": "string"
+                                    },
+                                    "educational_qualification": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Below 10th",
+                                        "SSC/10th",
+                                        "PUC/12th",
+                                        "Diploma",
+                                        "Graduate",
+                                        "Post Graduate"
+                                      ]
+                                    },
+                                    "job_location": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Work from office (WFO)",
+                                        "Work from home (WFH)",
+                                        "Hybrid (WFO + WFH)",
+                                        "Field Job"
+                                      ]
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "job_experience": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Fresher",
+                                        "Experienced",
+                                        "Any"
+                                      ]
+                                    },
+                                    "interview_mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "In-Person",
+                                        "Telephonic / Online"
+                                      ]
+                                    },
+                                    "year_of_experience": {
+                                      "type": "string"
+                                    },
+                                    "job_shift": {
+                                      "type": "string",
+                                      "enum": [
+                                        "General",
+                                        "Morning",
+                                        "Afternoon",
+                                        "Night",
+                                        "Rotational"
+                                      ]
+                                    },
+                                    "salary_range_min": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "salary_range_max": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "preferred_languages": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "name": {
+                                                    "type": "string"
+                                                  },
+                                                  "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "publishedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "createdBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "updatedBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -28607,7 +29458,7 @@
               }
             }
           },
-          "featured_image": {
+          "logo_image": {
             "type": "object",
             "properties": {
               "data": {
@@ -28758,14 +29609,97 @@
               "$ref": "#/components/schemas/PaymentPaymentComponent"
             }
           },
-          "salary_range": {
-            "type": "string"
-          },
           "open_positions": {
             "type": "integer"
           },
           "job_title": {
             "type": "string"
+          },
+          "educational_qualification": {
+            "type": "string",
+            "enum": [
+              "Below 10th",
+              "SSC/10th",
+              "PUC/12th",
+              "Diploma",
+              "Graduate",
+              "Post Graduate"
+            ]
+          },
+          "job_location": {
+            "type": "string",
+            "enum": [
+              "Work from office (WFO)",
+              "Work from home (WFH)",
+              "Hybrid (WFO + WFH)",
+              "Field Job"
+            ]
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "Male only",
+              "Female only",
+              "Any gender"
+            ]
+          },
+          "job_experience": {
+            "type": "string",
+            "enum": [
+              "Fresher",
+              "Experienced",
+              "Any"
+            ]
+          },
+          "interview_mode": {
+            "type": "string",
+            "enum": [
+              "In-Person",
+              "Telephonic / Online"
+            ]
+          },
+          "year_of_experience": {
+            "type": "string"
+          },
+          "job_shift": {
+            "type": "string",
+            "enum": [
+              "General",
+              "Morning",
+              "Afternoon",
+              "Night",
+              "Rotational"
+            ]
+          },
+          "salary_range_min": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
+          "salary_range_max": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
+          "preferred_languages": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "properties": {}
+                    }
+                  }
+                }
+              }
+            }
           },
           "createdAt": {
             "type": "string",
@@ -28837,7 +29771,7 @@
           }
         }
       },
-      "JobTitleRequest": {
+      "LanguageRequest": {
         "type": "object",
         "required": [
           "data"
@@ -28853,24 +29787,24 @@
           }
         }
       },
-      "JobTitleListResponseDataItem": {
+      "LanguageListResponseDataItem": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/JobTitle"
+            "$ref": "#/components/schemas/Language"
           }
         }
       },
-      "JobTitleListResponse": {
+      "LanguageListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/JobTitleListResponseDataItem"
+              "$ref": "#/components/schemas/LanguageListResponseDataItem"
             }
           },
           "meta": {
@@ -28899,7 +29833,7 @@
           }
         }
       },
-      "JobTitle": {
+      "Language": {
         "type": "object",
         "properties": {
           "name": {
@@ -29205,22 +30139,22 @@
           }
         }
       },
-      "JobTitleResponseDataObject": {
+      "LanguageResponseDataObject": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/JobTitle"
+            "$ref": "#/components/schemas/Language"
           }
         }
       },
-      "JobTitleResponse": {
+      "LanguageResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/JobTitleResponseDataObject"
+            "$ref": "#/components/schemas/LanguageResponseDataObject"
           },
           "meta": {
             "type": "object"
@@ -32971,7 +33905,7 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "company_name": {
+                                    "name": {
                                       "type": "string"
                                     },
                                     "designation": {
@@ -32980,10 +33914,7 @@
                                     "job_description": {
                                       "type": "string"
                                     },
-                                    "educational_qualification": {
-                                      "type": "string"
-                                    },
-                                    "employment_type": {
+                                    "job_type": {
                                       "type": "string",
                                       "enum": [
                                         "Full-Time",
@@ -33036,7 +33967,7 @@
                                         }
                                       }
                                     },
-                                    "featured_image": {
+                                    "logo_image": {
                                       "type": "object",
                                       "properties": {
                                         "data": {
@@ -33268,14 +34199,147 @@
                                         }
                                       }
                                     },
-                                    "salary_range": {
-                                      "type": "string"
-                                    },
                                     "open_positions": {
                                       "type": "integer"
                                     },
                                     "job_title": {
                                       "type": "string"
+                                    },
+                                    "educational_qualification": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Below 10th",
+                                        "SSC/10th",
+                                        "PUC/12th",
+                                        "Diploma",
+                                        "Graduate",
+                                        "Post Graduate"
+                                      ]
+                                    },
+                                    "job_location": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Work from office (WFO)",
+                                        "Work from home (WFH)",
+                                        "Hybrid (WFO + WFH)",
+                                        "Field Job"
+                                      ]
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "job_experience": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Fresher",
+                                        "Experienced",
+                                        "Any"
+                                      ]
+                                    },
+                                    "interview_mode": {
+                                      "type": "string",
+                                      "enum": [
+                                        "In-Person",
+                                        "Telephonic / Online"
+                                      ]
+                                    },
+                                    "year_of_experience": {
+                                      "type": "string"
+                                    },
+                                    "job_shift": {
+                                      "type": "string",
+                                      "enum": [
+                                        "General",
+                                        "Morning",
+                                        "Afternoon",
+                                        "Night",
+                                        "Rotational"
+                                      ]
+                                    },
+                                    "salary_range_min": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "salary_range_max": {
+                                      "type": "string",
+                                      "pattern": "^\\d*$",
+                                      "example": "123456789"
+                                    },
+                                    "preferred_languages": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "name": {
+                                                    "type": "string"
+                                                  },
+                                                  "createdAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "updatedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "publishedAt": {
+                                                    "type": "string",
+                                                    "format": "date-time"
+                                                  },
+                                                  "createdBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  "updatedBy": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -38273,7 +39337,7 @@
                                                                         "attributes": {
                                                                           "type": "object",
                                                                           "properties": {
-                                                                            "company_name": {
+                                                                            "name": {
                                                                               "type": "string"
                                                                             },
                                                                             "designation": {
@@ -38282,10 +39346,7 @@
                                                                             "job_description": {
                                                                               "type": "string"
                                                                             },
-                                                                            "educational_qualification": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "employment_type": {
+                                                                            "job_type": {
                                                                               "type": "string",
                                                                               "enum": [
                                                                                 "Full-Time",
@@ -38338,7 +39399,7 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "featured_image": {
+                                                                            "logo_image": {
                                                                               "type": "object",
                                                                               "properties": {
                                                                                 "data": {
@@ -38570,14 +39631,147 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "salary_range": {
-                                                                              "type": "string"
-                                                                            },
                                                                             "open_positions": {
                                                                               "type": "integer"
                                                                             },
                                                                             "job_title": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "educational_qualification": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Below 10th",
+                                                                                "SSC/10th",
+                                                                                "PUC/12th",
+                                                                                "Diploma",
+                                                                                "Graduate",
+                                                                                "Post Graduate"
+                                                                              ]
+                                                                            },
+                                                                            "job_location": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Work from office (WFO)",
+                                                                                "Work from home (WFH)",
+                                                                                "Hybrid (WFO + WFH)",
+                                                                                "Field Job"
+                                                                              ]
+                                                                            },
+                                                                            "gender": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Male only",
+                                                                                "Female only",
+                                                                                "Any gender"
+                                                                              ]
+                                                                            },
+                                                                            "job_experience": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Fresher",
+                                                                                "Experienced",
+                                                                                "Any"
+                                                                              ]
+                                                                            },
+                                                                            "interview_mode": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "In-Person",
+                                                                                "Telephonic / Online"
+                                                                              ]
+                                                                            },
+                                                                            "year_of_experience": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "job_shift": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "General",
+                                                                                "Morning",
+                                                                                "Afternoon",
+                                                                                "Night",
+                                                                                "Rotational"
+                                                                              ]
+                                                                            },
+                                                                            "salary_range_min": {
+                                                                              "type": "string",
+                                                                              "pattern": "^\\d*$",
+                                                                              "example": "123456789"
+                                                                            },
+                                                                            "salary_range_max": {
+                                                                              "type": "string",
+                                                                              "pattern": "^\\d*$",
+                                                                              "example": "123456789"
+                                                                            },
+                                                                            "preferred_languages": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "data": {
+                                                                                  "type": "array",
+                                                                                  "items": {
+                                                                                    "type": "object",
+                                                                                    "properties": {
+                                                                                      "id": {
+                                                                                        "type": "number"
+                                                                                      },
+                                                                                      "attributes": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                          "name": {
+                                                                                            "type": "string"
+                                                                                          },
+                                                                                          "createdAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "updatedAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "publishedAt": {
+                                                                                            "type": "string",
+                                                                                            "format": "date-time"
+                                                                                          },
+                                                                                          "createdBy": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "data": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "id": {
+                                                                                                    "type": "number"
+                                                                                                  },
+                                                                                                  "attributes": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {}
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          },
+                                                                                          "updatedBy": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                              "data": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                  "id": {
+                                                                                                    "type": "number"
+                                                                                                  },
+                                                                                                  "attributes": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {}
+                                                                                                  }
+                                                                                                }
+                                                                                              }
+                                                                                            }
+                                                                                          }
+                                                                                        }
+                                                                                      }
+                                                                                    }
+                                                                                  }
+                                                                                }
+                                                                              }
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -44557,7 +45751,7 @@
         "operationId": "delete/job-listings/{id}"
       }
     },
-    "/job-titles": {
+    "/languages": {
       "get": {
         "responses": {
           "200": {
@@ -44565,7 +45759,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobTitleListResponse"
+                  "$ref": "#/components/schemas/LanguageListResponse"
                 }
               }
             }
@@ -44622,7 +45816,7 @@
           }
         },
         "tags": [
-          "Job-title"
+          "Language"
         ],
         "parameters": [
           {
@@ -44728,7 +45922,7 @@
             }
           }
         ],
-        "operationId": "get/job-titles"
+        "operationId": "get/languages"
       },
       "post": {
         "responses": {
@@ -44737,7 +45931,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobTitleResponse"
+                  "$ref": "#/components/schemas/LanguageResponse"
                 }
               }
             }
@@ -44794,23 +45988,23 @@
           }
         },
         "tags": [
-          "Job-title"
+          "Language"
         ],
         "parameters": [],
-        "operationId": "post/job-titles",
+        "operationId": "post/languages",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleRequest"
+                "$ref": "#/components/schemas/LanguageRequest"
               }
             }
           }
         }
       }
     },
-    "/job-titles/{id}": {
+    "/languages/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -44818,7 +46012,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobTitleResponse"
+                  "$ref": "#/components/schemas/LanguageResponse"
                 }
               }
             }
@@ -44875,7 +46069,7 @@
           }
         },
         "tags": [
-          "Job-title"
+          "Language"
         ],
         "parameters": [
           {
@@ -44889,7 +46083,7 @@
             }
           }
         ],
-        "operationId": "get/job-titles/{id}"
+        "operationId": "get/languages/{id}"
       },
       "put": {
         "responses": {
@@ -44898,7 +46092,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/JobTitleResponse"
+                  "$ref": "#/components/schemas/LanguageResponse"
                 }
               }
             }
@@ -44955,7 +46149,7 @@
           }
         },
         "tags": [
-          "Job-title"
+          "Language"
         ],
         "parameters": [
           {
@@ -44969,13 +46163,13 @@
             }
           }
         ],
-        "operationId": "put/job-titles/{id}",
+        "operationId": "put/languages/{id}",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleRequest"
+                "$ref": "#/components/schemas/LanguageRequest"
               }
             }
           }
@@ -45046,7 +46240,7 @@
           }
         },
         "tags": [
-          "Job-title"
+          "Language"
         ],
         "parameters": [
           {
@@ -45060,7 +46254,7 @@
             }
           }
         ],
-        "operationId": "delete/job-titles/{id}"
+        "operationId": "delete/languages/{id}"
       }
     },
     "/pg-amenities": {

@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "job_titles",
+  "collectionName": "languages",
   "info": {
-    "singularName": "job-title",
-    "pluralName": "job-titles",
-    "displayName": "Job Title"
+    "singularName": "language",
+    "pluralName": "languages",
+    "displayName": "Language"
   },
   "options": {
     "draftAndPublish": true

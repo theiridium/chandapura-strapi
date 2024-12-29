@@ -1,5 +1,5 @@
 {
-  "/job-titles": {
+  "/languages": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleListResponse"
+                "$ref": "#/components/schemas/LanguageListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Job-title"
+        "Language"
       ],
       "parameters": [
         {
@@ -170,7 +170,7 @@
           }
         }
       ],
-      "operationId": "get/job-titles"
+      "operationId": "get/languages"
     },
     "post": {
       "responses": {
@@ -179,7 +179,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleResponse"
+                "$ref": "#/components/schemas/LanguageResponse"
               }
             }
           }
@@ -236,23 +236,23 @@
         }
       },
       "tags": [
-        "Job-title"
+        "Language"
       ],
       "parameters": [],
-      "operationId": "post/job-titles",
+      "operationId": "post/languages",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/JobTitleRequest"
+              "$ref": "#/components/schemas/LanguageRequest"
             }
           }
         }
       }
     }
   },
-  "/job-titles/{id}": {
+  "/languages/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -260,7 +260,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleResponse"
+                "$ref": "#/components/schemas/LanguageResponse"
               }
             }
           }
@@ -317,7 +317,7 @@
         }
       },
       "tags": [
-        "Job-title"
+        "Language"
       ],
       "parameters": [
         {
@@ -331,7 +331,7 @@
           }
         }
       ],
-      "operationId": "get/job-titles/{id}"
+      "operationId": "get/languages/{id}"
     },
     "put": {
       "responses": {
@@ -340,7 +340,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/JobTitleResponse"
+                "$ref": "#/components/schemas/LanguageResponse"
               }
             }
           }
@@ -397,7 +397,7 @@
         }
       },
       "tags": [
-        "Job-title"
+        "Language"
       ],
       "parameters": [
         {
@@ -411,13 +411,13 @@
           }
         }
       ],
-      "operationId": "put/job-titles/{id}",
+      "operationId": "put/languages/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/JobTitleRequest"
+              "$ref": "#/components/schemas/LanguageRequest"
             }
           }
         }
@@ -488,7 +488,7 @@
         }
       },
       "tags": [
-        "Job-title"
+        "Language"
       ],
       "parameters": [
         {
@@ -502,7 +502,7 @@
           }
         }
       ],
-      "operationId": "delete/job-titles/{id}"
+      "operationId": "delete/languages/{id}"
     }
   }
 }
