@@ -1300,7 +1300,7 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
         'Post Graduate'
       ]
     >;
-    job_location: Attribute.Enumeration<
+    work_mode: Attribute.Enumeration<
       [
         'Work from office (WFO)',
         'Work from home (WFH)',

@@ -200,19 +200,6 @@ export interface PaymentPayment extends Schema.Component {
   };
 }
 
-export interface ContactContactDetails extends Schema.Component {
-  collectionName: 'components_contact_contact_details';
-  info: {
-    displayName: 'Contact Details';
-    description: '';
-  };
-  attributes: {
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
-  };
-}
-
 export interface ClassifiedVehicleDetails extends Schema.Component {
   collectionName: 'components_classified_vehicle_details';
   info: {
@@ -230,6 +217,19 @@ export interface ClassifiedVehicleDetails extends Schema.Component {
   };
 }
 
+export interface ContactContactDetails extends Schema.Component {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'Contact Details';
+    description: '';
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.Email;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -241,8 +241,8 @@ declare module '@strapi/types' {
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
       'payment.payment': PaymentPayment;
-      'contact.contact-details': ContactContactDetails;
       'classified.vehicle-details': ClassifiedVehicleDetails;
+      'contact.contact-details': ContactContactDetails;
     }
   }
 }

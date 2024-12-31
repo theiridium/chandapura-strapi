@@ -92,7 +92,7 @@
         "Post Graduate"
       ]
     },
-    "job_location": {
+    "work_mode": {
       "type": "enumeration",
       "enum": [
         "Work from office (WFO)",

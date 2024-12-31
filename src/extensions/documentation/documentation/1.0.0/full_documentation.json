@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-12-29T00:37:05.469Z"
+    "x-generation-date": "2024-12-30T22:01:29.686Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3303,7 +3303,7 @@
                                         "Post Graduate"
                                       ]
                                     },
-                                    "job_location": {
+                                    "work_mode": {
                                       "type": "string",
                                       "enum": [
                                         "Work from office (WFO)",
@@ -8539,7 +8539,7 @@
                                                                               "Post Graduate"
                                                                             ]
                                                                           },
-                                                                          "job_location": {
+                                                                          "work_mode": {
                                                                             "type": "string",
                                                                             "enum": [
                                                                               "Work from office (WFO)",
@@ -13757,7 +13757,7 @@
                                                                                 "Post Graduate"
                                                                               ]
                                                                             },
-                                                                            "job_location": {
+                                                                            "work_mode": {
                                                                               "type": "string",
                                                                               "enum": [
                                                                                 "Work from office (WFO)",
@@ -17915,7 +17915,7 @@
                                                       "Post Graduate"
                                                     ]
                                                   },
-                                                  "job_location": {
+                                                  "work_mode": {
                                                     "type": "string",
                                                     "enum": [
                                                       "Work from office (WFO)",
@@ -23307,7 +23307,7 @@
                                         "Post Graduate"
                                       ]
                                     },
-                                    "job_location": {
+                                    "work_mode": {
                                       "type": "string",
                                       "enum": [
                                         "Work from office (WFO)",
@@ -25036,7 +25036,7 @@
                   "Post Graduate"
                 ]
               },
-              "job_location": {
+              "work_mode": {
                 "type": "string",
                 "enum": [
                   "Work from office (WFO)",
@@ -28278,7 +28278,7 @@
                                         "Post Graduate"
                                       ]
                                     },
-                                    "job_location": {
+                                    "work_mode": {
                                       "type": "string",
                                       "enum": [
                                         "Work from office (WFO)",
@@ -29626,7 +29626,7 @@
               "Post Graduate"
             ]
           },
-          "job_location": {
+          "work_mode": {
             "type": "string",
             "enum": [
               "Work from office (WFO)",
@@ -34216,7 +34216,7 @@
                                         "Post Graduate"
                                       ]
                                     },
-                                    "job_location": {
+                                    "work_mode": {
                                       "type": "string",
                                       "enum": [
                                         "Work from office (WFO)",
@@ -39648,7 +39648,7 @@
                                                                                 "Post Graduate"
                                                                               ]
                                                                             },
-                                                                            "job_location": {
+                                                                            "work_mode": {
                                                                               "type": "string",
                                                                               "enum": [
                                                                                 "Work from office (WFO)",
