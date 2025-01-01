@@ -11,7 +11,7 @@ export default ({ env }) => ({
             },
             'job-listing': {
                 settings: {
-                    filterableAttributes: ["publish_status"]
+                    filterableAttributes: ["publish_status", "work_mode", "job_type", "area"]
                 },
             },
         }
