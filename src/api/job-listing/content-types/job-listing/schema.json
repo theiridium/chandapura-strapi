@@ -39,7 +39,7 @@
       "type": "integer"
     },
     "slug": {
-      "type": "string"
+      "type": "text"
     },
     "author": {
       "type": "relation",

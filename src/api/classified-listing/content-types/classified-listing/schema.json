@@ -16,7 +16,7 @@
       "type": "string"
     },
     "slug": {
-      "type": "string"
+      "type": "text"
     },
     "author": {
       "type": "relation",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-01T07:52:28.344Z"
+    "x-generation-date": "2025-01-02T10:41:18.875Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -151,6 +151,9 @@
                 "items": {
                   "$ref": "#/components/schemas/PaymentPaymentComponent"
                 }
+              },
+              "slug": {
+                "type": "string"
               }
             }
           }
@@ -1908,6 +1911,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "slug": {
+                                                  "type": "string"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -4640,6 +4646,9 @@
               "$ref": "#/components/schemas/PaymentPaymentComponent"
             }
           },
+          "slug": {
+            "type": "string"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -7327,6 +7336,9 @@
                                                                                 }
                                                                               }
                                                                             }
+                                                                          },
+                                                                          "slug": {
+                                                                            "type": "string"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -12546,6 +12558,9 @@
                                                                                 }
                                                                               }
                                                                             },
+                                                                            "slug": {
+                                                                              "type": "string"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -17284,6 +17299,9 @@
                                                                   }
                                                                 }
                                                               },
+                                                              "slug": {
+                                                                "type": "string"
+                                                              },
                                                               "createdAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
@@ -21912,6 +21930,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "slug": {
+                                                  "type": "string"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -26883,6 +26904,9 @@
                                                       }
                                                     }
                                                   }
+                                                },
+                                                "slug": {
+                                                  "type": "string"
                                                 },
                                                 "createdAt": {
                                                   "type": "string",
@@ -32822,6 +32846,9 @@
                                                     }
                                                   }
                                                 },
+                                                "slug": {
+                                                  "type": "string"
+                                                },
                                                 "createdAt": {
                                                   "type": "string",
                                                   "format": "date-time"
@@ -38436,6 +38463,9 @@
                                                                                   }
                                                                                 }
                                                                               }
+                                                                            },
+                                                                            "slug": {
+                                                                              "type": "string"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",

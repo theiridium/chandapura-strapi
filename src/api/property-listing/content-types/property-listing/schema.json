@@ -109,7 +109,7 @@
       "component": "payment.payment"
     },
     "slug": {
-      "type": "string"
+      "type": "text"
     }
   }
 }

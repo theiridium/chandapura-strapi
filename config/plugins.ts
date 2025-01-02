@@ -14,6 +14,11 @@ export default ({ env }) => ({
                     filterableAttributes: ["publish_status", "work_mode", "job_type", "area"]
                 },
             },
+            'business-listing': {
+                settings: {
+                    filterableAttributes: ["publish_status", "payment_details"]
+                },
+            },
         }
     },
     email: {
@@ -50,14 +55,10 @@ export default ({ env }) => ({
         skipUndefinedReferences: true,
         config: {
             contentTypes: {
-                'business-listing': {
+                'advertisement': {
                     field: 'slug',
                     references: ['name'],
-                },
-                'job-listing': {
-                    field: 'slug',
-                    references: ['company_name', 'job_role', 'id'],
-                },
+                }
             },
         },
     },

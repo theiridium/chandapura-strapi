@@ -927,6 +927,7 @@ export interface ApiAdvertisementAdvertisement extends Schema.CollectionType {
     contact: Attribute.Component<'contact.contact-details'>;
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1016,7 +1017,7 @@ export interface ApiBusinessListingBusinessListing
     name: Attribute.String;
     full_address: Attribute.Text;
     description: Attribute.Text;
-    slug: Attribute.String;
+    slug: Attribute.Text;
     tags: Attribute.Text;
     sub_category: Attribute.Relation<
       'api::business-listing.business-listing',
@@ -1207,7 +1208,7 @@ export interface ApiClassifiedListingClassifiedListing
   };
   attributes: {
     name: Attribute.String;
-    slug: Attribute.String;
+    slug: Attribute.Text;
     author: Attribute.Relation<
       'api::classified-listing.classified-listing',
       'manyToOne',
@@ -1273,7 +1274,7 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     >;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     step_number: Attribute.Integer;
-    slug: Attribute.String;
+    slug: Attribute.Text;
     author: Attribute.Relation<
       'api::job-listing.job-listing',
       'manyToOne',
@@ -1481,7 +1482,7 @@ export interface ApiPropertyListingPropertyListing
     contact: Attribute.Component<'contact.contact-details'>;
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
-    slug: Attribute.String;
+    slug: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
