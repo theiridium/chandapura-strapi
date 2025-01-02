@@ -11,18 +11,18 @@ const CreateSlug = async (id: any) => {
     });
     switch (response.property_type) {
         case "PG":
-            slug = slugify(`${response.property_type} in ${response.area.name} Bangalore`, { lower: true, strict: true });
+            slug = slugify(`${response.property_type} in ${response.area.name} Bengaluru`, { lower: true, strict: true });
             break;
 
         case "Plot":
-            slug = slugify(`${response.name} ${response.property_type} for sale in ${response.area.name} Bangalore`, { lower: true, strict: true });
+            slug = slugify(`${response.name} ${response.property_type} for sale in ${response.area.name} Bengaluru`, { lower: true, strict: true });
             break;
 
         default:
             let room_type = "";
             if (response.listing_type == "Rent") room_type = response.details_by_listingtype.find(x => x.__component == "real-estate.rent-property-details")["room_type"];
             else room_type = response.details_by_listingtype.find(x => x.__component == "real-estate.sale-property-details")["room_type"];
-            slug = slugify(`${response.name} ${room_type} ${response.property_type} for ${response.listing_type} in ${response.area.name} Bangalore`, { lower: true, strict: true });
+            slug = slugify(`${response.name} ${room_type} ${response.property_type} for ${response.listing_type} in ${response.area.name} Bengaluru`, { lower: true, strict: true });
             break;
     }
     return slug;

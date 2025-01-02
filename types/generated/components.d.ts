@@ -179,6 +179,19 @@ export interface RealEstatePgDetails extends Schema.Component {
   };
 }
 
+export interface ContactContactDetails extends Schema.Component {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'Contact Details';
+    description: '';
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.Email;
+  };
+}
+
 export interface PaymentPayment extends Schema.Component {
   collectionName: 'components_payment_payments';
   info: {
@@ -197,19 +210,6 @@ export interface PaymentPayment extends Schema.Component {
     amount: Attribute.Decimal;
     isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
     expiry_date_timestamp: Attribute.Decimal;
-  };
-}
-
-export interface ContactContactDetails extends Schema.Component {
-  collectionName: 'components_contact_contact_details';
-  info: {
-    displayName: 'Contact Details';
-    description: '';
-  };
-  attributes: {
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
   };
 }
 
@@ -240,8 +240,8 @@ declare module '@strapi/types' {
       'real-estate.plot-details': RealEstatePlotDetails;
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
-      'payment.payment': PaymentPayment;
       'contact.contact-details': ContactContactDetails;
+      'payment.payment': PaymentPayment;
       'classified.vehicle-details': ClassifiedVehicleDetails;
     }
   }

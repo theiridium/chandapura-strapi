@@ -8,7 +8,7 @@ const CreateSlug = async (id: any) => {
     const response = await strapi.entityService.findOne('api::job-listing.job-listing', id, {
         populate: ['area']
     });
-    const slug = slugify(`job vacanncy for ${response.job_title} in ${response.area.name} Bangalore`, { lower: true, strict: true });
+    const slug = slugify(`job vacanncy for ${response.job_title} in ${response.area.name} Bengaluru`, { lower: true, strict: true });
     return slug;
 }
 

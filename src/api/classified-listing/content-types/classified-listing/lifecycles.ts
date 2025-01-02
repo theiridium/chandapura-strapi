@@ -8,7 +8,7 @@ const CreateSlug = async (id: any) => {
     const response = await strapi.entityService.findOne('api::classified-listing.classified-listing', id, {
         populate: ['area', 'category']
     });
-    const slug = slugify(`${response.category.name} for sale in ${response.area.name} Bangalore`, { lower: true, strict: true });
+    const slug = slugify(`${response.category.name} for sale in ${response.area.name} Bengaluru`, { lower: true, strict: true });
     return slug;
 }
 
