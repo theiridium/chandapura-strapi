@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-02T17:44:43.027Z"
+    "x-generation-date": "2025-01-02T23:49:55.433Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3347,11 +3347,11 @@
                                     "job_shift": {
                                       "type": "string",
                                       "enum": [
-                                        "General",
-                                        "Morning",
-                                        "Afternoon",
-                                        "Night",
-                                        "Rotational"
+                                        "General Shift",
+                                        "Morning Shift",
+                                        "Afternoon Shift",
+                                        "Night Shift",
+                                        "Rotational Shift"
                                       ]
                                     },
                                     "salary_range_min": {
@@ -8589,11 +8589,11 @@
                                                                           "job_shift": {
                                                                             "type": "string",
                                                                             "enum": [
-                                                                              "General",
-                                                                              "Morning",
-                                                                              "Afternoon",
-                                                                              "Night",
-                                                                              "Rotational"
+                                                                              "General Shift",
+                                                                              "Morning Shift",
+                                                                              "Afternoon Shift",
+                                                                              "Night Shift",
+                                                                              "Rotational Shift"
                                                                             ]
                                                                           },
                                                                           "salary_range_min": {
@@ -13810,11 +13810,11 @@
                                                                             "job_shift": {
                                                                               "type": "string",
                                                                               "enum": [
-                                                                                "General",
-                                                                                "Morning",
-                                                                                "Afternoon",
-                                                                                "Night",
-                                                                                "Rotational"
+                                                                                "General Shift",
+                                                                                "Morning Shift",
+                                                                                "Afternoon Shift",
+                                                                                "Night Shift",
+                                                                                "Rotational Shift"
                                                                               ]
                                                                             },
                                                                             "salary_range_min": {
@@ -17971,11 +17971,11 @@
                                                   "job_shift": {
                                                     "type": "string",
                                                     "enum": [
-                                                      "General",
-                                                      "Morning",
-                                                      "Afternoon",
-                                                      "Night",
-                                                      "Rotational"
+                                                      "General Shift",
+                                                      "Morning Shift",
+                                                      "Afternoon Shift",
+                                                      "Night Shift",
+                                                      "Rotational Shift"
                                                     ]
                                                   },
                                                   "salary_range_min": {
@@ -23366,11 +23366,11 @@
                                     "job_shift": {
                                       "type": "string",
                                       "enum": [
-                                        "General",
-                                        "Morning",
-                                        "Afternoon",
-                                        "Night",
-                                        "Rotational"
+                                        "General Shift",
+                                        "Morning Shift",
+                                        "Afternoon Shift",
+                                        "Night Shift",
+                                        "Rotational Shift"
                                       ]
                                     },
                                     "salary_range_min": {
@@ -25095,11 +25095,11 @@
               "job_shift": {
                 "type": "string",
                 "enum": [
-                  "General",
-                  "Morning",
-                  "Afternoon",
-                  "Night",
-                  "Rotational"
+                  "General Shift",
+                  "Morning Shift",
+                  "Afternoon Shift",
+                  "Night Shift",
+                  "Rotational Shift"
                 ]
               },
               "salary_range_min": {
@@ -28340,11 +28340,11 @@
                                     "job_shift": {
                                       "type": "string",
                                       "enum": [
-                                        "General",
-                                        "Morning",
-                                        "Afternoon",
-                                        "Night",
-                                        "Rotational"
+                                        "General Shift",
+                                        "Morning Shift",
+                                        "Afternoon Shift",
+                                        "Night Shift",
+                                        "Rotational Shift"
                                       ]
                                     },
                                     "salary_range_min": {
@@ -29688,11 +29688,11 @@
           "job_shift": {
             "type": "string",
             "enum": [
-              "General",
-              "Morning",
-              "Afternoon",
-              "Night",
-              "Rotational"
+              "General Shift",
+              "Morning Shift",
+              "Afternoon Shift",
+              "Night Shift",
+              "Rotational Shift"
             ]
           },
           "salary_range_min": {
@@ -34281,11 +34281,11 @@
                                     "job_shift": {
                                       "type": "string",
                                       "enum": [
-                                        "General",
-                                        "Morning",
-                                        "Afternoon",
-                                        "Night",
-                                        "Rotational"
+                                        "General Shift",
+                                        "Morning Shift",
+                                        "Afternoon Shift",
+                                        "Night Shift",
+                                        "Rotational Shift"
                                       ]
                                     },
                                     "salary_range_min": {
@@ -39716,11 +39716,11 @@
                                                                             "job_shift": {
                                                                               "type": "string",
                                                                               "enum": [
-                                                                                "General",
-                                                                                "Morning",
-                                                                                "Afternoon",
-                                                                                "Night",
-                                                                                "Rotational"
+                                                                                "General Shift",
+                                                                                "Morning Shift",
+                                                                                "Afternoon Shift",
+                                                                                "Night Shift",
+                                                                                "Rotational Shift"
                                                                               ]
                                                                             },
                                                                             "salary_range_min": {

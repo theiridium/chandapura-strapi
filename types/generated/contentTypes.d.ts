@@ -1314,7 +1314,13 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     interview_mode: Attribute.Enumeration<['In-Person', 'Telephonic / Online']>;
     year_of_experience: Attribute.String;
     job_shift: Attribute.Enumeration<
-      ['General', 'Morning', 'Afternoon', 'Night', 'Rotational']
+      [
+        'General Shift',
+        'Morning Shift',
+        'Afternoon Shift',
+        'Night Shift',
+        'Rotational Shift'
+      ]
     >;
     salary_range_min: Attribute.BigInteger;
     salary_range_max: Attribute.BigInteger;

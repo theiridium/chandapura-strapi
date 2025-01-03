@@ -130,11 +130,11 @@
     "job_shift": {
       "type": "enumeration",
       "enum": [
-        "General",
-        "Morning",
-        "Afternoon",
-        "Night",
-        "Rotational"
+        "General Shift",
+        "Morning Shift",
+        "Afternoon Shift",
+        "Night Shift",
+        "Rotational Shift"
       ]
     },
     "salary_range_min": {
