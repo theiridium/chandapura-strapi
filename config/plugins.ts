@@ -16,7 +16,8 @@ export default ({ env }) => ({
             },
             'business-listing': {
                 settings: {
-                    filterableAttributes: ["publish_status", "payment_details"]
+                    filterableAttributes: ["publish_status", "payment_details", "sub_category"],
+                    sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
                 },
             },
         }
