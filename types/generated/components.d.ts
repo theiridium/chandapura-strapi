@@ -1,26 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PaymentPayment extends Schema.Component {
-  collectionName: 'components_payment_payments';
-  info: {
-    displayName: 'Payment Details';
-    description: '';
-  };
-  options: {
-    timestamps: true;
-  };
-  attributes: {
-    purchase_date: Attribute.DateTime;
-    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date: Attribute.DateTime;
-    raz_order_id: Attribute.String & Attribute.Private;
-    raz_payment_id: Attribute.String & Attribute.Private;
-    amount: Attribute.Decimal;
-    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date_timestamp: Attribute.Decimal;
-  };
-}
-
 export interface RealEstateSalePropertyDetails extends Schema.Component {
   collectionName: 'components_real_estate_sale_property_details';
   info: {
@@ -200,6 +179,93 @@ export interface RealEstatePgDetails extends Schema.Component {
   };
 }
 
+export interface PaymentPayment extends Schema.Component {
+  collectionName: 'components_payment_payments';
+  info: {
+    displayName: 'Payment Details';
+    description: '';
+  };
+  options: {
+    timestamps: true;
+  };
+  attributes: {
+    purchase_date: Attribute.DateTime;
+    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date: Attribute.DateTime;
+    raz_order_id: Attribute.String & Attribute.Private;
+    raz_payment_id: Attribute.String & Attribute.Private;
+    amount: Attribute.Decimal;
+    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date_timestamp: Attribute.Decimal;
+  };
+}
+
+export interface JobPersonalJobPosting extends Schema.Component {
+  collectionName: 'components_job_personal_job_postings';
+  info: {
+    displayName: 'Personal Job Posting';
+    description: '';
+  };
+  attributes: {
+    job_title: Attribute.String;
+    job_description: Attribute.Text;
+    job_timing_from: Attribute.Time;
+    job_timing_to: Attribute.Time;
+    salary: Attribute.BigInteger;
+    gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
+  };
+}
+
+export interface JobCompanyJobPosting extends Schema.Component {
+  collectionName: 'components_job_company_job_postings';
+  info: {
+    displayName: 'Company Job Posting';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    job_description: Attribute.Text;
+    job_type: Attribute.Enumeration<
+      ['Full-Time', 'Part-Time', 'Contract-Based', 'Freelance', 'Internship']
+    >;
+    open_positions: Attribute.Integer;
+    job_title: Attribute.String;
+    educational_qualification: Attribute.Enumeration<
+      [
+        'Below 10th',
+        'SSC/10th',
+        'PUC/12th',
+        'Diploma',
+        'Graduate',
+        'Post Graduate'
+      ]
+    >;
+    work_mode: Attribute.Enumeration<
+      [
+        'Work from office (WFO)',
+        'Work from home (WFH)',
+        'Hybrid (WFO + WFH)',
+        'Field Job'
+      ]
+    >;
+    gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
+    job_experience: Attribute.Enumeration<['Fresher', 'Experienced', 'Any']>;
+    interview_mode: Attribute.Enumeration<['In-Person', 'Telephonic / Online']>;
+    experience_in_years: Attribute.String;
+    job_shift: Attribute.Enumeration<
+      [
+        'General Shift',
+        'Morning Shift',
+        'Afternoon Shift',
+        'Night Shift',
+        'Rotational Shift'
+      ]
+    >;
+    salary_range_min: Attribute.BigInteger;
+    salary_range_max: Attribute.BigInteger;
+  };
+}
+
 export interface ContactContactDetails extends Schema.Component {
   collectionName: 'components_contact_contact_details';
   info: {
@@ -233,7 +299,6 @@ export interface ClassifiedVehicleDetails extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'payment.payment': PaymentPayment;
       'real-estate.sale-property-details': RealEstateSalePropertyDetails;
       'real-estate.rent-property-details': RealEstateRentPropertyDetails;
       'real-estate.real-estate': RealEstateRealEstate;
@@ -241,6 +306,9 @@ declare module '@strapi/types' {
       'real-estate.plot-details': RealEstatePlotDetails;
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
+      'payment.payment': PaymentPayment;
+      'job.personal-job-posting': JobPersonalJobPosting;
+      'job.company-job-posting': JobCompanyJobPosting;
       'contact.contact-details': ContactContactDetails;
       'classified.vehicle-details': ClassifiedVehicleDetails;
     }

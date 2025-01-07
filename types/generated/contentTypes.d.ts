@@ -1329,6 +1329,10 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       'oneToMany',
       'api::language.language'
     >;
+    details_by_jobCategory: Attribute.DynamicZone<
+      ['job.personal-job-posting', 'job.company-job-posting']
+    >;
+    category: Attribute.Enumeration<['Company', 'Personal']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1340,6 +1344,38 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::job-listing.job-listing',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJobTitleJobTitle extends Schema.CollectionType {
+  collectionName: 'job_titles';
+  info: {
+    singularName: 'job-title';
+    pluralName: 'job-titles';
+    displayName: 'Job Title';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    company: Attribute.Boolean & Attribute.DefaultTo<false>;
+    personal: Attribute.Boolean & Attribute.DefaultTo<false>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::job-title.job-title',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::job-title.job-title',
       'oneToOne',
       'admin::user'
     > &
@@ -1645,6 +1681,7 @@ declare module '@strapi/types' {
       'api::classified-category.classified-category': ApiClassifiedCategoryClassifiedCategory;
       'api::classified-listing.classified-listing': ApiClassifiedListingClassifiedListing;
       'api::job-listing.job-listing': ApiJobListingJobListing;
+      'api::job-title.job-title': ApiJobTitleJobTitle;
       'api::language.language': ApiLanguageLanguage;
       'api::pg-amenity.pg-amenity': ApiPgAmenityPgAmenity;
       'api::plot-amenity.plot-amenity': ApiPlotAmenityPlotAmenity;

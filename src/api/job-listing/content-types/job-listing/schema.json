@@ -147,6 +147,20 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::language.language"
+    },
+    "details_by_jobCategory": {
+      "type": "dynamiczone",
+      "components": [
+        "job.personal-job-posting",
+        "job.company-job-posting"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Company",
+        "Personal"
+      ]
     }
   }
 }

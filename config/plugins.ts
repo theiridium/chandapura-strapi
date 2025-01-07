@@ -6,17 +6,25 @@ export default ({ env }) => ({
                     populate: ['details_by_listingtype.amenities', 'payment_details', 'featured_image', 'contact', 'area'],
                 },
                 settings: {
-                    filterableAttributes: ["publish_status", "payment_details", "listing_type"]
+                    filterableAttributes: ["publish_status", "payment_details", "listing_type", "property_type", "area"],
+                    sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
                 },
             },
             'job-listing': {
                 settings: {
-                    filterableAttributes: ["publish_status", "work_mode", "job_type", "area"]
+                    filterableAttributes: ["publish_status", "work_mode", "job_type", "area"],
+                    sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
+                },
+            },
+            'classified-listing': {
+                settings: {
+                    filterableAttributes: ["publish_status", "category", "area"],
+                    sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
                 },
             },
             'business-listing': {
                 settings: {
-                    filterableAttributes: ["publish_status", "payment_details", "sub_category"],
+                    filterableAttributes: ["publish_status", "payment_details", "category", "sub_category", "area"],
                     sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
                 },
             },

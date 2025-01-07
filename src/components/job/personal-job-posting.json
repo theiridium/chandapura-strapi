@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_job_personal_job_postings",
+  "info": {
+    "displayName": "Personal Job Posting",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "job_title": {
+      "type": "string"
+    },
+    "job_description": {
+      "type": "text"
+    },
+    "job_timing_from": {
+      "type": "time"
+    },
+    "job_timing_to": {
+      "type": "time"
+    },
+    "salary": {
+      "type": "biginteger"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male only",
+        "Female only",
+        "Any gender"
+      ]
+    }
+  }
+}
