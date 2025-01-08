@@ -3,7 +3,7 @@ export default ({ env }) => ({
         config: {
             'property-listing': {
                 entriesQuery: {
-                    populate: ['details_by_listingtype.amenities', 'payment_details', 'featured_image', 'contact', 'area'],
+                    populate: ['details_by_listingtype.amenities', 'details_by_listingtype.occupancy_type', 'payment_details', 'featured_image', 'contact', 'area'],
                 },
                 settings: {
                     filterableAttributes: ["publish_status", "payment_details", "listing_type", "property_type", "area"],
@@ -12,7 +12,7 @@ export default ({ env }) => ({
             },
             'job-listing': {
                 settings: {
-                    filterableAttributes: ["publish_status", "work_mode", "job_type", "area"],
+                    filterableAttributes: ["publish_status", "area", "category"],
                     sortableAttributes: ["id", "createdAt", "updatedAt", "name"]
                 },
             },

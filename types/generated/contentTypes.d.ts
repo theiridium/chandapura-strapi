@@ -1266,12 +1266,6 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String;
-    designation: Attribute.String;
-    job_description: Attribute.Text;
-    job_type: Attribute.Enumeration<
-      ['Full-Time', 'Part-Time', 'Contract-Based', 'Freelance', 'Internship']
-    >;
     publish_status: Attribute.Boolean & Attribute.DefaultTo<false>;
     step_number: Attribute.Integer;
     slug: Attribute.Text;
@@ -1289,41 +1283,6 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     contact: Attribute.Component<'contact.contact-details'>;
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
-    open_positions: Attribute.Integer;
-    job_title: Attribute.String;
-    educational_qualification: Attribute.Enumeration<
-      [
-        'Below 10th',
-        'SSC/10th',
-        'PUC/12th',
-        'Diploma',
-        'Graduate',
-        'Post Graduate'
-      ]
-    >;
-    work_mode: Attribute.Enumeration<
-      [
-        'Work from office (WFO)',
-        'Work from home (WFH)',
-        'Hybrid (WFO + WFH)',
-        'Field Job'
-      ]
-    >;
-    gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
-    job_experience: Attribute.Enumeration<['Fresher', 'Experienced', 'Any']>;
-    interview_mode: Attribute.Enumeration<['In-Person', 'Telephonic / Online']>;
-    year_of_experience: Attribute.String;
-    job_shift: Attribute.Enumeration<
-      [
-        'General Shift',
-        'Morning Shift',
-        'Afternoon Shift',
-        'Night Shift',
-        'Rotational Shift'
-      ]
-    >;
-    salary_range_min: Attribute.BigInteger;
-    salary_range_max: Attribute.BigInteger;
     preferred_languages: Attribute.Relation<
       'api::job-listing.job-listing',
       'oneToMany',
@@ -1333,6 +1292,10 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       ['job.personal-job-posting', 'job.company-job-posting']
     >;
     category: Attribute.Enumeration<['Company', 'Personal']>;
+    job_title: Attribute.String;
+    gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
+    full_address: Attribute.Text;
+    job_description: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

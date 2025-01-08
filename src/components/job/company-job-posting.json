@@ -6,11 +6,8 @@
   },
   "options": {},
   "attributes": {
-    "name": {
+    "company_name": {
       "type": "string"
-    },
-    "job_description": {
-      "type": "text"
     },
     "job_type": {
       "type": "enumeration",
@@ -24,9 +21,6 @@
     },
     "open_positions": {
       "type": "integer"
-    },
-    "job_title": {
-      "type": "string"
     },
     "educational_qualification": {
       "type": "enumeration",
@@ -46,14 +40,6 @@
         "Work from home (WFH)",
         "Hybrid (WFO + WFH)",
         "Field Job"
-      ]
-    },
-    "gender": {
-      "type": "enumeration",
-      "enum": [
-        "Male only",
-        "Female only",
-        "Any gender"
       ]
     },
     "job_experience": {

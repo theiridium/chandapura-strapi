@@ -12,25 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string"
-    },
-    "designation": {
-      "type": "string"
-    },
-    "job_description": {
-      "type": "text"
-    },
-    "job_type": {
-      "type": "enumeration",
-      "enum": [
-        "Full-Time",
-        "Part-Time",
-        "Contract-Based",
-        "Freelance",
-        "Internship"
-      ]
-    },
     "publish_status": {
       "type": "boolean",
       "default": false
@@ -75,74 +56,6 @@
       "repeatable": true,
       "component": "payment.payment"
     },
-    "open_positions": {
-      "type": "integer"
-    },
-    "job_title": {
-      "type": "string"
-    },
-    "educational_qualification": {
-      "type": "enumeration",
-      "enum": [
-        "Below 10th",
-        "SSC/10th",
-        "PUC/12th",
-        "Diploma",
-        "Graduate",
-        "Post Graduate"
-      ]
-    },
-    "work_mode": {
-      "type": "enumeration",
-      "enum": [
-        "Work from office (WFO)",
-        "Work from home (WFH)",
-        "Hybrid (WFO + WFH)",
-        "Field Job"
-      ]
-    },
-    "gender": {
-      "type": "enumeration",
-      "enum": [
-        "Male only",
-        "Female only",
-        "Any gender"
-      ]
-    },
-    "job_experience": {
-      "type": "enumeration",
-      "enum": [
-        "Fresher",
-        "Experienced",
-        "Any"
-      ]
-    },
-    "interview_mode": {
-      "type": "enumeration",
-      "enum": [
-        "In-Person",
-        "Telephonic / Online"
-      ]
-    },
-    "year_of_experience": {
-      "type": "string"
-    },
-    "job_shift": {
-      "type": "enumeration",
-      "enum": [
-        "General Shift",
-        "Morning Shift",
-        "Afternoon Shift",
-        "Night Shift",
-        "Rotational Shift"
-      ]
-    },
-    "salary_range_min": {
-      "type": "biginteger"
-    },
-    "salary_range_max": {
-      "type": "biginteger"
-    },
     "preferred_languages": {
       "type": "relation",
       "relation": "oneToMany",
@@ -161,6 +74,23 @@
         "Company",
         "Personal"
       ]
+    },
+    "job_title": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "enumeration",
+      "enum": [
+        "Male only",
+        "Female only",
+        "Any gender"
+      ]
+    },
+    "full_address": {
+      "type": "text"
+    },
+    "job_description": {
+      "type": "richtext"
     }
   }
 }

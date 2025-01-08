@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-07T18:07:23.549Z"
+    "x-generation-date": "2025-01-08T23:00:07.649Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2998,25 +2998,6 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "designation": {
-                                      "type": "string"
-                                    },
-                                    "job_description": {
-                                      "type": "string"
-                                    },
-                                    "job_type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Full-Time",
-                                        "Part-Time",
-                                        "Contract-Based",
-                                        "Freelance",
-                                        "Internship"
-                                      ]
-                                    },
                                     "publish_status": {
                                       "type": "boolean"
                                     },
@@ -3292,78 +3273,6 @@
                                         }
                                       }
                                     },
-                                    "open_positions": {
-                                      "type": "integer"
-                                    },
-                                    "job_title": {
-                                      "type": "string"
-                                    },
-                                    "educational_qualification": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Below 10th",
-                                        "SSC/10th",
-                                        "PUC/12th",
-                                        "Diploma",
-                                        "Graduate",
-                                        "Post Graduate"
-                                      ]
-                                    },
-                                    "work_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Work from office (WFO)",
-                                        "Work from home (WFH)",
-                                        "Hybrid (WFO + WFH)",
-                                        "Field Job"
-                                      ]
-                                    },
-                                    "gender": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Male only",
-                                        "Female only",
-                                        "Any gender"
-                                      ]
-                                    },
-                                    "job_experience": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Fresher",
-                                        "Experienced",
-                                        "Any"
-                                      ]
-                                    },
-                                    "interview_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "In-Person",
-                                        "Telephonic / Online"
-                                      ]
-                                    },
-                                    "year_of_experience": {
-                                      "type": "string"
-                                    },
-                                    "job_shift": {
-                                      "type": "string",
-                                      "enum": [
-                                        "General Shift",
-                                        "Morning Shift",
-                                        "Afternoon Shift",
-                                        "Night Shift",
-                                        "Rotational Shift"
-                                      ]
-                                    },
-                                    "salary_range_min": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
-                                    "salary_range_max": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
                                     "preferred_languages": {
                                       "type": "object",
                                       "properties": {
@@ -3447,12 +3356,6 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "job_title": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
-                                                "type": "string"
-                                              },
                                               "job_timing_from": {
                                                 "type": "string",
                                                 "format": "time",
@@ -3467,14 +3370,6 @@
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
-                                                ]
                                               }
                                             }
                                           },
@@ -3487,10 +3382,7 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "name": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
+                                              "company_name": {
                                                 "type": "string"
                                               },
                                               "job_type": {
@@ -3505,9 +3397,6 @@
                                               },
                                               "open_positions": {
                                                 "type": "integer"
-                                              },
-                                              "job_title": {
-                                                "type": "string"
                                               },
                                               "educational_qualification": {
                                                 "type": "string",
@@ -3527,14 +3416,6 @@
                                                   "Work from home (WFH)",
                                                   "Hybrid (WFO + WFH)",
                                                   "Field Job"
-                                                ]
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
                                                 ]
                                               },
                                               "job_experience": {
@@ -3586,6 +3467,23 @@
                                         "Company",
                                         "Personal"
                                       ]
+                                    },
+                                    "job_title": {
+                                      "type": "string"
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "full_address": {
+                                      "type": "string"
+                                    },
+                                    "job_description": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -8393,25 +8291,6 @@
                                                                       "attributes": {
                                                                         "type": "object",
                                                                         "properties": {
-                                                                          "name": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "designation": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "job_description": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "job_type": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "Full-Time",
-                                                                              "Part-Time",
-                                                                              "Contract-Based",
-                                                                              "Freelance",
-                                                                              "Internship"
-                                                                            ]
-                                                                          },
                                                                           "publish_status": {
                                                                             "type": "boolean"
                                                                           },
@@ -8687,78 +8566,6 @@
                                                                               }
                                                                             }
                                                                           },
-                                                                          "open_positions": {
-                                                                            "type": "integer"
-                                                                          },
-                                                                          "job_title": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "educational_qualification": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "Below 10th",
-                                                                              "SSC/10th",
-                                                                              "PUC/12th",
-                                                                              "Diploma",
-                                                                              "Graduate",
-                                                                              "Post Graduate"
-                                                                            ]
-                                                                          },
-                                                                          "work_mode": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "Work from office (WFO)",
-                                                                              "Work from home (WFH)",
-                                                                              "Hybrid (WFO + WFH)",
-                                                                              "Field Job"
-                                                                            ]
-                                                                          },
-                                                                          "gender": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "Male only",
-                                                                              "Female only",
-                                                                              "Any gender"
-                                                                            ]
-                                                                          },
-                                                                          "job_experience": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "Fresher",
-                                                                              "Experienced",
-                                                                              "Any"
-                                                                            ]
-                                                                          },
-                                                                          "interview_mode": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "In-Person",
-                                                                              "Telephonic / Online"
-                                                                            ]
-                                                                          },
-                                                                          "year_of_experience": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "job_shift": {
-                                                                            "type": "string",
-                                                                            "enum": [
-                                                                              "General Shift",
-                                                                              "Morning Shift",
-                                                                              "Afternoon Shift",
-                                                                              "Night Shift",
-                                                                              "Rotational Shift"
-                                                                            ]
-                                                                          },
-                                                                          "salary_range_min": {
-                                                                            "type": "string",
-                                                                            "pattern": "^\\d*$",
-                                                                            "example": "123456789"
-                                                                          },
-                                                                          "salary_range_max": {
-                                                                            "type": "string",
-                                                                            "pattern": "^\\d*$",
-                                                                            "example": "123456789"
-                                                                          },
                                                                           "preferred_languages": {
                                                                             "type": "object",
                                                                             "properties": {
@@ -8842,12 +8649,6 @@
                                                                                     "__component": {
                                                                                       "type": "string"
                                                                                     },
-                                                                                    "job_title": {
-                                                                                      "type": "string"
-                                                                                    },
-                                                                                    "job_description": {
-                                                                                      "type": "string"
-                                                                                    },
                                                                                     "job_timing_from": {
                                                                                       "type": "string",
                                                                                       "format": "time",
@@ -8862,14 +8663,6 @@
                                                                                       "type": "string",
                                                                                       "pattern": "^\\d*$",
                                                                                       "example": "123456789"
-                                                                                    },
-                                                                                    "gender": {
-                                                                                      "type": "string",
-                                                                                      "enum": [
-                                                                                        "Male only",
-                                                                                        "Female only",
-                                                                                        "Any gender"
-                                                                                      ]
                                                                                     }
                                                                                   }
                                                                                 },
@@ -8882,10 +8675,7 @@
                                                                                     "__component": {
                                                                                       "type": "string"
                                                                                     },
-                                                                                    "name": {
-                                                                                      "type": "string"
-                                                                                    },
-                                                                                    "job_description": {
+                                                                                    "company_name": {
                                                                                       "type": "string"
                                                                                     },
                                                                                     "job_type": {
@@ -8900,9 +8690,6 @@
                                                                                     },
                                                                                     "open_positions": {
                                                                                       "type": "integer"
-                                                                                    },
-                                                                                    "job_title": {
-                                                                                      "type": "string"
                                                                                     },
                                                                                     "educational_qualification": {
                                                                                       "type": "string",
@@ -8922,14 +8709,6 @@
                                                                                         "Work from home (WFH)",
                                                                                         "Hybrid (WFO + WFH)",
                                                                                         "Field Job"
-                                                                                      ]
-                                                                                    },
-                                                                                    "gender": {
-                                                                                      "type": "string",
-                                                                                      "enum": [
-                                                                                        "Male only",
-                                                                                        "Female only",
-                                                                                        "Any gender"
                                                                                       ]
                                                                                     },
                                                                                     "job_experience": {
@@ -8981,6 +8760,23 @@
                                                                               "Company",
                                                                               "Personal"
                                                                             ]
+                                                                          },
+                                                                          "job_title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "gender": {
+                                                                            "type": "string",
+                                                                            "enum": [
+                                                                              "Male only",
+                                                                              "Female only",
+                                                                              "Any gender"
+                                                                            ]
+                                                                          },
+                                                                          "full_address": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "job_description": {
+                                                                            "type": "string"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -13767,25 +13563,6 @@
                                                                         "attributes": {
                                                                           "type": "object",
                                                                           "properties": {
-                                                                            "name": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "designation": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_description": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_type": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Full-Time",
-                                                                                "Part-Time",
-                                                                                "Contract-Based",
-                                                                                "Freelance",
-                                                                                "Internship"
-                                                                              ]
-                                                                            },
                                                                             "publish_status": {
                                                                               "type": "boolean"
                                                                             },
@@ -14061,78 +13838,6 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "open_positions": {
-                                                                              "type": "integer"
-                                                                            },
-                                                                            "job_title": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "educational_qualification": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Below 10th",
-                                                                                "SSC/10th",
-                                                                                "PUC/12th",
-                                                                                "Diploma",
-                                                                                "Graduate",
-                                                                                "Post Graduate"
-                                                                              ]
-                                                                            },
-                                                                            "work_mode": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Work from office (WFO)",
-                                                                                "Work from home (WFH)",
-                                                                                "Hybrid (WFO + WFH)",
-                                                                                "Field Job"
-                                                                              ]
-                                                                            },
-                                                                            "gender": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Male only",
-                                                                                "Female only",
-                                                                                "Any gender"
-                                                                              ]
-                                                                            },
-                                                                            "job_experience": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Fresher",
-                                                                                "Experienced",
-                                                                                "Any"
-                                                                              ]
-                                                                            },
-                                                                            "interview_mode": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "In-Person",
-                                                                                "Telephonic / Online"
-                                                                              ]
-                                                                            },
-                                                                            "year_of_experience": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_shift": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "General Shift",
-                                                                                "Morning Shift",
-                                                                                "Afternoon Shift",
-                                                                                "Night Shift",
-                                                                                "Rotational Shift"
-                                                                              ]
-                                                                            },
-                                                                            "salary_range_min": {
-                                                                              "type": "string",
-                                                                              "pattern": "^\\d*$",
-                                                                              "example": "123456789"
-                                                                            },
-                                                                            "salary_range_max": {
-                                                                              "type": "string",
-                                                                              "pattern": "^\\d*$",
-                                                                              "example": "123456789"
-                                                                            },
                                                                             "preferred_languages": {
                                                                               "type": "object",
                                                                               "properties": {
@@ -14216,12 +13921,6 @@
                                                                                       "__component": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "job_title": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "job_description": {
-                                                                                        "type": "string"
-                                                                                      },
                                                                                       "job_timing_from": {
                                                                                         "type": "string",
                                                                                         "format": "time",
@@ -14236,14 +13935,6 @@
                                                                                         "type": "string",
                                                                                         "pattern": "^\\d*$",
                                                                                         "example": "123456789"
-                                                                                      },
-                                                                                      "gender": {
-                                                                                        "type": "string",
-                                                                                        "enum": [
-                                                                                          "Male only",
-                                                                                          "Female only",
-                                                                                          "Any gender"
-                                                                                        ]
                                                                                       }
                                                                                     }
                                                                                   },
@@ -14256,10 +13947,7 @@
                                                                                       "__component": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "name": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "job_description": {
+                                                                                      "company_name": {
                                                                                         "type": "string"
                                                                                       },
                                                                                       "job_type": {
@@ -14274,9 +13962,6 @@
                                                                                       },
                                                                                       "open_positions": {
                                                                                         "type": "integer"
-                                                                                      },
-                                                                                      "job_title": {
-                                                                                        "type": "string"
                                                                                       },
                                                                                       "educational_qualification": {
                                                                                         "type": "string",
@@ -14296,14 +13981,6 @@
                                                                                           "Work from home (WFH)",
                                                                                           "Hybrid (WFO + WFH)",
                                                                                           "Field Job"
-                                                                                        ]
-                                                                                      },
-                                                                                      "gender": {
-                                                                                        "type": "string",
-                                                                                        "enum": [
-                                                                                          "Male only",
-                                                                                          "Female only",
-                                                                                          "Any gender"
                                                                                         ]
                                                                                       },
                                                                                       "job_experience": {
@@ -14355,6 +14032,23 @@
                                                                                 "Company",
                                                                                 "Personal"
                                                                               ]
+                                                                            },
+                                                                            "job_title": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "gender": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Male only",
+                                                                                "Female only",
+                                                                                "Any gender"
+                                                                              ]
+                                                                            },
+                                                                            "full_address": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "job_description": {
+                                                                              "type": "string"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -18081,25 +17775,6 @@
                                               "attributes": {
                                                 "type": "object",
                                                 "properties": {
-                                                  "name": {
-                                                    "type": "string"
-                                                  },
-                                                  "designation": {
-                                                    "type": "string"
-                                                  },
-                                                  "job_description": {
-                                                    "type": "string"
-                                                  },
-                                                  "job_type": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "Full-Time",
-                                                      "Part-Time",
-                                                      "Contract-Based",
-                                                      "Freelance",
-                                                      "Internship"
-                                                    ]
-                                                  },
                                                   "publish_status": {
                                                     "type": "boolean"
                                                   },
@@ -18375,78 +18050,6 @@
                                                       }
                                                     }
                                                   },
-                                                  "open_positions": {
-                                                    "type": "integer"
-                                                  },
-                                                  "job_title": {
-                                                    "type": "string"
-                                                  },
-                                                  "educational_qualification": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "Below 10th",
-                                                      "SSC/10th",
-                                                      "PUC/12th",
-                                                      "Diploma",
-                                                      "Graduate",
-                                                      "Post Graduate"
-                                                    ]
-                                                  },
-                                                  "work_mode": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "Work from office (WFO)",
-                                                      "Work from home (WFH)",
-                                                      "Hybrid (WFO + WFH)",
-                                                      "Field Job"
-                                                    ]
-                                                  },
-                                                  "gender": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "Male only",
-                                                      "Female only",
-                                                      "Any gender"
-                                                    ]
-                                                  },
-                                                  "job_experience": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "Fresher",
-                                                      "Experienced",
-                                                      "Any"
-                                                    ]
-                                                  },
-                                                  "interview_mode": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "In-Person",
-                                                      "Telephonic / Online"
-                                                    ]
-                                                  },
-                                                  "year_of_experience": {
-                                                    "type": "string"
-                                                  },
-                                                  "job_shift": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                      "General Shift",
-                                                      "Morning Shift",
-                                                      "Afternoon Shift",
-                                                      "Night Shift",
-                                                      "Rotational Shift"
-                                                    ]
-                                                  },
-                                                  "salary_range_min": {
-                                                    "type": "string",
-                                                    "pattern": "^\\d*$",
-                                                    "example": "123456789"
-                                                  },
-                                                  "salary_range_max": {
-                                                    "type": "string",
-                                                    "pattern": "^\\d*$",
-                                                    "example": "123456789"
-                                                  },
                                                   "preferred_languages": {
                                                     "type": "object",
                                                     "properties": {
@@ -18530,12 +18133,6 @@
                                                             "__component": {
                                                               "type": "string"
                                                             },
-                                                            "job_title": {
-                                                              "type": "string"
-                                                            },
-                                                            "job_description": {
-                                                              "type": "string"
-                                                            },
                                                             "job_timing_from": {
                                                               "type": "string",
                                                               "format": "time",
@@ -18550,14 +18147,6 @@
                                                               "type": "string",
                                                               "pattern": "^\\d*$",
                                                               "example": "123456789"
-                                                            },
-                                                            "gender": {
-                                                              "type": "string",
-                                                              "enum": [
-                                                                "Male only",
-                                                                "Female only",
-                                                                "Any gender"
-                                                              ]
                                                             }
                                                           }
                                                         },
@@ -18570,10 +18159,7 @@
                                                             "__component": {
                                                               "type": "string"
                                                             },
-                                                            "name": {
-                                                              "type": "string"
-                                                            },
-                                                            "job_description": {
+                                                            "company_name": {
                                                               "type": "string"
                                                             },
                                                             "job_type": {
@@ -18588,9 +18174,6 @@
                                                             },
                                                             "open_positions": {
                                                               "type": "integer"
-                                                            },
-                                                            "job_title": {
-                                                              "type": "string"
                                                             },
                                                             "educational_qualification": {
                                                               "type": "string",
@@ -18610,14 +18193,6 @@
                                                                 "Work from home (WFH)",
                                                                 "Hybrid (WFO + WFH)",
                                                                 "Field Job"
-                                                              ]
-                                                            },
-                                                            "gender": {
-                                                              "type": "string",
-                                                              "enum": [
-                                                                "Male only",
-                                                                "Female only",
-                                                                "Any gender"
                                                               ]
                                                             },
                                                             "job_experience": {
@@ -18669,6 +18244,23 @@
                                                       "Company",
                                                       "Personal"
                                                     ]
+                                                  },
+                                                  "job_title": {
+                                                    "type": "string"
+                                                  },
+                                                  "gender": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                      "Male only",
+                                                      "Female only",
+                                                      "Any gender"
+                                                    ]
+                                                  },
+                                                  "full_address": {
+                                                    "type": "string"
+                                                  },
+                                                  "job_description": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -23629,25 +23221,6 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "designation": {
-                                      "type": "string"
-                                    },
-                                    "job_description": {
-                                      "type": "string"
-                                    },
-                                    "job_type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Full-Time",
-                                        "Part-Time",
-                                        "Contract-Based",
-                                        "Freelance",
-                                        "Internship"
-                                      ]
-                                    },
                                     "publish_status": {
                                       "type": "boolean"
                                     },
@@ -23923,78 +23496,6 @@
                                         }
                                       }
                                     },
-                                    "open_positions": {
-                                      "type": "integer"
-                                    },
-                                    "job_title": {
-                                      "type": "string"
-                                    },
-                                    "educational_qualification": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Below 10th",
-                                        "SSC/10th",
-                                        "PUC/12th",
-                                        "Diploma",
-                                        "Graduate",
-                                        "Post Graduate"
-                                      ]
-                                    },
-                                    "work_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Work from office (WFO)",
-                                        "Work from home (WFH)",
-                                        "Hybrid (WFO + WFH)",
-                                        "Field Job"
-                                      ]
-                                    },
-                                    "gender": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Male only",
-                                        "Female only",
-                                        "Any gender"
-                                      ]
-                                    },
-                                    "job_experience": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Fresher",
-                                        "Experienced",
-                                        "Any"
-                                      ]
-                                    },
-                                    "interview_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "In-Person",
-                                        "Telephonic / Online"
-                                      ]
-                                    },
-                                    "year_of_experience": {
-                                      "type": "string"
-                                    },
-                                    "job_shift": {
-                                      "type": "string",
-                                      "enum": [
-                                        "General Shift",
-                                        "Morning Shift",
-                                        "Afternoon Shift",
-                                        "Night Shift",
-                                        "Rotational Shift"
-                                      ]
-                                    },
-                                    "salary_range_min": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
-                                    "salary_range_max": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
                                     "preferred_languages": {
                                       "type": "object",
                                       "properties": {
@@ -24078,12 +23579,6 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "job_title": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
-                                                "type": "string"
-                                              },
                                               "job_timing_from": {
                                                 "type": "string",
                                                 "format": "time",
@@ -24098,14 +23593,6 @@
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
-                                                ]
                                               }
                                             }
                                           },
@@ -24118,10 +23605,7 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "name": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
+                                              "company_name": {
                                                 "type": "string"
                                               },
                                               "job_type": {
@@ -24136,9 +23620,6 @@
                                               },
                                               "open_positions": {
                                                 "type": "integer"
-                                              },
-                                              "job_title": {
-                                                "type": "string"
                                               },
                                               "educational_qualification": {
                                                 "type": "string",
@@ -24158,14 +23639,6 @@
                                                   "Work from home (WFH)",
                                                   "Hybrid (WFO + WFH)",
                                                   "Field Job"
-                                                ]
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
                                                 ]
                                               },
                                               "job_experience": {
@@ -24217,6 +23690,23 @@
                                         "Company",
                                         "Personal"
                                       ]
+                                    },
+                                    "job_title": {
+                                      "type": "string"
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "full_address": {
+                                      "type": "string"
+                                    },
+                                    "job_description": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -25732,25 +25222,6 @@
           "data": {
             "type": "object",
             "properties": {
-              "name": {
-                "type": "string"
-              },
-              "designation": {
-                "type": "string"
-              },
-              "job_description": {
-                "type": "string"
-              },
-              "job_type": {
-                "type": "string",
-                "enum": [
-                  "Full-Time",
-                  "Part-Time",
-                  "Contract-Based",
-                  "Freelance",
-                  "Internship"
-                ]
-              },
               "publish_status": {
                 "type": "boolean"
               },
@@ -25805,78 +25276,6 @@
                   "$ref": "#/components/schemas/PaymentPaymentComponent"
                 }
               },
-              "open_positions": {
-                "type": "integer"
-              },
-              "job_title": {
-                "type": "string"
-              },
-              "educational_qualification": {
-                "type": "string",
-                "enum": [
-                  "Below 10th",
-                  "SSC/10th",
-                  "PUC/12th",
-                  "Diploma",
-                  "Graduate",
-                  "Post Graduate"
-                ]
-              },
-              "work_mode": {
-                "type": "string",
-                "enum": [
-                  "Work from office (WFO)",
-                  "Work from home (WFH)",
-                  "Hybrid (WFO + WFH)",
-                  "Field Job"
-                ]
-              },
-              "gender": {
-                "type": "string",
-                "enum": [
-                  "Male only",
-                  "Female only",
-                  "Any gender"
-                ]
-              },
-              "job_experience": {
-                "type": "string",
-                "enum": [
-                  "Fresher",
-                  "Experienced",
-                  "Any"
-                ]
-              },
-              "interview_mode": {
-                "type": "string",
-                "enum": [
-                  "In-Person",
-                  "Telephonic / Online"
-                ]
-              },
-              "year_of_experience": {
-                "type": "string"
-              },
-              "job_shift": {
-                "type": "string",
-                "enum": [
-                  "General Shift",
-                  "Morning Shift",
-                  "Afternoon Shift",
-                  "Night Shift",
-                  "Rotational Shift"
-                ]
-              },
-              "salary_range_min": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
-              },
-              "salary_range_max": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
-              },
               "preferred_languages": {
                 "type": "array",
                 "items": {
@@ -25910,6 +25309,23 @@
                   "Company",
                   "Personal"
                 ]
+              },
+              "job_title": {
+                "type": "string"
+              },
+              "gender": {
+                "type": "string",
+                "enum": [
+                  "Male only",
+                  "Female only",
+                  "Any gender"
+                ]
+              },
+              "full_address": {
+                "type": "string"
+              },
+              "job_description": {
+                "type": "string"
               }
             }
           }
@@ -25964,25 +25380,6 @@
       "JobListing": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string"
-          },
-          "designation": {
-            "type": "string"
-          },
-          "job_description": {
-            "type": "string"
-          },
-          "job_type": {
-            "type": "string",
-            "enum": [
-              "Full-Time",
-              "Part-Time",
-              "Contract-Based",
-              "Freelance",
-              "Internship"
-            ]
-          },
           "publish_status": {
             "type": "boolean"
           },
@@ -28776,25 +28173,6 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "designation": {
-                                      "type": "string"
-                                    },
-                                    "job_description": {
-                                      "type": "string"
-                                    },
-                                    "job_type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Full-Time",
-                                        "Part-Time",
-                                        "Contract-Based",
-                                        "Freelance",
-                                        "Internship"
-                                      ]
-                                    },
                                     "publish_status": {
                                       "type": "boolean"
                                     },
@@ -29070,78 +28448,6 @@
                                         }
                                       }
                                     },
-                                    "open_positions": {
-                                      "type": "integer"
-                                    },
-                                    "job_title": {
-                                      "type": "string"
-                                    },
-                                    "educational_qualification": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Below 10th",
-                                        "SSC/10th",
-                                        "PUC/12th",
-                                        "Diploma",
-                                        "Graduate",
-                                        "Post Graduate"
-                                      ]
-                                    },
-                                    "work_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Work from office (WFO)",
-                                        "Work from home (WFH)",
-                                        "Hybrid (WFO + WFH)",
-                                        "Field Job"
-                                      ]
-                                    },
-                                    "gender": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Male only",
-                                        "Female only",
-                                        "Any gender"
-                                      ]
-                                    },
-                                    "job_experience": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Fresher",
-                                        "Experienced",
-                                        "Any"
-                                      ]
-                                    },
-                                    "interview_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "In-Person",
-                                        "Telephonic / Online"
-                                      ]
-                                    },
-                                    "year_of_experience": {
-                                      "type": "string"
-                                    },
-                                    "job_shift": {
-                                      "type": "string",
-                                      "enum": [
-                                        "General Shift",
-                                        "Morning Shift",
-                                        "Afternoon Shift",
-                                        "Night Shift",
-                                        "Rotational Shift"
-                                      ]
-                                    },
-                                    "salary_range_min": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
-                                    "salary_range_max": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
                                     "preferred_languages": {
                                       "type": "object",
                                       "properties": {
@@ -29225,12 +28531,6 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "job_title": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
-                                                "type": "string"
-                                              },
                                               "job_timing_from": {
                                                 "type": "string",
                                                 "format": "time",
@@ -29245,14 +28545,6 @@
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
-                                                ]
                                               }
                                             }
                                           },
@@ -29265,10 +28557,7 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "name": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
+                                              "company_name": {
                                                 "type": "string"
                                               },
                                               "job_type": {
@@ -29283,9 +28572,6 @@
                                               },
                                               "open_positions": {
                                                 "type": "integer"
-                                              },
-                                              "job_title": {
-                                                "type": "string"
                                               },
                                               "educational_qualification": {
                                                 "type": "string",
@@ -29305,14 +28591,6 @@
                                                   "Work from home (WFH)",
                                                   "Hybrid (WFO + WFH)",
                                                   "Field Job"
-                                                ]
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
                                                 ]
                                               },
                                               "job_experience": {
@@ -29364,6 +28642,23 @@
                                         "Company",
                                         "Personal"
                                       ]
+                                    },
+                                    "job_title": {
+                                      "type": "string"
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "full_address": {
+                                      "type": "string"
+                                    },
+                                    "job_description": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -30571,78 +29866,6 @@
               "$ref": "#/components/schemas/PaymentPaymentComponent"
             }
           },
-          "open_positions": {
-            "type": "integer"
-          },
-          "job_title": {
-            "type": "string"
-          },
-          "educational_qualification": {
-            "type": "string",
-            "enum": [
-              "Below 10th",
-              "SSC/10th",
-              "PUC/12th",
-              "Diploma",
-              "Graduate",
-              "Post Graduate"
-            ]
-          },
-          "work_mode": {
-            "type": "string",
-            "enum": [
-              "Work from office (WFO)",
-              "Work from home (WFH)",
-              "Hybrid (WFO + WFH)",
-              "Field Job"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "Male only",
-              "Female only",
-              "Any gender"
-            ]
-          },
-          "job_experience": {
-            "type": "string",
-            "enum": [
-              "Fresher",
-              "Experienced",
-              "Any"
-            ]
-          },
-          "interview_mode": {
-            "type": "string",
-            "enum": [
-              "In-Person",
-              "Telephonic / Online"
-            ]
-          },
-          "year_of_experience": {
-            "type": "string"
-          },
-          "job_shift": {
-            "type": "string",
-            "enum": [
-              "General Shift",
-              "Morning Shift",
-              "Afternoon Shift",
-              "Night Shift",
-              "Rotational Shift"
-            ]
-          },
-          "salary_range_min": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
-          },
-          "salary_range_max": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
-          },
           "preferred_languages": {
             "type": "object",
             "properties": {
@@ -30682,6 +29905,23 @@
               "Company",
               "Personal"
             ]
+          },
+          "job_title": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string",
+            "enum": [
+              "Male only",
+              "Female only",
+              "Any gender"
+            ]
+          },
+          "full_address": {
+            "type": "string"
+          },
+          "job_description": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -30762,12 +30002,6 @@
           "__component": {
             "type": "string"
           },
-          "job_title": {
-            "type": "string"
-          },
-          "job_description": {
-            "type": "string"
-          },
           "job_timing_from": {
             "type": "string",
             "format": "time",
@@ -30782,14 +30016,6 @@
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "Male only",
-              "Female only",
-              "Any gender"
-            ]
           }
         }
       },
@@ -30802,10 +30028,7 @@
           "__component": {
             "type": "string"
           },
-          "name": {
-            "type": "string"
-          },
-          "job_description": {
+          "company_name": {
             "type": "string"
           },
           "job_type": {
@@ -30820,9 +30043,6 @@
           },
           "open_positions": {
             "type": "integer"
-          },
-          "job_title": {
-            "type": "string"
           },
           "educational_qualification": {
             "type": "string",
@@ -30842,14 +30062,6 @@
               "Work from home (WFH)",
               "Hybrid (WFO + WFH)",
               "Field Job"
-            ]
-          },
-          "gender": {
-            "type": "string",
-            "enum": [
-              "Male only",
-              "Female only",
-              "Any gender"
             ]
           },
           "job_experience": {
@@ -35431,25 +34643,6 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "name": {
-                                      "type": "string"
-                                    },
-                                    "designation": {
-                                      "type": "string"
-                                    },
-                                    "job_description": {
-                                      "type": "string"
-                                    },
-                                    "job_type": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Full-Time",
-                                        "Part-Time",
-                                        "Contract-Based",
-                                        "Freelance",
-                                        "Internship"
-                                      ]
-                                    },
                                     "publish_status": {
                                       "type": "boolean"
                                     },
@@ -35725,78 +34918,6 @@
                                         }
                                       }
                                     },
-                                    "open_positions": {
-                                      "type": "integer"
-                                    },
-                                    "job_title": {
-                                      "type": "string"
-                                    },
-                                    "educational_qualification": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Below 10th",
-                                        "SSC/10th",
-                                        "PUC/12th",
-                                        "Diploma",
-                                        "Graduate",
-                                        "Post Graduate"
-                                      ]
-                                    },
-                                    "work_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Work from office (WFO)",
-                                        "Work from home (WFH)",
-                                        "Hybrid (WFO + WFH)",
-                                        "Field Job"
-                                      ]
-                                    },
-                                    "gender": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Male only",
-                                        "Female only",
-                                        "Any gender"
-                                      ]
-                                    },
-                                    "job_experience": {
-                                      "type": "string",
-                                      "enum": [
-                                        "Fresher",
-                                        "Experienced",
-                                        "Any"
-                                      ]
-                                    },
-                                    "interview_mode": {
-                                      "type": "string",
-                                      "enum": [
-                                        "In-Person",
-                                        "Telephonic / Online"
-                                      ]
-                                    },
-                                    "year_of_experience": {
-                                      "type": "string"
-                                    },
-                                    "job_shift": {
-                                      "type": "string",
-                                      "enum": [
-                                        "General Shift",
-                                        "Morning Shift",
-                                        "Afternoon Shift",
-                                        "Night Shift",
-                                        "Rotational Shift"
-                                      ]
-                                    },
-                                    "salary_range_min": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
-                                    "salary_range_max": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
-                                    },
                                     "preferred_languages": {
                                       "type": "object",
                                       "properties": {
@@ -35880,12 +35001,6 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "job_title": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
-                                                "type": "string"
-                                              },
                                               "job_timing_from": {
                                                 "type": "string",
                                                 "format": "time",
@@ -35900,14 +35015,6 @@
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
-                                                ]
                                               }
                                             }
                                           },
@@ -35920,10 +35027,7 @@
                                               "__component": {
                                                 "type": "string"
                                               },
-                                              "name": {
-                                                "type": "string"
-                                              },
-                                              "job_description": {
+                                              "company_name": {
                                                 "type": "string"
                                               },
                                               "job_type": {
@@ -35938,9 +35042,6 @@
                                               },
                                               "open_positions": {
                                                 "type": "integer"
-                                              },
-                                              "job_title": {
-                                                "type": "string"
                                               },
                                               "educational_qualification": {
                                                 "type": "string",
@@ -35960,14 +35061,6 @@
                                                   "Work from home (WFH)",
                                                   "Hybrid (WFO + WFH)",
                                                   "Field Job"
-                                                ]
-                                              },
-                                              "gender": {
-                                                "type": "string",
-                                                "enum": [
-                                                  "Male only",
-                                                  "Female only",
-                                                  "Any gender"
                                                 ]
                                               },
                                               "job_experience": {
@@ -36019,6 +35112,23 @@
                                         "Company",
                                         "Personal"
                                       ]
+                                    },
+                                    "job_title": {
+                                      "type": "string"
+                                    },
+                                    "gender": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Male only",
+                                        "Female only",
+                                        "Any gender"
+                                      ]
+                                    },
+                                    "full_address": {
+                                      "type": "string"
+                                    },
+                                    "job_description": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -41019,25 +40129,6 @@
                                                                         "attributes": {
                                                                           "type": "object",
                                                                           "properties": {
-                                                                            "name": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "designation": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_description": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_type": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Full-Time",
-                                                                                "Part-Time",
-                                                                                "Contract-Based",
-                                                                                "Freelance",
-                                                                                "Internship"
-                                                                              ]
-                                                                            },
                                                                             "publish_status": {
                                                                               "type": "boolean"
                                                                             },
@@ -41313,78 +40404,6 @@
                                                                                 }
                                                                               }
                                                                             },
-                                                                            "open_positions": {
-                                                                              "type": "integer"
-                                                                            },
-                                                                            "job_title": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "educational_qualification": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Below 10th",
-                                                                                "SSC/10th",
-                                                                                "PUC/12th",
-                                                                                "Diploma",
-                                                                                "Graduate",
-                                                                                "Post Graduate"
-                                                                              ]
-                                                                            },
-                                                                            "work_mode": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Work from office (WFO)",
-                                                                                "Work from home (WFH)",
-                                                                                "Hybrid (WFO + WFH)",
-                                                                                "Field Job"
-                                                                              ]
-                                                                            },
-                                                                            "gender": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Male only",
-                                                                                "Female only",
-                                                                                "Any gender"
-                                                                              ]
-                                                                            },
-                                                                            "job_experience": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "Fresher",
-                                                                                "Experienced",
-                                                                                "Any"
-                                                                              ]
-                                                                            },
-                                                                            "interview_mode": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "In-Person",
-                                                                                "Telephonic / Online"
-                                                                              ]
-                                                                            },
-                                                                            "year_of_experience": {
-                                                                              "type": "string"
-                                                                            },
-                                                                            "job_shift": {
-                                                                              "type": "string",
-                                                                              "enum": [
-                                                                                "General Shift",
-                                                                                "Morning Shift",
-                                                                                "Afternoon Shift",
-                                                                                "Night Shift",
-                                                                                "Rotational Shift"
-                                                                              ]
-                                                                            },
-                                                                            "salary_range_min": {
-                                                                              "type": "string",
-                                                                              "pattern": "^\\d*$",
-                                                                              "example": "123456789"
-                                                                            },
-                                                                            "salary_range_max": {
-                                                                              "type": "string",
-                                                                              "pattern": "^\\d*$",
-                                                                              "example": "123456789"
-                                                                            },
                                                                             "preferred_languages": {
                                                                               "type": "object",
                                                                               "properties": {
@@ -41468,12 +40487,6 @@
                                                                                       "__component": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "job_title": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "job_description": {
-                                                                                        "type": "string"
-                                                                                      },
                                                                                       "job_timing_from": {
                                                                                         "type": "string",
                                                                                         "format": "time",
@@ -41488,14 +40501,6 @@
                                                                                         "type": "string",
                                                                                         "pattern": "^\\d*$",
                                                                                         "example": "123456789"
-                                                                                      },
-                                                                                      "gender": {
-                                                                                        "type": "string",
-                                                                                        "enum": [
-                                                                                          "Male only",
-                                                                                          "Female only",
-                                                                                          "Any gender"
-                                                                                        ]
                                                                                       }
                                                                                     }
                                                                                   },
@@ -41508,10 +40513,7 @@
                                                                                       "__component": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "name": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "job_description": {
+                                                                                      "company_name": {
                                                                                         "type": "string"
                                                                                       },
                                                                                       "job_type": {
@@ -41526,9 +40528,6 @@
                                                                                       },
                                                                                       "open_positions": {
                                                                                         "type": "integer"
-                                                                                      },
-                                                                                      "job_title": {
-                                                                                        "type": "string"
                                                                                       },
                                                                                       "educational_qualification": {
                                                                                         "type": "string",
@@ -41548,14 +40547,6 @@
                                                                                           "Work from home (WFH)",
                                                                                           "Hybrid (WFO + WFH)",
                                                                                           "Field Job"
-                                                                                        ]
-                                                                                      },
-                                                                                      "gender": {
-                                                                                        "type": "string",
-                                                                                        "enum": [
-                                                                                          "Male only",
-                                                                                          "Female only",
-                                                                                          "Any gender"
                                                                                         ]
                                                                                       },
                                                                                       "job_experience": {
@@ -41607,6 +40598,23 @@
                                                                                 "Company",
                                                                                 "Personal"
                                                                               ]
+                                                                            },
+                                                                            "job_title": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "gender": {
+                                                                              "type": "string",
+                                                                              "enum": [
+                                                                                "Male only",
+                                                                                "Female only",
+                                                                                "Any gender"
+                                                                              ]
+                                                                            },
+                                                                            "full_address": {
+                                                                              "type": "string"
+                                                                            },
+                                                                            "job_description": {
+                                                                              "type": "string"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
