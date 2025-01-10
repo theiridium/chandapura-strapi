@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_job_personal_job_postings",
+  "collectionName": "components_job_personal_job_details",
   "info": {
-    "displayName": "Personal Job Posting",
-    "description": ""
+    "displayName": "Personal Job Details"
   },
   "options": {},
   "attributes": {

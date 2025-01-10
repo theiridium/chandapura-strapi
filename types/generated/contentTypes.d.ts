@@ -1116,7 +1116,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   info: {
     singularName: 'category';
     pluralName: 'categories';
-    displayName: 'Category';
+    displayName: 'Business Category';
     description: '';
   };
   options: {
@@ -1289,9 +1289,9 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
       'api::language.language'
     >;
     details_by_jobCategory: Attribute.DynamicZone<
-      ['job.personal-job-posting', 'job.company-job-posting']
+      ['job.personal-job-details', 'job.corporate-job-details']
     >;
-    category: Attribute.Enumeration<['Company', 'Personal']>;
+    category: Attribute.Enumeration<['Corporate', 'Personal']>;
     job_title: Attribute.String;
     gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
     full_address: Attribute.Text;

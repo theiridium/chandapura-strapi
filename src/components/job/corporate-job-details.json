@@ -1,8 +1,7 @@
 {
-  "collectionName": "components_job_company_job_postings",
+  "collectionName": "components_job_corporate_job_details",
   "info": {
-    "displayName": "Company Job Posting",
-    "description": ""
+    "displayName": "Corporate Job Details"
   },
   "options": {},
   "attributes": {

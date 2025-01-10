@@ -64,14 +64,14 @@
     "details_by_jobCategory": {
       "type": "dynamiczone",
       "components": [
-        "job.personal-job-posting",
-        "job.company-job-posting"
+        "job.personal-job-details",
+        "job.corporate-job-details"
       ]
     },
     "category": {
       "type": "enumeration",
       "enum": [
-        "Company",
+        "Corporate",
         "Personal"
       ]
     },

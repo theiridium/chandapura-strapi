@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-08T23:00:07.649Z"
+    "x-generation-date": "2025-01-10T01:32:05.501Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3464,7 +3464,7 @@
                                     "category": {
                                       "type": "string",
                                       "enum": [
-                                        "Company",
+                                        "Corporate",
                                         "Personal"
                                       ]
                                     },
@@ -8757,7 +8757,7 @@
                                                                           "category": {
                                                                             "type": "string",
                                                                             "enum": [
-                                                                              "Company",
+                                                                              "Corporate",
                                                                               "Personal"
                                                                             ]
                                                                           },
@@ -14029,7 +14029,7 @@
                                                                             "category": {
                                                                               "type": "string",
                                                                               "enum": [
-                                                                                "Company",
+                                                                                "Corporate",
                                                                                 "Personal"
                                                                               ]
                                                                             },
@@ -18241,7 +18241,7 @@
                                                   "category": {
                                                     "type": "string",
                                                     "enum": [
-                                                      "Company",
+                                                      "Corporate",
                                                       "Personal"
                                                     ]
                                                   },
@@ -23687,7 +23687,7 @@
                                     "category": {
                                       "type": "string",
                                       "enum": [
-                                        "Company",
+                                        "Corporate",
                                         "Personal"
                                       ]
                                     },
@@ -25295,10 +25295,10 @@
                 "items": {
                   "anyOf": [
                     {
-                      "$ref": "#/components/schemas/JobPersonalJobPostingComponent"
+                      "$ref": "#/components/schemas/JobPersonalJobDetailsComponent"
                     },
                     {
-                      "$ref": "#/components/schemas/JobCompanyJobPostingComponent"
+                      "$ref": "#/components/schemas/JobCorporateJobDetailsComponent"
                     }
                   ]
                 }
@@ -25306,7 +25306,7 @@
               "category": {
                 "type": "string",
                 "enum": [
-                  "Company",
+                  "Corporate",
                   "Personal"
                 ]
               },
@@ -28639,7 +28639,7 @@
                                     "category": {
                                       "type": "string",
                                       "enum": [
-                                        "Company",
+                                        "Corporate",
                                         "Personal"
                                       ]
                                     },
@@ -29891,10 +29891,10 @@
             "items": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/JobPersonalJobPostingComponent"
+                  "$ref": "#/components/schemas/JobPersonalJobDetailsComponent"
                 },
                 {
-                  "$ref": "#/components/schemas/JobCompanyJobPostingComponent"
+                  "$ref": "#/components/schemas/JobCorporateJobDetailsComponent"
                 }
               ]
             }
@@ -29902,7 +29902,7 @@
           "category": {
             "type": "string",
             "enum": [
-              "Company",
+              "Corporate",
               "Personal"
             ]
           },
@@ -29993,7 +29993,7 @@
           }
         }
       },
-      "JobPersonalJobPostingComponent": {
+      "JobPersonalJobDetailsComponent": {
         "type": "object",
         "properties": {
           "id": {
@@ -30019,7 +30019,7 @@
           }
         }
       },
-      "JobCompanyJobPostingComponent": {
+      "JobCorporateJobDetailsComponent": {
         "type": "object",
         "properties": {
           "id": {
@@ -35109,7 +35109,7 @@
                                     "category": {
                                       "type": "string",
                                       "enum": [
-                                        "Company",
+                                        "Corporate",
                                         "Personal"
                                       ]
                                     },
@@ -40595,7 +40595,7 @@
                                                                             "category": {
                                                                               "type": "string",
                                                                               "enum": [
-                                                                                "Company",
+                                                                                "Corporate",
                                                                                 "Personal"
                                                                               ]
                                                                             },

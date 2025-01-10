@@ -200,11 +200,10 @@ export interface RealEstatePgDetails extends Schema.Component {
   };
 }
 
-export interface JobPersonalJobPosting extends Schema.Component {
-  collectionName: 'components_job_personal_job_postings';
+export interface JobPersonalJobDetails extends Schema.Component {
+  collectionName: 'components_job_personal_job_details';
   info: {
-    displayName: 'Personal Job Posting';
-    description: '';
+    displayName: 'Personal Job Details';
   };
   attributes: {
     job_timing_from: Attribute.Time;
@@ -213,11 +212,10 @@ export interface JobPersonalJobPosting extends Schema.Component {
   };
 }
 
-export interface JobCompanyJobPosting extends Schema.Component {
-  collectionName: 'components_job_company_job_postings';
+export interface JobCorporateJobDetails extends Schema.Component {
+  collectionName: 'components_job_corporate_job_details';
   info: {
-    displayName: 'Company Job Posting';
-    description: '';
+    displayName: 'Corporate Job Details';
   };
   attributes: {
     company_name: Attribute.String;
@@ -301,8 +299,8 @@ declare module '@strapi/types' {
       'real-estate.plot-details': RealEstatePlotDetails;
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
-      'job.personal-job-posting': JobPersonalJobPosting;
-      'job.company-job-posting': JobCompanyJobPosting;
+      'job.personal-job-details': JobPersonalJobDetails;
+      'job.corporate-job-details': JobCorporateJobDetails;
       'contact.contact-details': ContactContactDetails;
       'classified.vehicle-details': ClassifiedVehicleDetails;
     }
