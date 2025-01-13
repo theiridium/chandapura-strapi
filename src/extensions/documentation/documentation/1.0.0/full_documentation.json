@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-01-10T01:32:05.501Z"
+    "x-generation-date": "2025-01-13T18:12:05.103Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3366,7 +3366,12 @@
                                                 "format": "time",
                                                 "example": "12:54.000"
                                               },
-                                              "salary": {
+                                              "salary_range_min": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "salary_range_max": {
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
@@ -8659,7 +8664,12 @@
                                                                                       "format": "time",
                                                                                       "example": "12:54.000"
                                                                                     },
-                                                                                    "salary": {
+                                                                                    "salary_range_min": {
+                                                                                      "type": "string",
+                                                                                      "pattern": "^\\d*$",
+                                                                                      "example": "123456789"
+                                                                                    },
+                                                                                    "salary_range_max": {
                                                                                       "type": "string",
                                                                                       "pattern": "^\\d*$",
                                                                                       "example": "123456789"
@@ -13931,7 +13941,12 @@
                                                                                         "format": "time",
                                                                                         "example": "12:54.000"
                                                                                       },
-                                                                                      "salary": {
+                                                                                      "salary_range_min": {
+                                                                                        "type": "string",
+                                                                                        "pattern": "^\\d*$",
+                                                                                        "example": "123456789"
+                                                                                      },
+                                                                                      "salary_range_max": {
                                                                                         "type": "string",
                                                                                         "pattern": "^\\d*$",
                                                                                         "example": "123456789"
@@ -18143,7 +18158,12 @@
                                                               "format": "time",
                                                               "example": "12:54.000"
                                                             },
-                                                            "salary": {
+                                                            "salary_range_min": {
+                                                              "type": "string",
+                                                              "pattern": "^\\d*$",
+                                                              "example": "123456789"
+                                                            },
+                                                            "salary_range_max": {
                                                               "type": "string",
                                                               "pattern": "^\\d*$",
                                                               "example": "123456789"
@@ -23589,7 +23609,12 @@
                                                 "format": "time",
                                                 "example": "12:54.000"
                                               },
-                                              "salary": {
+                                              "salary_range_min": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "salary_range_max": {
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
@@ -28541,7 +28566,12 @@
                                                 "format": "time",
                                                 "example": "12:54.000"
                                               },
-                                              "salary": {
+                                              "salary_range_min": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "salary_range_max": {
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
@@ -30012,7 +30042,12 @@
             "format": "time",
             "example": "12:54.000"
           },
-          "salary": {
+          "salary_range_min": {
+            "type": "string",
+            "pattern": "^\\d*$",
+            "example": "123456789"
+          },
+          "salary_range_max": {
             "type": "string",
             "pattern": "^\\d*$",
             "example": "123456789"
@@ -35011,7 +35046,12 @@
                                                 "format": "time",
                                                 "example": "12:54.000"
                                               },
-                                              "salary": {
+                                              "salary_range_min": {
+                                                "type": "string",
+                                                "pattern": "^\\d*$",
+                                                "example": "123456789"
+                                              },
+                                              "salary_range_max": {
                                                 "type": "string",
                                                 "pattern": "^\\d*$",
                                                 "example": "123456789"
@@ -40497,7 +40537,12 @@
                                                                                         "format": "time",
                                                                                         "example": "12:54.000"
                                                                                       },
-                                                                                      "salary": {
+                                                                                      "salary_range_min": {
+                                                                                        "type": "string",
+                                                                                        "pattern": "^\\d*$",
+                                                                                        "example": "123456789"
+                                                                                      },
+                                                                                      "salary_range_max": {
                                                                                         "type": "string",
                                                                                         "pattern": "^\\d*$",
                                                                                         "example": "123456789"

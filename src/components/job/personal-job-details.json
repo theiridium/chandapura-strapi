@@ -1,7 +1,8 @@
 {
   "collectionName": "components_job_personal_job_details",
   "info": {
-    "displayName": "Personal Job Details"
+    "displayName": "Personal Job Details",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,7 +12,10 @@
     "job_timing_to": {
       "type": "time"
     },
-    "salary": {
+    "salary_range_min": {
+      "type": "biginteger"
+    },
+    "salary_range_max": {
       "type": "biginteger"
     }
   }
