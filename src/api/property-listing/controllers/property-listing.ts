@@ -17,7 +17,7 @@ export default factories.createCoreController('api::property-listing.property-li
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
-                        subject: 'New Property Listing Published - Chandapura.com',
+                        subject: 'New Property Listing Posted - Chandapura.com',
                         html: `<p>A new Property Listing - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::property-listing.property-listing/${response.data.id}`,
                     });
                     let emailToAddressUser = itemData.author.email;

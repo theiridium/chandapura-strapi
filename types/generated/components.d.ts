@@ -1,26 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface PaymentPayment extends Schema.Component {
-  collectionName: 'components_payment_payments';
-  info: {
-    displayName: 'Payment Details';
-    description: '';
-  };
-  options: {
-    timestamps: true;
-  };
-  attributes: {
-    purchase_date: Attribute.DateTime;
-    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date: Attribute.DateTime;
-    raz_order_id: Attribute.String & Attribute.Private;
-    raz_payment_id: Attribute.String & Attribute.Private;
-    amount: Attribute.Decimal;
-    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date_timestamp: Attribute.Decimal;
-  };
-}
-
 export interface RealEstateSalePropertyDetails extends Schema.Component {
   collectionName: 'components_real_estate_sale_property_details';
   info: {
@@ -200,16 +179,24 @@ export interface RealEstatePgDetails extends Schema.Component {
   };
 }
 
-export interface ContactContactDetails extends Schema.Component {
-  collectionName: 'components_contact_contact_details';
+export interface PaymentPayment extends Schema.Component {
+  collectionName: 'components_payment_payments';
   info: {
-    displayName: 'Contact Details';
+    displayName: 'Payment Details';
     description: '';
   };
+  options: {
+    timestamps: true;
+  };
   attributes: {
-    contact_name: Attribute.String;
-    contact_number: Attribute.String;
-    contact_email_id: Attribute.Email;
+    purchase_date: Attribute.DateTime;
+    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date: Attribute.DateTime;
+    raz_order_id: Attribute.String & Attribute.Private;
+    raz_payment_id: Attribute.String & Attribute.Private;
+    amount: Attribute.Decimal;
+    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date_timestamp: Attribute.Decimal;
   };
 }
 
@@ -273,6 +260,19 @@ export interface JobCorporateJobDetails extends Schema.Component {
   };
 }
 
+export interface ContactContactDetails extends Schema.Component {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'Contact Details';
+    description: '';
+  };
+  attributes: {
+    contact_name: Attribute.String;
+    contact_number: Attribute.String;
+    contact_email_id: Attribute.Email;
+  };
+}
+
 export interface ClassifiedVehicleDetails extends Schema.Component {
   collectionName: 'components_classified_vehicle_details';
   info: {
@@ -293,7 +293,6 @@ export interface ClassifiedVehicleDetails extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'payment.payment': PaymentPayment;
       'real-estate.sale-property-details': RealEstateSalePropertyDetails;
       'real-estate.rent-property-details': RealEstateRentPropertyDetails;
       'real-estate.real-estate': RealEstateRealEstate;
@@ -301,9 +300,10 @@ declare module '@strapi/types' {
       'real-estate.plot-details': RealEstatePlotDetails;
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
-      'contact.contact-details': ContactContactDetails;
+      'payment.payment': PaymentPayment;
       'job.personal-job-details': JobPersonalJobDetails;
       'job.corporate-job-details': JobCorporateJobDetails;
+      'contact.contact-details': ContactContactDetails;
       'classified.vehicle-details': ClassifiedVehicleDetails;
     }
   }

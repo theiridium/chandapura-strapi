@@ -17,7 +17,7 @@ export default factories.createCoreController('api::job-listing.job-listing', ({
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
-                        subject: 'New Job Listing Published - Chandapura.com',
+                        subject: 'New Job Listing Posted - Chandapura.com',
                         html: `<p>A new Job lisiting by <b>${response.data.attributes.company_name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::job-listing.job-listing/${response.data.id}`,
                     });
                     let emailToAddressUser = authorData.author.email;

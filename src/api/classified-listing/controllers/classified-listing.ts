@@ -17,7 +17,7 @@ export default factories.createCoreController('api::classified-listing.classifie
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
-                        subject: 'New Classified Listing Published - Chandapura.com',
+                        subject: 'New Classified Listing Posted - Chandapura.com',
                         html: `<p>A new Classified - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::classified-listing.classified-listing/${response.data.id}`,
                     });
                     let emailToAddressUser = authorData.author.email;
