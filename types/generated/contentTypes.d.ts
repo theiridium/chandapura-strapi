@@ -1320,13 +1320,14 @@ export interface ApiJobTitleJobTitle extends Schema.CollectionType {
     singularName: 'job-title';
     pluralName: 'job-titles';
     displayName: 'Job Title';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String;
-    company: Attribute.Boolean & Attribute.DefaultTo<false>;
+    corporate: Attribute.Boolean & Attribute.DefaultTo<false>;
     personal: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;

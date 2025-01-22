@@ -4,7 +4,8 @@
   "info": {
     "singularName": "job-title",
     "pluralName": "job-titles",
-    "displayName": "Job Title"
+    "displayName": "Job Title",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,7 +15,7 @@
     "name": {
       "type": "string"
     },
-    "company": {
+    "corporate": {
       "type": "boolean",
       "default": false
     },
