@@ -18,13 +18,14 @@ export default factories.createCoreController('api::advertisement.advertisement'
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
                         subject: 'New Advertisement Posted - Chandapura.com',
-                        html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::business-listing.business-listing/${response.data.id}`,
+                        html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> is posted and awaiting approval. Kindly review the item in below link for approval</p>
+                        </br><a href='${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::advertisement.advertisement/${response.data.id}'>Link to admin page</a>`,
                     });
                     let emailToAddressUser = itemData.author.email;
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Advertisement Uploaded - Chandapura.com',
-                        html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> has been successfully uploaded. Team is currently reviwing the uploaded content, once approved, the listing will be published live and you will be intimated about the same via email.</p>`,
+                        html: `<p>A new Advertisement - <b>${response.data.attributes.name}</b> has been successfully uploaded. Team is currently reviwing the uploaded content, once approved, the banner will be published live and you will be intimated about the same via email.</p>`,
                     });
                 }
                 if (response.data.attributes &&
