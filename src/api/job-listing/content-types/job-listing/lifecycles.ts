@@ -69,7 +69,7 @@ export default {
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Job Posted Live - Chandapura.com',
-                        html: `<p>Your Job vacancy for - <b><a href='https://www.chandapura.com/job-vacancy/${response.slug}?source=${result.id}'>${result.name}</b></a> is Live now.</p>`,
+                        html: `<p>Your Job vacancy for ${result.category} job category - <b><a href='https://www.chandapura.com/job-vacancy/${response.slug}?source=${result.id}'>${result.job_title}</b></a> is Live now.</p>`,
                     });
                 }
             }

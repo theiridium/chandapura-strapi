@@ -18,13 +18,13 @@ export default factories.createCoreController('api::job-listing.job-listing', ({
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressListAdmin,
                         subject: 'New Job Listing Posted - Chandapura.com',
-                        html: `<p>A new Job lisiting by <b>${response.data.attributes.company_name}</b> is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::job-listing.job-listing/${response.data.id}`,
+                        html: `<p>A new Job lisiting is posted and awaiting approval. Please review the item in below link for approval</p> ${process.env.PUBLIC_URL}/admin/content-manager/collection-types/api::job-listing.job-listing/${response.data.id}`,
                     });
                     let emailToAddressUser = authorData.author.email;
                     await strapi.plugins['email'].services.email.send({
                         to: emailToAddressUser,
                         subject: 'New Job Listing Uploaded - Chandapura.com',
-                        html: `<p>Your Job listing for the position <b>${response.data.attributes.job_designation}</b> has been successfully uploaded. Team is currently reviwing the uploaded content, once approved, the listing will be published live and you will be intimated about the same via email.</p>`,
+                        html: `<p>Your ${response.data.attributes.category} Job listing for the position <b>${response.data.attributes.job_title}</b> has been successfully uploaded. Team is currently reviwing the uploaded content, once approved, the listing will be published live and you will be intimated about the same via email.</p>`,
                     });
                 }
             }
