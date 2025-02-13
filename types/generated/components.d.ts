@@ -197,6 +197,9 @@ export interface PaymentPayment extends Schema.Component {
     amount: Attribute.Decimal;
     isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
     expiry_date_timestamp: Attribute.Decimal;
+    subscription_type: Attribute.Enumeration<
+      ['Monthly', 'Quarterly', 'Yearly']
+    >;
   };
 }
 

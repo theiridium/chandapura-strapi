@@ -1236,6 +1236,7 @@ export interface ApiClassifiedListingClassifiedListing
     ownership_history: Attribute.Integer;
     year_of_purchase: Attribute.String;
     details_by_category: Attribute.DynamicZone<['classified.vehicle-details']>;
+    isSold: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1296,6 +1297,7 @@ export interface ApiJobListingJobListing extends Schema.CollectionType {
     gender: Attribute.Enumeration<['Male only', 'Female only', 'Any gender']>;
     full_address: Attribute.Text;
     job_description: Attribute.RichText;
+    isHired: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1489,6 +1491,7 @@ export interface ApiPropertyListingPropertyListing
     payment_details: Attribute.Component<'payment.payment'>;
     payment_history: Attribute.Component<'payment.payment', true>;
     slug: Attribute.Text;
+    isSold: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

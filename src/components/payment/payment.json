@@ -35,6 +35,14 @@
     },
     "expiry_date_timestamp": {
       "type": "decimal"
+    },
+    "subscription_type": {
+      "type": "enumeration",
+      "enum": [
+        "Monthly",
+        "Quarterly",
+        "Yearly"
+      ]
     }
   }
 }

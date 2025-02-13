@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-02-12T13:56:43.032Z"
+    "x-generation-date": "2025-02-12T23:26:12.484Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1870,6 +1870,14 @@
                                                     "expiry_date_timestamp": {
                                                       "type": "number",
                                                       "format": "float"
+                                                    },
+                                                    "subscription_type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "Monthly",
+                                                        "Quarterly",
+                                                        "Yearly"
+                                                      ]
                                                     }
                                                   }
                                                 },
@@ -1908,6 +1916,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   }
@@ -2001,6 +2017,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -2039,6 +2063,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -2271,6 +2303,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -2309,6 +2349,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -2931,6 +2979,9 @@
                                         ]
                                       }
                                     },
+                                    "isSold": {
+                                      "type": "boolean"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -3231,6 +3282,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -3269,6 +3328,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -3489,6 +3556,9 @@
                                     },
                                     "job_description": {
                                       "type": "string"
+                                    },
+                                    "isHired": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -4382,6 +4452,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -4420,12 +4498,23 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
                                     },
                                     "slug": {
                                       "type": "string"
+                                    },
+                                    "isSold": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -4826,6 +4915,14 @@
           "expiry_date_timestamp": {
             "type": "number",
             "format": "float"
+          },
+          "subscription_type": {
+            "type": "string",
+            "enum": [
+              "Monthly",
+              "Quarterly",
+              "Yearly"
+            ]
           }
         }
       },
@@ -7351,6 +7448,14 @@
                                                                               "expiry_date_timestamp": {
                                                                                 "type": "number",
                                                                                 "format": "float"
+                                                                              },
+                                                                              "subscription_type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                  "Monthly",
+                                                                                  "Quarterly",
+                                                                                  "Yearly"
+                                                                                ]
                                                                               }
                                                                             }
                                                                           },
@@ -7389,6 +7494,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             }
@@ -7519,6 +7632,14 @@
                                                                               "expiry_date_timestamp": {
                                                                                 "type": "number",
                                                                                 "format": "float"
+                                                                              },
+                                                                              "subscription_type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                  "Monthly",
+                                                                                  "Quarterly",
+                                                                                  "Yearly"
+                                                                                ]
                                                                               }
                                                                             }
                                                                           },
@@ -7557,6 +7678,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             }
@@ -8229,6 +8358,9 @@
                                                                               ]
                                                                             }
                                                                           },
+                                                                          "isSold": {
+                                                                            "type": "boolean"
+                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
@@ -8529,6 +8661,14 @@
                                                                               "expiry_date_timestamp": {
                                                                                 "type": "number",
                                                                                 "format": "float"
+                                                                              },
+                                                                              "subscription_type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                  "Monthly",
+                                                                                  "Quarterly",
+                                                                                  "Yearly"
+                                                                                ]
                                                                               }
                                                                             }
                                                                           },
@@ -8567,6 +8707,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             }
@@ -8787,6 +8935,9 @@
                                                                           },
                                                                           "job_description": {
                                                                             "type": "string"
+                                                                          },
+                                                                          "isHired": {
+                                                                            "type": "boolean"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -9680,6 +9831,14 @@
                                                                               "expiry_date_timestamp": {
                                                                                 "type": "number",
                                                                                 "format": "float"
+                                                                              },
+                                                                              "subscription_type": {
+                                                                                "type": "string",
+                                                                                "enum": [
+                                                                                  "Monthly",
+                                                                                  "Quarterly",
+                                                                                  "Yearly"
+                                                                                ]
                                                                               }
                                                                             }
                                                                           },
@@ -9718,12 +9877,23 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             }
                                                                           },
                                                                           "slug": {
                                                                             "type": "string"
+                                                                          },
+                                                                          "isSold": {
+                                                                            "type": "boolean"
                                                                           },
                                                                           "createdAt": {
                                                                             "type": "string",
@@ -9880,6 +10050,14 @@
                                                     "expiry_date_timestamp": {
                                                       "type": "number",
                                                       "format": "float"
+                                                    },
+                                                    "subscription_type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "Monthly",
+                                                        "Quarterly",
+                                                        "Yearly"
+                                                      ]
                                                     }
                                                   }
                                                 },
@@ -9918,6 +10096,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   }
@@ -12628,6 +12814,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -12666,6 +12860,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -12796,6 +12998,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -12834,6 +13044,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -13506,6 +13724,9 @@
                                                                                 ]
                                                                               }
                                                                             },
+                                                                            "isSold": {
+                                                                              "type": "boolean"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -13806,6 +14027,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -13844,6 +14073,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -14064,6 +14301,9 @@
                                                                             },
                                                                             "job_description": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "isHired": {
+                                                                              "type": "boolean"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -14957,6 +15197,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -14995,12 +15243,23 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
                                                                             },
                                                                             "slug": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "isSold": {
+                                                                              "type": "boolean"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -15157,6 +15416,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   },
@@ -15195,6 +15462,14 @@
                                                         "expiry_date_timestamp": {
                                                           "type": "number",
                                                           "format": "float"
+                                                        },
+                                                        "subscription_type": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "Monthly",
+                                                            "Quarterly",
+                                                            "Yearly"
+                                                          ]
                                                         }
                                                       }
                                                     }
@@ -17425,6 +17700,14 @@
                                                                   "expiry_date_timestamp": {
                                                                     "type": "number",
                                                                     "format": "float"
+                                                                  },
+                                                                  "subscription_type": {
+                                                                    "type": "string",
+                                                                    "enum": [
+                                                                      "Monthly",
+                                                                      "Quarterly",
+                                                                      "Yearly"
+                                                                    ]
                                                                   }
                                                                 }
                                                               },
@@ -17463,6 +17746,14 @@
                                                                     "expiry_date_timestamp": {
                                                                       "type": "number",
                                                                       "format": "float"
+                                                                    },
+                                                                    "subscription_type": {
+                                                                      "type": "string",
+                                                                      "enum": [
+                                                                        "Monthly",
+                                                                        "Quarterly",
+                                                                        "Yearly"
+                                                                      ]
                                                                     }
                                                                   }
                                                                 }
@@ -17556,6 +17847,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   },
@@ -17594,6 +17893,14 @@
                                                         "expiry_date_timestamp": {
                                                           "type": "number",
                                                           "format": "float"
+                                                        },
+                                                        "subscription_type": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "Monthly",
+                                                            "Quarterly",
+                                                            "Yearly"
+                                                          ]
                                                         }
                                                       }
                                                     }
@@ -18023,6 +18330,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   },
@@ -18061,6 +18376,14 @@
                                                         "expiry_date_timestamp": {
                                                           "type": "number",
                                                           "format": "float"
+                                                        },
+                                                        "subscription_type": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "Monthly",
+                                                            "Quarterly",
+                                                            "Yearly"
+                                                          ]
                                                         }
                                                       }
                                                     }
@@ -18281,6 +18604,9 @@
                                                   },
                                                   "job_description": {
                                                     "type": "string"
+                                                  },
+                                                  "isHired": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -19174,6 +19500,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   },
@@ -19212,12 +19546,23 @@
                                                         "expiry_date_timestamp": {
                                                           "type": "number",
                                                           "format": "float"
+                                                        },
+                                                        "subscription_type": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "Monthly",
+                                                            "Quarterly",
+                                                            "Yearly"
+                                                          ]
                                                         }
                                                       }
                                                     }
                                                   },
                                                   "slug": {
                                                     "type": "string"
+                                                  },
+                                                  "isSold": {
+                                                    "type": "boolean"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -19353,6 +19698,14 @@
                             "expiry_date_timestamp": {
                               "type": "number",
                               "format": "float"
+                            },
+                            "subscription_type": {
+                              "type": "string",
+                              "enum": [
+                                "Monthly",
+                                "Quarterly",
+                                "Yearly"
+                              ]
                             }
                           }
                         },
@@ -19391,6 +19744,14 @@
                               "expiry_date_timestamp": {
                                 "type": "number",
                                 "format": "float"
+                              },
+                              "subscription_type": {
+                                "type": "string",
+                                "enum": [
+                                  "Monthly",
+                                  "Quarterly",
+                                  "Yearly"
+                                ]
                               }
                             }
                           }
@@ -20013,6 +20374,9 @@
                             ]
                           }
                         },
+                        "isSold": {
+                          "type": "boolean"
+                        },
                         "createdAt": {
                           "type": "string",
                           "format": "date-time"
@@ -20397,6 +20761,9 @@
                     }
                   ]
                 }
+              },
+              "isSold": {
+                "type": "boolean"
               }
             }
           }
@@ -22113,6 +22480,14 @@
                                                     "expiry_date_timestamp": {
                                                       "type": "number",
                                                       "format": "float"
+                                                    },
+                                                    "subscription_type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "Monthly",
+                                                        "Quarterly",
+                                                        "Yearly"
+                                                      ]
                                                     }
                                                   }
                                                 },
@@ -22151,6 +22526,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   }
@@ -22244,6 +22627,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -22282,6 +22673,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -22514,6 +22913,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -22552,6 +22959,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -23174,6 +23589,9 @@
                                         ]
                                       }
                                     },
+                                    "isSold": {
+                                      "type": "boolean"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -23474,6 +23892,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -23512,6 +23938,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -23732,6 +24166,9 @@
                                     },
                                     "job_description": {
                                       "type": "string"
+                                    },
+                                    "isHired": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -24625,6 +25062,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -24663,12 +25108,23 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
                                     },
                                     "slug": {
                                       "type": "string"
+                                    },
+                                    "isSold": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -25127,6 +25583,9 @@
               ]
             }
           },
+          "isSold": {
+            "type": "boolean"
+          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
@@ -25351,6 +25810,9 @@
               },
               "job_description": {
                 "type": "string"
+              },
+              "isHired": {
+                "type": "boolean"
               }
             }
           }
@@ -27070,6 +27532,14 @@
                                                     "expiry_date_timestamp": {
                                                       "type": "number",
                                                       "format": "float"
+                                                    },
+                                                    "subscription_type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "Monthly",
+                                                        "Quarterly",
+                                                        "Yearly"
+                                                      ]
                                                     }
                                                   }
                                                 },
@@ -27108,6 +27578,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   }
@@ -27201,6 +27679,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -27239,6 +27725,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -27471,6 +27965,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -27509,6 +28011,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -28131,6 +28641,9 @@
                                         ]
                                       }
                                     },
+                                    "isSold": {
+                                      "type": "boolean"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -28431,6 +28944,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -28469,6 +28990,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -28689,6 +29218,9 @@
                                     },
                                     "job_description": {
                                       "type": "string"
+                                    },
+                                    "isHired": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -29582,6 +30114,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -29620,12 +30160,23 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
                                     },
                                     "slug": {
                                       "type": "string"
+                                    },
+                                    "isSold": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -29952,6 +30503,9 @@
           },
           "job_description": {
             "type": "string"
+          },
+          "isHired": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -31834,6 +32388,9 @@
               },
               "slug": {
                 "type": "string"
+              },
+              "isSold": {
+                "type": "boolean"
               }
             }
           }
@@ -33550,6 +34107,14 @@
                                                     "expiry_date_timestamp": {
                                                       "type": "number",
                                                       "format": "float"
+                                                    },
+                                                    "subscription_type": {
+                                                      "type": "string",
+                                                      "enum": [
+                                                        "Monthly",
+                                                        "Quarterly",
+                                                        "Yearly"
+                                                      ]
                                                     }
                                                   }
                                                 },
@@ -33588,6 +34153,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   }
@@ -33681,6 +34254,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -33719,6 +34300,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -33951,6 +34540,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -33989,6 +34586,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -34611,6 +35216,9 @@
                                         ]
                                       }
                                     },
+                                    "isSold": {
+                                      "type": "boolean"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -34911,6 +35519,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -34949,6 +35565,14 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
@@ -35169,6 +35793,9 @@
                                     },
                                     "job_description": {
                                       "type": "string"
+                                    },
+                                    "isHired": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -36062,6 +36689,14 @@
                                         "expiry_date_timestamp": {
                                           "type": "number",
                                           "format": "float"
+                                        },
+                                        "subscription_type": {
+                                          "type": "string",
+                                          "enum": [
+                                            "Monthly",
+                                            "Quarterly",
+                                            "Yearly"
+                                          ]
                                         }
                                       }
                                     },
@@ -36100,12 +36735,23 @@
                                           "expiry_date_timestamp": {
                                             "type": "number",
                                             "format": "float"
+                                          },
+                                          "subscription_type": {
+                                            "type": "string",
+                                            "enum": [
+                                              "Monthly",
+                                              "Quarterly",
+                                              "Yearly"
+                                            ]
                                           }
                                         }
                                       }
                                     },
                                     "slug": {
                                       "type": "string"
+                                    },
+                                    "isSold": {
+                                      "type": "boolean"
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -36567,6 +37213,9 @@
           },
           "slug": {
             "type": "string"
+          },
+          "isSold": {
+            "type": "boolean"
           },
           "createdAt": {
             "type": "string",
@@ -39224,6 +39873,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -39262,6 +39919,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -39392,6 +40057,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -39430,6 +40103,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -40102,6 +40783,9 @@
                                                                                 ]
                                                                               }
                                                                             },
+                                                                            "isSold": {
+                                                                              "type": "boolean"
+                                                                            },
                                                                             "createdAt": {
                                                                               "type": "string",
                                                                               "format": "date-time"
@@ -40402,6 +41086,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -40440,6 +41132,14 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
@@ -40660,6 +41360,9 @@
                                                                             },
                                                                             "job_description": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "isHired": {
+                                                                              "type": "boolean"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -41553,6 +42256,14 @@
                                                                                 "expiry_date_timestamp": {
                                                                                   "type": "number",
                                                                                   "format": "float"
+                                                                                },
+                                                                                "subscription_type": {
+                                                                                  "type": "string",
+                                                                                  "enum": [
+                                                                                    "Monthly",
+                                                                                    "Quarterly",
+                                                                                    "Yearly"
+                                                                                  ]
                                                                                 }
                                                                               }
                                                                             },
@@ -41591,12 +42302,23 @@
                                                                                   "expiry_date_timestamp": {
                                                                                     "type": "number",
                                                                                     "format": "float"
+                                                                                  },
+                                                                                  "subscription_type": {
+                                                                                    "type": "string",
+                                                                                    "enum": [
+                                                                                      "Monthly",
+                                                                                      "Quarterly",
+                                                                                      "Yearly"
+                                                                                    ]
                                                                                   }
                                                                                 }
                                                                               }
                                                                             },
                                                                             "slug": {
                                                                               "type": "string"
+                                                                            },
+                                                                            "isSold": {
+                                                                              "type": "boolean"
                                                                             },
                                                                             "createdAt": {
                                                                               "type": "string",
@@ -41753,6 +42475,14 @@
                                                       "expiry_date_timestamp": {
                                                         "type": "number",
                                                         "format": "float"
+                                                      },
+                                                      "subscription_type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                          "Monthly",
+                                                          "Quarterly",
+                                                          "Yearly"
+                                                        ]
                                                       }
                                                     }
                                                   },
@@ -41791,6 +42521,14 @@
                                                         "expiry_date_timestamp": {
                                                           "type": "number",
                                                           "format": "float"
+                                                        },
+                                                        "subscription_type": {
+                                                          "type": "string",
+                                                          "enum": [
+                                                            "Monthly",
+                                                            "Quarterly",
+                                                            "Yearly"
+                                                          ]
                                                         }
                                                       }
                                                     }

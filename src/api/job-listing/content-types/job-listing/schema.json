@@ -91,6 +91,10 @@
     },
     "job_description": {
       "type": "richtext"
+    },
+    "isHired": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

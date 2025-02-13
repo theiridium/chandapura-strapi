@@ -90,6 +90,10 @@
       "components": [
         "classified.vehicle-details"
       ]
+    },
+    "isSold": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

@@ -110,6 +110,10 @@
     },
     "slug": {
       "type": "text"
+    },
+    "isSold": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
