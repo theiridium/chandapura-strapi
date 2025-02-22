@@ -179,30 +179,6 @@ export interface RealEstatePgDetails extends Schema.Component {
   };
 }
 
-export interface PaymentPayment extends Schema.Component {
-  collectionName: 'components_payment_payments';
-  info: {
-    displayName: 'Payment Details';
-    description: '';
-  };
-  options: {
-    timestamps: true;
-  };
-  attributes: {
-    purchase_date: Attribute.DateTime;
-    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date: Attribute.DateTime;
-    raz_order_id: Attribute.String & Attribute.Private;
-    raz_payment_id: Attribute.String & Attribute.Private;
-    amount: Attribute.Decimal;
-    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
-    expiry_date_timestamp: Attribute.Decimal;
-    subscription_type: Attribute.Enumeration<
-      ['Monthly', 'Quarterly', 'Yearly']
-    >;
-  };
-}
-
 export interface JobPersonalJobDetails extends Schema.Component {
   collectionName: 'components_job_personal_job_details';
   info: {
@@ -276,6 +252,30 @@ export interface ContactContactDetails extends Schema.Component {
   };
 }
 
+export interface PaymentPayment extends Schema.Component {
+  collectionName: 'components_payment_payments';
+  info: {
+    displayName: 'Payment Details';
+    description: '';
+  };
+  options: {
+    timestamps: true;
+  };
+  attributes: {
+    purchase_date: Attribute.DateTime;
+    isPaymentSuccess: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date: Attribute.DateTime;
+    raz_order_id: Attribute.String & Attribute.Private;
+    raz_payment_id: Attribute.String & Attribute.Private;
+    amount: Attribute.Decimal;
+    isOfferApplied: Attribute.Boolean & Attribute.DefaultTo<false>;
+    expiry_date_timestamp: Attribute.Decimal;
+    subscription_type: Attribute.Enumeration<
+      ['Monthly', 'Quarterly', 'Yearly']
+    >;
+  };
+}
+
 export interface ClassifiedVehicleDetails extends Schema.Component {
   collectionName: 'components_classified_vehicle_details';
   info: {
@@ -303,10 +303,10 @@ declare module '@strapi/types' {
       'real-estate.plot-details': RealEstatePlotDetails;
       'real-estate.pg-room-type': RealEstatePgRoomType;
       'real-estate.pg-details': RealEstatePgDetails;
-      'payment.payment': PaymentPayment;
       'job.personal-job-details': JobPersonalJobDetails;
       'job.corporate-job-details': JobCorporateJobDetails;
       'contact.contact-details': ContactContactDetails;
+      'payment.payment': PaymentPayment;
       'classified.vehicle-details': ClassifiedVehicleDetails;
     }
   }

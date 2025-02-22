@@ -91,7 +91,7 @@
         "classified.vehicle-details"
       ]
     },
-    "isSold": {
+    "isUnlisted": {
       "type": "boolean",
       "default": false
     }

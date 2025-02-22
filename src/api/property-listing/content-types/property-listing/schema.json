@@ -111,7 +111,7 @@
     "slug": {
       "type": "text"
     },
-    "isSold": {
+    "isUnlisted": {
       "type": "boolean",
       "default": false
     }

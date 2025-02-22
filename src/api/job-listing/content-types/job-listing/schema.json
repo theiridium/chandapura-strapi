@@ -92,7 +92,7 @@
     "job_description": {
       "type": "richtext"
     },
-    "isHired": {
+    "isUnlisted": {
       "type": "boolean",
       "default": false
     }
