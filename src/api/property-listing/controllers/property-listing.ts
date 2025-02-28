@@ -12,7 +12,11 @@ export default factories.createCoreController('api::property-listing.property-li
                 populate: ['author', 'payment_details', 'payment_history'],
             });
             if (process.env.APP_ENV === "Production") {
-                const adminUsers = await strapi.db.query('admin::user').findMany();
+                const adminUsers = await strapi.db.query('admin::user').findMany({
+                    where: {
+                        roles: { id: 1 }
+                    }
+                });
                 let emailToAddressListAdmin = adminUsers.map(x => x.email);
                 if (response.data.attributes && response.data.attributes.step_number === 4) {
                     await strapi.plugins['email'].services.email.send({
