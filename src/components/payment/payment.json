@@ -41,8 +41,13 @@
       "enum": [
         "Monthly",
         "Quarterly",
-        "Yearly"
+        "Yearly",
+        "Free"
       ]
+    },
+    "isFreeListing": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
